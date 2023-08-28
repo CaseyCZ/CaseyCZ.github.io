@@ -1,6 +1,6 @@
 
 <h1 align="left">Hi 👋, I'm Lukáš</h1>
-<h3 align="center">A passionate amateur developer from Czech Republic</h3>
+<h3 align="left">A passionate amateur developer from Czech Republic</h3>
 <p align="left"> <a href="https://twitter.com/Searcasey" target="blank"><img
 
  - 📦 Website [CaseyCZ](https://CaseyCZ.github.io)

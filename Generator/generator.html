@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>DALL-E Image Generator</title>
-  <link rel="stylesheet" href="generator.css">
+  <link rel="stylesheet" href="*Generator/generator.css">
 </head>
 <body>
   <div class="container">
@@ -26,7 +26,7 @@
 
     generateButton.addEventListener('click', async () => {
       const description = descriptionInput.value;
-      const apiUrl = 'YOUR_DALL_E_API_ENDPOINT'; // Nahraďte tímto endpointem
+      const apiUrl = 'https://api.openai.com/v1/images/generations';
 
       try {
         const response = await fetch(apiUrl, {

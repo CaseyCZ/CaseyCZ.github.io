@@ -18,7 +18,7 @@
   </div>
 
   <script>
-    const apiKey = "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"; // Nahraďte tímto klíčem
+    const apiKey = "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"; // Nahraďte tímto klíčem
 
     const generateButton = document.getElementById('generate-button');
     const imageContainer = document.getElementById('image-container');
@@ -30,7 +30,7 @@
 
       try {
         const response = await fetch(apiUrl, {
-          method: 'POST',
+          method: 'POST', // Změna z GET na POST
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${apiKey}`
@@ -42,18 +42,10 @@
           })
         });
 
-        if (response.status === 401) {
-          throw new Error('Unauthorized - Check your API key.');
-        }
-
         const data = await response.json();
+        const imageUrl = data.data[0].url;
 
-        if (data.data && data.data[0] && data.data[0].url) {
-          const imageUrl = data.data[0].url;
-          imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image" class="result-image">`;
-        } else {
-          imageContainer.innerHTML = 'Image generation failed.';
-        }
+        imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image" class="result-image">`;
       } catch (error) {
         console.error(error);
         imageContainer.innerHTML = 'Error generating image.';

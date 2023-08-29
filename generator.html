@@ -18,7 +18,8 @@
   </div>
 
   <script>
-    const apiKey = "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"; // Nahraďte tímto klíčem
+    // Načítání API klíče z GitHub Secrets
+    const apiKey = process.env.API; // Název GITHUB_API_KEY je třeba nastavit podle toho, jak jste klíč pojmenovali v GitHub Secrets
 
     const generateButton = document.getElementById('generate-button');
     const imageContainer = document.getElementById('image-container');
@@ -30,7 +31,7 @@
 
       try {
         const response = await fetch(apiUrl, {
-          method: 'POST', // Změna z GET na POST
+          method: 'POST',
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${apiKey}`

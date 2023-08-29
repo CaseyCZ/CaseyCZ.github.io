@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>DALL-E Image Generator</title>
-<link rel="stylesheet" href="generator.css">
+  <link rel="stylesheet" href="generator.css">
 </head>
 <body>
   <div class="container">
@@ -42,10 +42,18 @@
           })
         });
 
-        const data = await response.json();
-        const imageUrl = data.data[0].url;
+        if (response.status === 401) {
+          throw new Error('Unauthorized - Check your API key.');
+        }
 
-        imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image" class="result-image">`;
+        const data = await response.json();
+
+        if (data.data && data.data[0] && data.data[0].url) {
+          const imageUrl = data.data[0].url;
+          imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image" class="result-image">`;
+        } else {
+          imageContainer.innerHTML = 'Image generation failed.';
+        }
       } catch (error) {
         console.error(error);
         imageContainer.innerHTML = 'Error generating image.';

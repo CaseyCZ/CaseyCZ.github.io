@@ -1,43 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="Generator/generator.css">
   <title>DALL-E Image Generator</title>
+  <link rel="stylesheet" href="generator.css">
 </head>
 <body>
   <div class="container">
-    <h1>DALL-E Image Generator</h1>
-    <textarea id="prompt" placeholder="Enter a description for the image..."></textarea>
-    <button id="generateButton">Generate Image</button>
-    <div id="result"></div>
+    <h2>Generate an Image using Open AI API</h2>
+    <textarea
+      class="app-input"
+      id="description"
+      placeholder="Enter image description..."
+      rows="4"
+    ></textarea>
+    <button class="app-button" id="generate-button">Generate Image</button>
+    <div id="image-container" class="result-container"></div>
   </div>
-  <script src="script.js"></script>
-  const apiKey = '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'; // Nahraďte tímto 
 
-document.getElementById('generate-button').addEventListener('click', async () => {
-  const description = document.getElementById('description').value;
-  const apiUrl = 'https://api.openai.com/v1/images/generations';
-  
-  const response = await fetch(apiUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${apiKey}`
-    },
-    body: JSON.stringify({
-      prompt: description,
-      n: 1,
-      size: '1024x1024'
-    })
-  });
-  
-  const data = await response.json();
-  const imageUrl = data.data[0].url;
-  
-  const imageContainer = document.getElementById('image-container');
-  imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
-});
+  <script>
+    const apiKey = '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'; // Nahraďte tímto klíčem
+
+    const generateButton = document.getElementById('generate-button');
+    const imageContainer = document.getElementById('image-container');
+    const descriptionInput = document.getElementById('description');
+
+    generateButton.addEventListener('click', async () => {
+      const description = descriptionInput.value;
+      const apiUrl = 'YOUR_DALL_E_API_ENDPOINT'; // Nahraďte tímto endpointem
+
+      try {
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+          },
+          body: JSON.stringify({
+            prompt: description,
+            n: 1,
+            size: '1024x1024'
+          })
+        });
+
+        const data = await response.json();
+        const imageUrl = data.data[0].url;
+
+        imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image" class="result-image">`;
+      } catch (error) {
+        console.error(error);
+        imageContainer.innerHTML = 'Error generating image.';
+      }
+    });
+  </script>
 </body>
 </html>

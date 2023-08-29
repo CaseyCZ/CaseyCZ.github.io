@@ -14,5 +14,30 @@
     <div id="result"></div>
   </div>
   <script src="script.js"></script>
+  const apiKey = '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'; // Nahraďte tímto 
+
+document.getElementById('generate-button').addEventListener('click', async () => {
+  const description = document.getElementById('description').value;
+  const apiUrl = 'https://api.openai.com/v1/images/generations';
+  
+  const response = await fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${apiKey}`
+    },
+    body: JSON.stringify({
+      prompt: description,
+      n: 1,
+      size: '1024x1024'
+    })
+  });
+  
+  const data = await response.json();
+  const imageUrl = data.data[0].url;
+  
+  const imageContainer = document.getElementById('image-container');
+  imageContainer.innerHTML = `<img src="${imageUrl}" alt="Generated Image">`;
+});
 </body>
 </html>

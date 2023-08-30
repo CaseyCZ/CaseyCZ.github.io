@@ -44,7 +44,7 @@ body:not(.night-mode) .card {
 .social-icon {
   color: #ff9900;
 }
- .body
+.body {
   margin-bottom: 1em;
 }
 .thumbnail {
@@ -131,4 +131,5 @@ html.can-touch .link-item:active {
     /* disable hover effect when input is touch */
     background-color: #1f1f1f;
   }
+}
 }

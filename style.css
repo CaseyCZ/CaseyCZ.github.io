@@ -31,8 +31,9 @@ body {
 }
 
 .header {
-  background-color: linear-gradient(to right, #667eea, #764ba2);
+  background: linear-gradient(to right, #667eea, #764ba2);
   color: white;
+  transition: background-color 0.3s ease;
 }
 
 .social-icon {

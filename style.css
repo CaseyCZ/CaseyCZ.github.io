@@ -168,35 +168,44 @@ body:not(.night-mode) .card {
   background-color: #222; /* Barva pozadí v nočním režimu */
   color: white; /* Barva textu v nočním režimu */
 }
-/* Zobrazení hamburger menu na mobilních zařízeních */
-@media screen and (max-width: 768px) {
-  /* Styl pro zobrazení hamburger ikony */
-  .hamburger-icon {
-    display: block;
-    cursor: pointer;
-  }
-  
-  /* Skrýt odkazy v navigačním menu na zařízeních s maximální šířkou 768px */
-  .nav-links {
-    display: none;
-  }
-  
-  /* Styl pro zobrazení odkazů v navigačním menu na mobilních zařízeních */
-  .nav-links.show-menu {
-    display: block;
-  }
-}/* Skrýt ikonu hamburger menu v desktopové verzi */
-.hamburger-icon {
-  display: none;
-  cursor: pointer;
+/* Style the navigation menu */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
 }
 
-/* Styl pro zobrazení odkazů v navigačním menu */
-.nav-links.show-menu {
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
   display: block;
 }
 
-/* Styl pro skrytí odkazů v navigačním menu na začátku (pro mobilní verzi) */
-.nav-links {
-  display: none;
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #04AA6D;
+  color: white;
 }

@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
   const nightModeButton = document.getElementById('nightModeButton');
   nightModeButton.addEventListener('click', toggleNightMode);
 });
-// Funkce pro otevření/zavření menu
-function toggleMenu() {
-  const navLinks = document.querySelector('.nav-links');
-  navLinks.classList.toggle('show-menu');
+/* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
 }
-
-// Přidání posluchače události pro zobrazení/skrytí menu po kliknutí na ikonu hamburger menu
-const hamburgerIcon = document.querySelector('.hamburger-icon');
-hamburgerIcon.addEventListener('click', toggleMenu);

@@ -22,13 +22,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="night-mode">
-  <div class="hamburger-icon" onclick="toggleMenu()">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-  </div>
-  
-  <nav class="nav-links">
+<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="#home" class="active">Logo</a>
+  <!-- Navigation links (hidden by default) -->
+  <div id="myLinks">
     <a href="index.html" class="nav-link">Domů</a>
     <a href="about.html" class="nav-link">O mně</a>
     <a href="generator/generator.html" class="nav-link">Image Generátor</a>
@@ -37,6 +38,12 @@
       <img width="24" height="24" src="./icons/DarkMode-Light.png" id="toggleDark" alt="Toggle Mode" style="display: inline-block;"/>
     </a>
   </nav>
+  </div>
+  <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
   <header class="header text-center py-5">
     <div class="container">
       <h1 class="text-white">Lukáš Kysela</h1>

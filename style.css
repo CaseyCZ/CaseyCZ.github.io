@@ -163,11 +163,11 @@ body:not(.night-mode) .card {
     /* disable hover effect when input is touch */
     background-color: #1f1f1f;
   }
-/* Skrytí navigační lišty na mobilech a tabletech */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none; /* Skryjeme navigační lištu */
-  }
+/* Noční režim */
+.night-mode {
+  background-color: #222; /* Barva pozadí v nočním režimu */
+  color: white; /* Barva textu v nočním režimu */
+}
 /* Styly pro hamburger menu */
 .hamburger-menu {
   display: none; /* Hamburger menu je na začátku skryté na širších obrazovkách */

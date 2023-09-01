@@ -164,58 +164,6 @@ body:not(.night-mode) .card {
     /* disable hover effect when input is touch */
     background-color: #1f1f1f;
   }
-}
-/* Styly pro hamburger menu */
-.hamburger-menu {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 3px 0;
-  transition: 0.4s;
-}
-
-/* Styly pro zobrazení menu v mobilním režimu */
-.show-menu .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.show-menu .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.show-menu .bar:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -6px);
-}
-/* Základní styly pro navigační lištu */
-.nav-links {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #333; /* Barva pozadí */
-  color: white; /* Barva textu */
-  padding: 10px; /* Vnější odsazení */
-  position: absolute; /* Absolutní pozice pro umístění nahoře */
-  top: 0; /* Nahoře */
-  left: 0;
-  right: 0;
-}
-
-.nav-link {
-  margin-left: 20px;
-  text-decoration: none;
-  color: white;
-  transition: color 0.3s;
-  background: none !important;
-  border: none !important;
-  padding: 0 !important;
-}
-
 /* Skrytí navigační lišty na mobilech a tabletech */
 @media (max-width: 768px) {
   .nav-links {
@@ -234,5 +182,31 @@ body:not(.night-mode) .card {
     height: 3px;
     background-color: white;
     margin: 3px 0;
+  }
+}
+
+/* Zobrazení navigační lišty v desktopovém režimu */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #333; /* Barva pozadí */
+    color: white; /* Barva textu */
+    padding: 10px; /* Vnější odsazení */
+    position: absolute; /* Absolutní pozice pro umístění nahoře */
+    top: 0; /* Nahoře */
+    left: 0;
+    right: 0;
+  }
+
+  .nav-link {
+    margin-left: 20px;
+    text-decoration: none;
+    color: white;
+    transition: color 0.3s;
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
   }
 }

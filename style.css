@@ -191,7 +191,7 @@ body:not(.night-mode) .card {
 
 /* Style the hamburger menu */
 .topnav a.icon {
-  background:linear-gradient(to right, #667eea, #764ba2);
+  background: #764ba2;
   display: block;
   position: absolute;
   right: 0;
@@ -200,12 +200,12 @@ body:not(.night-mode) .card {
 
 /* Add a grey background color on mouse-over */
 .topnav a:hover {
-  background-color:  rgb(109, 82, 172);
+  background-color:  #764ba2;
   color:  white;
 }
 
 /* Style the active link (or home/logo) */
 .active {
-  background-color: linear-gradient(to right, #667eea, #764ba2);
+  background-color: transparent;
   color: white;
 }}

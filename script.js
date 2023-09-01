@@ -1,7 +1,5 @@
 // script.js
 function toggleNightMode() {
-    // Zde umístěte logiku vašeho event handleru
-    let isNightMode = !isNightMode;
     document.body.classList.toggle('night-mode');
   }
   

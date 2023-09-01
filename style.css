@@ -35,9 +35,8 @@ body {
   color: white;
   transition: background-color 0.3s ease;
 }
-
 .social-icon {
-  font-size: 24px;
+  font-size: 18px;
   color: #ff9900;
   transition: color 0.3s, transform 0.3s;
 }
@@ -46,7 +45,6 @@ body {
   color: white;
   transform: scale(1.2); /* Zvětší ikonu na 120% normální velikosti */
 }
-
 .body {
   margin-bottom: 1em;
 }

@@ -27,3 +27,7 @@ navLinksArray.forEach((link) => {
     navLinks.classList.remove('show-menu');
   });
 });
+function toggleMenu() {
+  var menu = document.querySelector('.hamburger-menu');
+  menu.classList.toggle('show-menu');
+}

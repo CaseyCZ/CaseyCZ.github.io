@@ -34,84 +34,97 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    .header {
-      background-image: linear-gradient(to right, #667eea, #764ba2);
-      transition: background-color 0.3s ease;
-    }
-    .header:hover {
-      background-color: #ff9900;
-    }
-    .social-icon {
-      font-size: 24px;
-      color: #333;
-      transition: color 0.3s ease;
-    }
-    .social-icon:hover {
-      color: #ff9900;
-    }
-    body:not(.night-mode) .card {
-      background-color: #1f1f1f; /* Bílé pozadí pro karty pouze v denním režimu */
-    }  .custom-btn {
-    background-image: linear-gradient(to right, #667eea, #764ba2);
-    color: white;
-    border: none;
-  }
-    /* Styly pro černé pozadí .card-body v nočním režimu */
-    body.night-mode .card-body {
-      background-color: #fff; /* Černé pozadí pro .card-body v nočním režimu */
-    }
-    .card {
-      transition: transform 0.3s ease;
-      background-color: #f0f0f0;
-      border: 1px solid #ddd;
-    }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card .card-title {
-      color: #764ba2;
-    }
-    .tabs a {
-      margin-right: 50px; /* Přidá větší mezeru mezi jednotlivými tlačíky */
-    }
-    .tabs {
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-    }
-    .tab {
-      padding: 10px 20px;
-      margin: 0 10px;
-      background-color: #ddd;
-      border-radius: 5px;
-      text-decoration: none;
-      color: #333;
-      transition: background-color 0.3s;
-    }
-    .tab:hover {
-      background-color: #aaa;
-    }
-    .night-mode {
-      background-color: #F8F8FF; /* Nastavte vhodnou barvu pozadí pro režim noci */
-      color: #000000; /* Nastavte barvu textu pro režim noci */
-      /* Zde můžete definovat další styly specifické pro režim noci */
-    }
-    .nightModeButton {
-      margin-right: 20px; /* Změňte tuto hodnotu podle vašich potřeb */
-    }/* Denní režim */
+/* Styly pro denní režim */
 body:not(.night-mode) {
   background-color: black;
   color: white;
 }
 
-/* Barva pozadí pro nadpisy karet v denním režimu */
-body:not(.night-mode) .card-header {
+body:not(.night-mode) .header {
+  background-image: linear-gradient(to right, #667eea, #764ba2);
+  transition: background-color 0.3s ease;
+}
+
+body:not(.night-mode) .header:hover {
+  background-color: #ff9900;
+}
+
+body:not(.night-mode) .social-icon {
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+body:not(.night-mode) .social-icon:hover {
+  color: #ff9900;
+}
+
+body:not(.night-mode) .card {
+  background-color: #1f1f1f; /* Bílé pozadí pro karty pouze v denním režimu */
+}
+
+body:not(.night-mode) .custom-btn {
+  background-image: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+  border: none;
+}
+
+body:not(.night-mode) .card-body {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+}
+
+body:not(.night-mode) .card:hover {
+  transform: scale(1.05);
+}
+
+body:not(.night-mode) .card .card-title {
+  color: #764ba2;
+}
+
+body:not(.night-mode) .tabs a {
+  margin-right: 50px;
+}
+
+body:not(.night-mode) .tab {
+  background-color: #ddd;
+  color: #333;
+}
+
+body:not(.night-mode) .tab:hover {
+  background-color: #aaa;
+}
+
+/* Styly pro noční režim */
+body.night-mode {
+  background-color: #F8F8FF; /* Nastavte vhodnou barvu pozadí pro režim noci */
+  color: #000000; /* Nastavte barvu textu pro režim noci */
+}
+
+body.night-mode .header {
   background-color: #2f2f2f;
 }
 
-/* Barva pozadí karet v denním režimu */
-body:not(.night-mode) .card {
+body.night-mode .social-icon {
+  color: #333;
+}
+
+body.night-mode .custom-btn {
+  background-image: linear-gradient(to right, #667eea, #764ba2);
+  color: white;
+}
+
+body.night-mode .card-body {
+  background-color: #fff;
+}
+
+body.night-mode .card {
   background-color: black;
+}
+
+/* Barva pozadí pro nadpisy karet v nočním režimu */
+body.night-mode .card-header {
+  background-color: #2f2f2f;
 }
 </style>
 </div>

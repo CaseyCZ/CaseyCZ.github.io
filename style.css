@@ -168,62 +168,35 @@ body:not(.night-mode) .card {
   background-color: #222; /* Barva pozadí v nočním režimu */
   color: white; /* Barva textu v nočním režimu */
 }
-/* Styly pro hamburger menu */
-.hamburger-menu {
-  display: none; /* Hamburger menu je na začátku skryté na širších obrazovkách */
+/* Zobrazení hamburger menu na mobilních zařízeních */
+@media screen and (max-width: 768px) {
+  /* Styl pro zobrazení hamburger ikony */
+  .hamburger-icon {
+    display: block;
+    cursor: pointer;
+  }
+  
+  /* Skrýt odkazy v navigačním menu na zařízeních s maximální šířkou 768px */
+  .nav-links {
+    display: none;
+  }
+  
+  /* Styl pro zobrazení odkazů v navigačním menu na mobilních zařízeních */
+  .nav-links.show-menu {
+    display: block;
+  }
+}/* Skrýt ikonu hamburger menu v desktopové verzi */
+.hamburger-icon {
+  display: none;
   cursor: pointer;
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-  margin: 6px 0;
-  transition: 0.4s;
+/* Styl pro zobrazení odkazů v navigačním menu */
+.nav-links.show-menu {
+  display: block;
 }
 
-/* Styly pro navigační menu */
+/* Styl pro skrytí odkazů v navigačním menu na začátku (pro mobilní verzi) */
 .nav-links {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  background-color: #333;
-  padding: 10px 0;
-  position: fixed;
-  top: 0;
-  left: -100%; /* Navigační menu je na začátku skryté mimo obrazovku */
-  width: 100%;
-  transition: 0.3s;
-  z-index: 1;
-}
-
-.nav-link {
-  color: white;
-  text-decoration: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  transition: 0.2s;
-}
-
-.nav-link:hover {
-  color: #FFD700; /* Změní se barva textu při najetí myší */
-}
-
-/* Noční režim */
-.night-mode {
-  background-color: #222; /* Barva pozadí v nočním režimu */
-  color: white; /* Barva textu v nočním režimu */
-}
-
-/* Zobrazení navigačního menu na širších obrazovkách */
-@media screen and (min-width: 768px) {
-  .hamburger-menu {
-    display: block;
-  }
-
-  .nav-links {
-    display: flex;
-    position: static;
-    background-color: transparent;
-  }
+  display: none;
 }

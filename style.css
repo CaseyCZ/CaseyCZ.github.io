@@ -165,3 +165,55 @@ body:not(.night-mode) .card {
     background-color: #1f1f1f;
   }
 }
+/* Styly pro hamburger menu */
+.hamburger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 3px 0;
+  transition: 0.4s;
+}
+
+/* Styly pro zobrazení menu v mobilním režimu */
+.show-menu .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.show-menu .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.show-menu .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Styly pro odkazy v menu */
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #333;
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+/* Styly pro širokou obrazovku (není třeba hamburger menu) */
+@media (min-width: 768px) {
+  .hamburger-menu {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+}

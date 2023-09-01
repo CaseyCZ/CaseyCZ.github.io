@@ -206,6 +206,6 @@ body:not(.night-mode) .card {
 
 /* Style the active link (or home/logo) */
 .active {
-  background-color: #04AA6D;
+  background-color: linear-gradient(to right, #667eea, #764ba2);
   color: white;
 }

@@ -171,7 +171,7 @@ body:not(.night-mode) .card {
 /* Style the navigation menu */
 .topnav {
   overflow: hidden;
-  background-color: #d9ec2a;
+  background-color:linear-gradient(to right, #667eea, #764ba2);
   position: relative;
 }
 
@@ -182,7 +182,7 @@ body:not(.night-mode) .card {
 
 /* Style navigation menu links */
 .topnav a {
-  color: rgb(206, 25, 145);
+  color: white;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 12px;
@@ -191,7 +191,7 @@ body:not(.night-mode) .card {
 
 /* Style the hamburger menu */
 .topnav a.icon {
-  background: rgb(28, 89, 219);
+  background:linear-gradient(to right, #667eea, #764ba2);
   display: block;
   position: absolute;
   right: 0;
@@ -200,8 +200,8 @@ body:not(.night-mode) .card {
 
 /* Add a grey background color on mouse-over */
 .topnav a:hover {
-  background-color: #ddd;
-  color: rgb(144, 57, 216);
+  background-color:  rgb(109, 82, 172);
+  color:  white;
 }
 
 /* Style the active link (or home/logo) */

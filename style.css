@@ -18,7 +18,7 @@ body {
 .button-container button {
   margin-left: 20px;
   text-decoration: none;
-  color: #333;
+  color: black; /*  barva textu v nabídce */
   transition: color 0.3s;
   background: none !important;
   border: none !important;
@@ -27,11 +27,11 @@ body {
 
 .button-container a:hover,
 .button-container button:hover {
-  color: #aaa;
+  color: white;
 }
 
 .header {
-  background-color: #667eea;
+  background-color: linear-gradient(to right, #667eea, #764ba2);
   color: white;
 }
 
@@ -118,7 +118,6 @@ body:not(.night-mode) .card {
 @media (prefers-color-scheme: dark) {
   .card-header {
     background-color: #29d145; /*  pozadí pro nadpisy karet v nočním režimu */
-    background-image: linear-gradient(to right, #667eea, #764ba2);
   }
 }
 

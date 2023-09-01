@@ -168,46 +168,62 @@ body:not(.night-mode) .card {
   .nav-links {
     display: none; /* Skryjeme navigační lištu */
   }
-
-  /* Zobrazení hamburger menu */
-/* Základní styly pro hamburger menu */
+/* Styly pro hamburger menu */
 .hamburger-menu {
-  display: flex;
-  flex-direction: column;
+  display: none; /* Hamburger menu je na začátku skryté na širších obrazovkách */
   cursor: pointer;
 }
 
 .bar {
   width: 25px;
   height: 3px;
-  background-color: white;
-  margin: 3px 0;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
 }
+
+/* Styly pro navigační menu */
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #333;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: -100%; /* Navigační menu je na začátku skryté mimo obrazovku */
+  width: 100%;
+  transition: 0.3s;
+  z-index: 1;
 }
-/* Zobrazení navigační lišty v desktopovém režimu */
-@media (min-width: 769px) {
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  color: #FFD700; /* Změní se barva textu při najetí myší */
+}
+
+/* Noční režim */
+.night-mode {
+  background-color: #222; /* Barva pozadí v nočním režimu */
+  color: white; /* Barva textu v nočním režimu */
+}
+
+/* Zobrazení navigačního menu na širších obrazovkách */
+@media screen and (min-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+
   .nav-links {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: #333; /* Barva pozadí */
-    color: white; /* Barva textu */
-    padding: 10px; /* Vnější odsazení */
-    position: absolute; /* Absolutní pozice pro umístění nahoře */
-    top: 0; /* Nahoře */
-    left: 0;
-    right: 0;
+    position: static;
+    background-color: transparent;
   }
-  .nav-link {
-    margin-left: 20px;
-    text-decoration: none;
-    color: white;
-    transition: color 0.3s;
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-  }
-/* Zobrazení navigační lišty v mobilním režimu */
-.nav-links.show-menu {
-  display: block;
 }

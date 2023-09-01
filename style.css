@@ -24,7 +24,6 @@ body {
   border: none !important;
   padding: 0 !important;
 }
-
 .button-container a:hover,
 .button-container button:hover {
   color: white;
@@ -171,20 +170,20 @@ body:not(.night-mode) .card {
   }
 
   /* Zobrazení hamburger menu */
-  .hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-  }
-
-  .bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-  }
+/* Základní styly pro hamburger menu */
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 }
 
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+}
+}
 /* Zobrazení navigační lišty v desktopovém režimu */
 @media (min-width: 769px) {
   .nav-links {
@@ -199,7 +198,6 @@ body:not(.night-mode) .card {
     left: 0;
     right: 0;
   }
-
   .nav-link {
     margin-left: 20px;
     text-decoration: none;
@@ -209,4 +207,7 @@ body:not(.night-mode) .card {
     border: none !important;
     padding: 0 !important;
   }
+/* Zobrazení navigační lišty v mobilním režimu */
+.nav-links.show-menu {
+  display: block;
 }

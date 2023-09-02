@@ -7,7 +7,6 @@
   top: 0;
   right: 0;
 }
-
 .button-container a,
 .button-container button {
   margin-left: 20px;
@@ -18,7 +17,6 @@
   border: none !important;
   padding: 0 !important;
 }
-
 .button-container a:hover,
 .button-container button:hover {
   color: #aaa;
@@ -35,7 +33,6 @@ body:not(.night-mode) .card {
   background-color: white; /* Černé pozadí v nočním režimu */
   color: black; /* Bílá barva textu v nočním režimu */
 }
-
 /* Zbytek vašeho CSS kódu... */
 .header {
   background-color: #667eea;
@@ -93,7 +90,6 @@ html.can-touch .link-item:active {
   font-size: 16px;
   margin-left: 5px;
   margin-right: 10px;
-
 /* Barva pozadí pro nadpisy karet v nočním režimu */
 @media (prefers-color-scheme: dark) {
   .card-header {
@@ -110,11 +106,9 @@ html.can-touch .link-item:active {
   body:not(.night-mode) .card {
     background-color: #fff; /* Bílé pozadí pro karty pouze v denním režimu */
   }
-
   /* Styly pro černé pozadí .card-body v nočním režimu */
   body.night-mode .card-body {
     background-color: #1f1f1f; /* Černé pozadí pro .card-body v nočním režimu */
-
   }
   .jumbotron {
     background-color: #2f2f2f;

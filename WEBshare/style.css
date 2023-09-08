@@ -1,0 +1,99 @@
+/* styles.css */
+
+/* Základní styly */
+body {
+    background-color: #282c35;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.movie-list-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #4caf50; /* Změna barvy titulu */
+}
+
+#movieNameInput {
+    padding: 5px;
+    font-size: 14px;
+    width: 60%;
+    border: 1px solid #ccc; /* Přidáme rámec kolem pole */
+    border-radius: 5px; /* Zaoblené rohy pole */
+}
+
+#searchButton {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 15px; /* Zaoblené rohy tlačítka */
+    margin-left: 10px;
+}
+
+/* Seznam filmů */
+.movie-list-wrapper {
+    text-align: left; /* Zarovnání textu v seznamu na levou stranu */
+}
+
+.movie-list-item {
+    background-color: #333; /* Trochu tmavší barva pozadí */
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px; /* Zvýšil jsem mezery mezi filmovými položkami */
+    color: #ffffff;
+    position: relative; /* Přidáme pozici relativní pro absolutní tlačítko */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Přidáme stín */
+    min-height: 20px; /* Minimální výška položky na dvou řádcích */
+    word-wrap: break-word; /* Zalomení textu na dvou řádcích */
+}
+
+.movie-list-item-title {
+    font-size: 14px;
+    margin-bottom: 5px; /* Snížil jsem mezery pod názvem položky */
+}
+
+.movie-list-item-button {
+    position: absolute;
+    bottom: 5px; /* Umístíme tlačítko na spodní část položky */
+    right: 10px; /* Umístíme tlačítko na pravý dolní roh */
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 5px 5px; /* Menší velikost tlačítka */
+    font-size: 11px; /* Menší fontová velikost tlačítka */
+    cursor: pointer;
+    border-radius: 10px; /* Zaoblené rohy tlačítka */
+}
+/* style.css */
+
+/* Styl pro <p> element */
+p {
+    font-size: 16px;
+    color: #ffffff; /* Barva textu (černá) */
+}
+
+/* Styl pro odkaz <a> uvnitř <p> elementu */
+p a {
+    text-decoration: none; /* Odkazy bez podtržení */
+    color: #4caf50; /* Barva odkazu (modrá) */
+    font-weight: bold; /* Tučné písmo pro odkaz */
+    transition: color 0.3s, font-size 0.3s; /* Animace pro změnu barvy textu a velikosti písma */
+}
+
+/* Styl pro odkaz <a> po najetí myší */
+p a:hover {
+    color: orange; /* Změna barvy na oranžovou */
+    font-size: 18px; /* Zvýšení velikosti písma na 18px */
+}

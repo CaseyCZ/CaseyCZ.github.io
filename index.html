@@ -2,6 +2,18 @@
 <html lang="cs">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div class="button-container">
+    <a href="/index.html" class="btn btn-primary">Domů</a>
+    <a href="/webshare.html" class="btn btn-primary">WEBshare</a>
+    <a href="/livescore.html" class="btn btn-primary">Livescore</a>
+    <a href="contact.html" class="btn btn-primary">Kontakt</a>
+    <div style="text-align: center; margin-top: 0px;">
+      <p style="text-align: center; margin: 0;">
+        <a onclick="toggleNightMode();" role="button">
+          <img width="24" height="24" src="./icons/DarkMode-Light.png" id="toggleDark" alt="Toggle Mode" style="display: inline-block;"/>
+        </a>
+      </p>
+    </div>
   <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none';">
   <meta name="description" content="Vítejte na mé osobní stránce, kde se můžete dozvědět více o mně, mých zájmech a projektech.">
   <meta charset="UTF-8">
@@ -18,23 +30,9 @@
   <link rel="icon" type="image/png" sizes="512x512" href="icons/android-chrome-512x512.png">
   <link rel="icon" type="image/png" sizes="150x150" href="icons/mstile-150x150.png">
   <meta name="msapplication-config" content="icons/browserconfig.xml">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-  <div class="button-container">
-    <a href="/index.html" class="btn btn-primary">Domů</a>
-    <a href="/webshare.html" class="btn btn-primary">WEBshare</a>
-    <a href="/livescore.html" class="btn btn-primary">Livescore</a>
-    <a href="contact.html" class="btn btn-primary">Kontakt</a>
-    <div style="text-align: center; margin-top: 0px;">
-      <p style="text-align: center; margin: 0;">
-        <a onclick="toggleNightMode();" role="button" style="display: inline-block; width: 24px; height: 24px;">
-          <img width="24" height="24" src="./icons/DarkMode-Light.png" id="toggleDark" alt="Toggle Mode" style="display: block;" loading="lazy" />
-        </a>        
-      </p>
-    </div>
-  </div>
   <style>
     .header {
       background-image: linear-gradient(to right, #667eea, #764ba2);
@@ -114,30 +112,31 @@ body:not(.night-mode) .card {
   background-color: black;
 }
 </style>
+</div>
+</head>
 <body>
   <header class="header text-center py-5">
     <div class="container">
       <h1 class="text-white">Lukáš Kysela</h1>
       <p class="text-white">Vítejte na mé stránce</p>
-      <a href="https://twitter.com/Searcasey" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-twitter" loading="lazy"></i><span class="sr-only">Odkaz na mé Twitterové konto</span></a>
-      <a href="https://www.youtube.com/channel/UCTT4ob7-2lkjdQf3yuqrjDw" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-youtube" loading="lazy"></i><span class="sr-only">Odkaz na můj YouTube kanál</span></a>
-      <a href="https://www.reddit.com/user/CaseyCZ" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-reddit" loading="lazy"></i><span class="sr-only">Odkaz na mé Reddit konto</span></a>
-      <a href="https://github.com/CaseyCZ" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-github" loading="lazy"></i><span class="sr-only">Odkaz na mé GitHub konto</span></a>
-      <a href="https://www.facebook.com/CaseyCZ" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-facebook" loading="lazy"></i><span class="sr-only">Odkaz na mé Facebook konto</span></a>
-      <a href="https://www.xbox.com/gamertag/CaseyCZ" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-xbox" loading="lazy"></i><span class="sr-only">Odkaz na mé Xbox konto</span></a>      
+      <a href="https://twitter.com/Searcasey" target="_blank" class="mr-3 social-icon"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.youtube.com/channel/UCTT4ob7-2lkjdQf3yuqrjDw" target="_blank" class="mr-3 social-icon"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.reddit.com/user/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-reddit"></i></a>
+      <a href="https://github.com/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-github"></i></a>
+      <a href="https://www.facebook.com/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.xbox.com/gamertag/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-xbox"></i></a>
     </div>
   </header>
   <div class="container text-center my-5">
     <h2>Novinky</h2>
-    <p>Aktuální novinky a projekty.</p>
+    <p>Zde naleznete aktuální novinky o mých projektech a aktivitách.</p>
     <div class="row">
       <div class="col-md-4">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Work</h5>
             <p class="card-text">SAP-Excel-HTML</p>
-            <a href="work.html" class="btn btn-xs custom-btn" aria-label="Více informací">
-              Více informací</a>
+            <a href="work.html" class="btn btn-xs custom-btn">Více informací</a>
           </div>
         </div>
       </div>
@@ -145,9 +144,8 @@ body:not(.night-mode) .card {
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Produkty</h5>
-            <p class="card-text">Apple, Microsoft</p>
-            <a href="depictions/?p=com.CaseyCZ.Cocoatop" class="btn btn-xs custom-btn" aria-label="Více informací o Cocoatop">
-              Více informací</a>
+            <p class="card-text">Apple,Microsoft</p>
+            <a href="depictions/?p=com.supermamon.oldpackage" class="btn btn-xs custom-btn">Více informací</a>
           </div>
         </div>
       </div>
@@ -155,12 +153,11 @@ body:not(.night-mode) .card {
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Sport</h5>
-            <p class="card-text">Florbal, Hokejbal</p>
-            <a href="depictions/?p=com.CaseyCZ.Cocoatop" class="btn btn-xs custom-btn" aria-label="Více informací o Cocoatop">
-              Více informací</a>
+            <p class="card-text">Florbal,Hokejbal</p>
+            <a href="depictions/?p=com.supermamon.newpackage" class="btn btn-xs custom-btn">Více informací</a>
           </div>
         </div>
-      </div>      
+      </div>
     </div>
   </div>
   <div class="container text-center my-5">
@@ -172,8 +169,7 @@ body:not(.night-mode) .card {
           <div class="card-body">
             <h5 class="card-title">Fotbal</h5>
             <p class="card-text">Slovan Liberec U7.</p>
-            <a href="depictions/?p=com.CaseyCZ.Cocoatop" class="btn btn-xs custom-btn" aria-label="Více informací o Cocoatop">
-              Více informací</a>
+            <a href="depictions/?p=com.CaseyCZ.Cocoatop" class="btn btn-xs custom-btn">Více informací</a>
           </div>
         </div>
       </div>
@@ -182,8 +178,7 @@ body:not(.night-mode) .card {
           <div class="card-body">
             <h5 class="card-title">Hry</h5>
             <p class="card-text">Xbox - Pc</p>
-            <a href="depictions/?p=com.CaseyCZ.Cocoatop" class="btn btn-xs custom-btn" aria-label="Více informací o Cocoatop">
-              Více informací</a>
+            <a href="depictions/?p=com.CaseyCZ.Cocoatop" class="btn btn-xs custom-btn">Více informací</a>
           </div>
         </div>
       </div>
@@ -192,15 +187,12 @@ body:not(.night-mode) .card {
           <div class="card-body">
             <h5 class="card-title">Dron</h5>
             <p class="card-text">Mavic Mini</p>
-            <a href="depictions/?p=com.CaseyCZ.Cocoatop" class="btn btn-xs custom-btn" aria-label="Více informací o Cocoatop">
-              Více informací</a>
+            <a href="depictions/?p=com.CaseyCZ.Cocoatop" class="btn btn-xs custom-btn">Více informací</a>
           </div>
         </div>
       </div>
     </div>
-  </div>  
-</body>
-</body>
+  </div>
 <script>
     let isNightMode = false;
     function toggleNightMode() {
@@ -208,4 +200,5 @@ body:not(.night-mode) .card {
       document.body.classList.toggle('night-mode');
     }
   </script>
+</body>
 </html>

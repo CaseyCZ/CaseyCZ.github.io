@@ -9,8 +9,8 @@
     <a href="contact.html" class="btn btn-primary">Kontakt</a>
     <div style="text-align: center; margin-top: 0px;">
       <p style="text-align: center; margin: 0;">
-        <a onclick="toggleNightMode();" role="button">
-          <img width="24" height="24" src="./icons/DarkMode-Light.png" id="toggleDark" alt="Toggle Mode" style="display: inline-block;"/>
+        <a onclick="toggleNightMode();" role="button" style="display: inline-block; width: 24px; height: 24px;">
+          <img width="24" height="24" src="./icons/DarkMode-Light.png" id="toggleDark" alt="Toggle Mode" style="display: block;" loading="lazy" />
         </a>
       </p>
     </div>
@@ -119,12 +119,12 @@ body:not(.night-mode) .card {
     <div class="container">
       <h1 class="text-white">Lukáš Kysela</h1>
       <p class="text-white">Vítejte na mé stránce</p>
-      <a href="https://twitter.com/Searcasey" target="_blank" class="mr-3 social-icon"><i class="fab fa-twitter" loading="lazy"></i></a>
-      <a href="https://www.youtube.com/channel/UCTT4ob7-2lkjdQf3yuqrjDw" target="_blank" class="mr-3 social-icon"><i class="fab fa-youtube" loading="lazy"></i></a>
-      <a href="https://www.reddit.com/user/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-reddit" loading="lazy"></i></a>
-      <a href="https://github.com/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-github" loading="lazy"></i></a>
-      <a href="https://www.facebook.com/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-facebook" loading="lazy"></i></a>
-      <a href="https://www.xbox.com/gamertag/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-xbox" loading="lazy"></i></a>      
+      <a href="https://twitter.com/Searcasey" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-twitter" loading="lazy"></i><span class="sr-only">Odkaz na mé Twitterové konto</span></a>
+      <a href="https://www.youtube.com/channel/UCTT4ob7-2lkjdQf3yuqrjDw" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-youtube" loading="lazy"></i><span class="sr-only">Odkaz na můj YouTube kanál</span></a>
+      <a href="https://www.reddit.com/user/CaseyCZ" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-reddit" loading="lazy"></i><span class="sr-only">Odkaz na mé Reddit konto</span></a>
+      <a href="https://github.com/CaseyCZ" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-github" loading="lazy"></i><span class="sr-only">Odkaz na mé GitHub konto</span></a>
+      <a href="https://www.facebook.com/CaseyCZ" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-facebook" loading="lazy"></i><span class="sr-only">Odkaz na mé Facebook konto</span></a>
+      <a href="https://www.xbox.com/gamertag/CaseyCZ" target="_blank" class="mr-3 social-icon" aria-hidden="true"><i class="fab fa-xbox" loading="lazy"></i><span class="sr-only">Odkaz na mé Xbox konto</span></a>      
     </div>
   </header>
   <iframe src="https://www.scorebat.com/embed/livescore/" frameborder="0" width="600" height="760" allowfullscreen allow="autoplay; fullscreen" style="width:100%; height:760px; overflow:hidden; display:block;" class="_scorebatEmbeddedPlayer_"></iframe>

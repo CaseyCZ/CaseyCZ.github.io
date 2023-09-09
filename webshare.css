@@ -97,29 +97,37 @@ p a:hover {
     color: orange; /* Změna barvy na oranžovou */
     font-size: 18px; /* Zvýšení velikosti písma na 18px */
 }
+/* Základní styl pro .button-container */
 .button-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 10px;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  .button-container a,
-  .button-container button {
-    margin-left: 20px;
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s;
-    background: none !important;
-    border: none !important;
-    padding: 0 !important;
-  }
-  .button-container a:hover,
-  .button-container button:hover {
-    color: #aaa;
-  }
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.button-container a,
+.button-container button {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
   /* Denní režim */
   body:not(.night-mode) .card {
     background-color: black; /* Bílé pozadí pro karty pouze v denním režimu */

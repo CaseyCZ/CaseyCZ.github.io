@@ -128,6 +128,10 @@ p a:hover {
   border: none !important;
   padding: 0 !important;
 }
+.button-container a:hover,
+.button-container button:hover {
+  color: #aaa;
+}
   /* Denní režim */
   body:not(.night-mode) .card {
     background-color: black; /* Bílé pozadí pro karty pouze v denním režimu */

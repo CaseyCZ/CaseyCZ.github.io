@@ -139,6 +139,6 @@ html.can-touch .link-item:active {
 }
 #logo {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10px; /* Výška od horního okraje stránky */
+  left: 10px; /* Vzdálenost od levého okraje stránky */
 }

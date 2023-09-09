@@ -6,7 +6,7 @@
   top: 0;
   right: 0;
   width: 100%; /* Přidáno pro pevnou šířku */
-  max-width: 300px; /* Přizpůsobte maximální šířku dle vašich potřeb */
+  max-width: 400px; /* Přizpůsobte maximální šířku dle vašich potřeb */
   box-sizing: border-box; /* Zahrne padding do šířky */
 }
 

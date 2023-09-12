@@ -133,6 +133,7 @@ body:not(.night-mode) .card {
   background-color: #ff9900;
 }
 
+
 .social-icon {
   margin-right: 10px;
   font-size: 24px;
@@ -179,6 +180,10 @@ div .card{
 
   width: 200px; /* Nastavte požadovanou maximální šířku */
   margin: 0 auto; /* Zarovná tělo do středu karty */
+}
+.card-title {
+  margin: 5px;       
+
 }
 .card {
 
@@ -259,8 +264,9 @@ div.col-md-4  {
   }
 }
 
-
-
+h2 {
+  margin: 10px;
+}
 h5 {
   font-size: 20px;
 }

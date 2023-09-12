@@ -48,36 +48,8 @@ p a:hover {
 }
 
 
-.button-container {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
-  justify-content: flex-end;
-}
 
-.button-container a,
-.button-container button {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #000000;
-  transition: color 0.3s;
-  background: none; /* Odstranění pozadí */
-  border: none; /* Odstranění rámečku */
-  padding: 0; /* Odstranění vnitřního odsazení */
-  outline: none; /* Odstranění modrého pozadí po stisknutí */
-}
 
-.button-container a:hover,
-.button-container button:hover {
-  background: none; /* Odstranění pozadí */
-  color: #ffffff;
-}
 
 /* Denní režim */
 body:not(.night-mode) .card {
@@ -260,44 +232,56 @@ div .card{
 div.col-md-4  { 
 
   margin-bottom: 20px;
-}.row {
+}
+.row {
   margin: 20px;
   padding: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Tři sloupce se stejnou šířkou */
   gap: 20px; /* Mezera mezi kartami */
   justify-items: center; /* Zarovná kartu na střed v rámci sloupce */
-}/* Media query pro menší šířku okna */
-@media (max-width: 710px) {
-  /* Změna uspořádání karet na sloupec */
-  .row {
-    display: block;
-  }
+}
 
-  /* Další styly pro karty v režimu s jednou kartou pod sebou */
+/* Media query pro menší šířku okna */
+@media (max-width: 710px) {
+  /* Změna uspořádání karet na jeden a půl sloupce */
+  .row {
+    grid-template-columns: repeat(1, 1fr); /* Jeden a půl sloupce */
+  }
+    /* Skrytí logo */
+    .custom-logo {
+      display: none;
+    }
+  /* Další styly pro karty v režimu s jedním a půl sloupce */
   .card {
-    margin-bottom: 20px;
-    width: 100%; /* Karta bude plné šířky obsahu */
+    margin-bottom: 10px;
+    width: calc(50% - 10px); /* Karta bude zabírat polovinu šířky s mezerou mezi nimi */
   }
 }
+
+
+
 h5 {
   font-size: 20px;
-}.button-odkazy {
+}
+.button-odkazy {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 10px;
   position: absolute;
-  top: 0;
-  right: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   max-width: 400px;
   box-sizing: border-box;
-  justify-content: flex-end;
+  margin-top: 20px; /* Posune obsah dolů o 20px */
+  margin-left: 20px;
 }
 
 .button-odkazy a,
 .button-odkazy button {
-  margin-left: 20px;
+  margin-left: 10px;
   text-decoration: none;
   color: #333;
   transition: color 0.3s;
@@ -312,3 +296,5 @@ h5 {
   background: none; /* Odstranění pozadí */
   color: #ffffff;
 }
+
+

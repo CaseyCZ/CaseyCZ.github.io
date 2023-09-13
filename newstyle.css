@@ -27,16 +27,11 @@ body {
   border-radius: 15px; /* Zaoblené rohy tlačítka */
   margin-left: 10px;
 }
-/* Styl pro <p> element */
-p {
-  font-size: 16px;
-  color: #ffffff; /* Barva textu (černá) */
-}
 
 /* Styl pro odkaz <a> uvnitř <p> elementu */
 p a {
   text-decoration: none; /* Odkazy bez podtržení */
-  color: #000000; /* Barva odkazu (modrá) */
+  color: #000000; /* Barva odkazu */
   font-weight: bold; /* Tučné písmo pro odkaz */
   transition: color 0.3s, font-size 0.3s; /* Animace pro změnu barvy textu a velikosti písma */
 }
@@ -46,7 +41,10 @@ p a:hover {
   color: orange; /* Změna barvy na oranžovou */
   font-size: 18px; /* Zvýšení velikosti písma na 18px */
 }
-
+.card-text {
+  font-size: 18px;
+  margin: 20px;
+}
 
 
 
@@ -73,18 +71,24 @@ body:not(.night-mode) .card {
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #000000;
-    color: white;
+  
+  }
+  p {
+    font-size: 16px;
+    margin: 10px;
+
   }
   .card-header {
     background-color: #000000;
+    color: #ffffff; 
   }
   body:not(.night-mode) .card {
     background-color: #fff; /* Bílé pozadí pro karty pouze v denním režimu */
   }
   /* Styly pro černé pozadí .card-body v nočním režimu */
-  body.night-mode .card-body {
+  body.night-mode .card {
     background-color: #000000; 
-    /* Černé pozadí pro .card-body v nočním režimu */
+    color: #000000; 
   }
   .jumbotron {
     background-color: #000000;
@@ -172,7 +176,7 @@ body:not(.night-mode) .card {
 }
 
 /* Styly pro černé pozadí .card-body v nočním režimu */
-body.night-mode .card-body {
+body.night-mode .card {
   background-color: #fff; /* Černé pozadí pro .card-body v nočním režimu */
 }
 
@@ -302,5 +306,4 @@ h5 {
   background: none; /* Odstranění pozadí */
   color: #ffffff;
 }
-
 

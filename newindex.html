@@ -207,73 +207,58 @@
         </div>
       </div>
     </div>
-<!--OnlineRadioBox Player widget-->
-<div class="orbP cmpct" id="orb_player_1937fee67e287d3d" vlm="1">
-  <style media="screen">
-      /* General */
-    .orbP{position:relative;box-sizing:border-box;overflow:hidden;font-weight:normal;border:1px solid transparent;user-select:none;text-align:left}.orbP br,.orbP>br{display:none!important;}.orbP p,.orbP>p{margin:0!important;padding:0!important;line-height:normal!important;font-size:inherit!important}.orbPh{display:block;position:absolute;z-index:100;top:50%;margin-top:-12px!important;right:10px;width:21px!important;text-decoration:none!important;cursor:pointer}.orbPh>img{margin:0!important;border:none;height:24px!important;-webkit-filter:drop-shadow(2px 2px 0 rgba(47,99,160,.2));filter:drop-shadow(2px 2px 0 rgba(47,99,160,.2))}.orbPt{text-decoration:none!important}.orbPti{float:left;margin:0 10px 0 0!important;vertical-align:top!important;height:48px!important;width:89px!important;border:none!important;border-radius:2px!important;opacity:1!important}.orbPtn{display:block;margin-right:52px;line-height:24px!important;font-size:17px!important;font-weight:bold!important;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.orbPtt{display:block;margin-right:52px;text-decoration:none!important;line-height:24px!important;font-size:12px!important;opacity:.85;transition:opacity .2s;text-overflow:ellipsis;overflow:hidden;white-space:nowrap}.orbPtt:hover{opacity:1}.orbPp,.orbPs{float:left!important;margin:0 10px 0 0!important;padding:0!important;height:48px!important;width:48px!important;line-height:48px!important;border-radius:2px!important;border:none!important;text-align:center!important;cursor:pointer;-webkit-appearance:none;-moz-appearance:none;appearance:none!important;}.orbPp::before,.orbPs::before{display:inline-block;vertical-align:middle;content:'';width:0;height:0;border-style:solid}.orbPp::before{border-width:16px 0 16px 26px}.orbPs::before{border-width:16px}.orbPp:hover,.orbPs:hover{-webkit-transform:scale(1.087);transform:scale(1.087)}.orbPhc{position:relative!important;box-sizing:border-box!important;padding:10px!important;overflow:hidden}
-      /* Playlist */
-    .orbPpl{position:relative;overflow:auto;overflow-x:hidden;overflow-y:auto;margin:0!important;padding:0!important;list-style:none!important}.orbPpli{box-sizing:border-box;margin:0!important;padding:0 10px!important;list-style:none!important;background-image:none;float:none!important;height: auto!important}.orbPpli>a,.orbPpli>span{display:block!important;padding:0!important;margin:0!important;height:auto!important;font-weight:normal!important;text-decoration:none!important;line-height:32px!important;font-size:14px!important;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;transition:color .125s;border:none !important}.orbPpli>a:hover,.orbPpli>span:hover{background:transparent!important}.orbPpli>a>time,.orbPpli>span>time{display:inline-block;font-size:12px!important;width:3em!important}.orbPpli+li{border-style:solid!important;border-width:1px 0 0!important}
-      /* Volume */
-      .orbV{position:absolute;z-index:1!important;width:24px!important;right:48px!important;top:0!important;bottom:0!important;line-height:1!important;overflow:hidden!important;transition:width .3s}.orbV:hover{width:160px!important}.orbVC{position:absolute!important;height:18px!important;left:24px!important;top:50%!important;margin:-9px 0 0 11px!important}.orbVC::after{display:block;content:'';margin-top:4px;width:0;height:0;border-style:solid;border-width:4px 100px 4px 0;opacity:.33}.orbVCs{position:absolute!important;z-index:2!important;top:0!important;width:18px!important;height:18px!important;border-radius:50%!important;cursor:ew-resize!important;box-shadow:0 6px 8px -2px rgba(0,9,18,0.36)}.orbVb{position:absolute!important;width:24px!important;height:24px!important;top:50%!important;left:0!important;margin-top:-12px;white-space:nowrap!important;cursor:pointer;transition:opacity .3s}.orbVb::before{display:inline-block;content:'';vertical-align:middle;width:7px;height:12px}.orbVb::after{display:inline-block;content:'';vertical-align:middle;border-width:12px 12px 12px 0;border-style:solid;height:0;width:0;margin-left:-6px}.orbV:hover .orbVb{opacity:.33!important;cursor:default}.orbVb>._m{display: block!important;width:7px!important;height:18px!important;position:absolute!important;top:50%;margin-top:-9px!important;right:0; overflow: hidden!important;}.orbVb>._m::before{display:block;content:'';position:absolute;right:0;top:50%;width:28px;height:24px;margin-top:-12px;border:1px solid;border-radius:50%}.orbVb>._m::after{display:block;content:'';position:absolute;right:4px;top:50%;width:14px;height:14px;margin-top:-7px;border:1px solid;border-radius:50%}
-      /* Flags*/
-    .orbF{padding:0 0 10px 10px!important;border-top:1px solid;display:-ms-flexbox;display:-webkit-box;display:flex;-ms-flex-flow:row nowrap!important;flex-flow:row nowrap!important}
-    .orbFl{margin:0!important;padding:0!important;list-style:none!important}
-    .orbFli,.orbFh{display:inline-block!important;vertical-align:top!important;line-height:18px!important;white-space:nowrap!important;margin:10px 7px 0 0!important;padding:0 6px 0 0!important;text-indent:0!important;list-style:none!important;font-size:11px!important;text-align:right}
-    .orbFlif{float:left!important;width:27px!important;height:18px!important;margin-right:5px!important}
-    .orbFhi{position:relative!important;display:inline-block!important;vertical-align:baseline!important;width:8px!important;height:9px!important;margin:0 8px 0 5px!important;border-style:solid!important;border-width:2px 1px 0 1px!important;border-radius:5px 5px 0 0!important;opacity:.5}
-    .orbFhi::before,.orbFhi::after{display:block;content:'';position:absolute;bottom:-2px;width:0;height:3px;border-style:solid;border-width:2px;border-radius:3px}
-    .orbFhi::before{left:-4px}.orbFhi::after{right:-4px}
-      /* Multiselect */
-    .orbPm{margin:0!important;padding:0!important;list-style:none!important}
-    .orbPmi{position:relative;margin:0!important;padding:10px!important;list-style:none!important;border:dotted rgba(204,204,204,0.5);border-width:1px 0 0;font-size:12px!important;overflow:hidden;white-space:nowrap;line-height:1!important;cursor:pointer}
-    .orbPmi::before{display:block;content:'';position:absolute;z-index:1;top:50%;right:10px;margin-top:-8px;width:0;height:0;border-style:solid;border-width:8px 0 8px 13px;opacity:.5;filter:alpha(opacity=50);transition:opacity .2s;}
-    .orbPmi:hover::before{opacity:1;filter:alpha(opacity=100)}
-    .orbPmi::after{display:block;content:'';position:absolute;top:0;bottom:0;right:0;width:36px}
-    .orbPmii{display:inline-block;vertical-align:middle;margin-right:10px;width:30px;height:16px;border:none!important;border-radius:2px!important}
-    .orbPmin{display:inline-block;vertical-align:middle;}
-  
-      /* Compact General */
-    .cmpct .orbPti{height:24px!important;width:44px!important}
-    .cmpct .orbPtn{line-height:12px!important;font-size:12px!important}
-    .cmpct .orbPtt{line-height:12px!important;font-size:10px!important}
-    .cmpct .orbPp,.cmpct .orbPs{height:24px!important;width:24px!important;line-height:24px!important}
-    .cmpct .orbPp::before{border-width:8px 0 8px 13px !important}
-    .cmpct .orbPs::before{border-width:8px !important}
-      /* Compact w/Playlist */
-    .cmpct .orbPpli>a,.cmpct .orbPpli>span{line-height:24px!important;font-size:12px!important}
-    .cmpct .orbPpli>a>time,.cmpct .orbPpli>span>time{font-size:11px!important}
-  
-  </style>
-  <style media="screen" id="orb_player_1937fee67e287d3d_settings">.orbP{background-color:#715cbb !important;}/*common player background*/.orbP{border:none;}/*common player container border, radius, width*/.orbPp,.orbPs{background:#715cbb !important}/*buttons play/stop bg*/.orbPp::before{border-color:transparent transparent transparent #ffffff !important} /* play button color */.orbPs::before{border-color:#ffffff !important} /* stop button color */.orbPtn,.orbPtt,.orbPtt:hover{color:#ffffff !important;}/*station name & track link color*/.orbV{background-color:#715cbb !important;box-shadow:0 0 32px 32px #715cbb !important}/*volume control color */.orbVC::after,.orbVb::after{border-color:transparent #ffffff transparent transparent !important}.orbVb::before,.orbVCs{background:#ffffff !important} /* volume bg color */.orbVb>._m::before,.orbVb>._m::after{border-color:#ffffff !important}</style>
-  <div class="orbPhc" bis_skin_checked="1">
-    <a class="orbPh" href="https://onlineradiobox.com/cz/" title="Listen on Online Radio Box!" target="_blank"><img src="//ecdn.onlineradiobox.com/img/wl.svg" alt="Listen on Online Radio Box!"></a>
-  <audio id="orb_player_1937fee67e287d3d_p" crossorigin="true" style="width:1px;height:1px;overflow:hidden;position:absolute;"></audio>
-  
-    <button class="orbPp" title="Poslouchej živě" country="cz" alias="evropa2" stream="1"></button>
-    <a class="orbPt" href="https://onlineradiobox.com/cz/evropa2/" target="_blank">
-      <img class="orbPti" src="//cdn.onlineradiobox.com/img/l/0/17560.v8.png" alt="Evropa 2">
-      <span class="orbPtn">Evropa 2</span>
-    </a>
-    <span class="orbPtt" loading="načítání" playing="hraje" error="chyba přehrávání" not_supported="this browser can't play it" external="Poslouchejte nyní (otevře se v přehrávači v novém okně)" geo_blocked="Není dostupné ve vaší zemi"></span>
-    <div class="orbV" bis_skin_checked="1"><div class="orbVb" bis_skin_checked="1"><i class="_m"></i></div><div class="orbVC" bis_skin_checked="1"><div class="orbVCs" bis_skin_checked="1"></div></div></div>
-  </div>
-  
-  
-  <script>
-    var orbp_w = orbp_w || { lang: "cs-cz" };
-    orbp_w.cmd = orbp_w.cmd || [];
-    orbp_w.apiUrl = "https://onlineradiobox.com";
-    orbp_w.cmd.push(function() {
-      orbp_w.init("orb_player_1937fee67e287d3d");
-    });
-    var s, t; s = document.createElement('script'); s.type = 'text/javascript';
-  s.src = "//ecdn.onlineradiobox.com/js/pwidget2.min.235ca64e.js";
-    t = document.getElementsByTagName('script')[0]; t.parentNode.insertBefore(s, t);
-  </script>
-  </div>
-  <!--OnlineRadioBox Player widget-->
-  
+<div id="eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU=" class="mytuner-widget" data-target="400689" data-requires_initialization="true" data-autoplay="false" data-hidehistory="true" style="width: 100%; max-width: 100%; overflow: hidden; max-height: 500px; border: 1px solid rgb(129, 127, 128);"><style type="text/css"> .mytuner-widget { all: initial; display: block; color: #3D3D3D; } .mytuner-widget, .mytuner-widget * { box-sizing: border-box; font-family: sans-serif; } .main-play-button { padding: 5px; border-radius: 20px; width: 40px; height: 40px; float: left; margin-left: 10px; margin-right: 15px; margin-top: 12.5px; cursor: pointer; background-color: #FFF; box-shadow: 1px 2px 6px -3px black; display: inline-block; } .main-play-button:hover { background-color: #EEE; } .main-play-button.disabled { filter: grayscale(1); cursor: not-allowed; } .main-play-button div { background: url("https://mytuner-radio.com/static/icons/widgets/BT_Play/BT_Play@2x.png") no-repeat center; background-size: 16px; width: 28px; height: 28px; margin-left: 3px; } .main-play-button.loading div { background: url("https://static2.mytuner.mobi/static/images/sprite-loading.gif") no-repeat center; filter: grayscale(1); background-size: 28px; margin-left: 2px; } .main-play-button.playing div { background: url("https://mytuner-radio.com/static/icons/widgets/BT_Pause/BT_Pause@2x.png") no-repeat center; background-size: 16px; margin-left: 2px; } .main-play-button.error div { background: url("https://mytuner-radio.com/static/icons/widgets/BT_Error/erro@2x.png") no-repeat center; background-size: 16px; margin-left: 0; } .play-button { background: url("https://mytuner-radio.com/static/icons/widgets/BT_Play/BT_Play.png") no-repeat center; width: 40px; height: 40px; cursor: pointer; display: inline-flex; align-items: center; margin: auto 4px auto 19px; /* align with radio logo */ } .play-button.loading { background: url("https://static2.mytuner.mobi/static/images/sprite-loading.gif") no-repeat center; filter: grayscale(1); background-size: 28px; } .play-button.playing { background: url("https://mytuner-radio.com/static/icons/widgets/BT_Pause/BT_Pause.png") no-repeat center; } .play-button.error { background: url("https://mytuner-radio.com/static/icons/widgets/BT_Error/erro.png") no-repeat center; background-size: 15px; } .play-button.disabled { opacity: 0.3; } .play-button.disabled:hover { cursor: not-allowed; } input[type=range][orient=vertical] { writing-mode: bt-lr; /* IE */ -webkit-appearance: slider-vertical; /* WebKit */ width: 8px; padding: 0 5px; } .volume-controls { width: 35px; height: 35px; display: inline-block; position: absolute; margin-left: 5px; margin-top: 14px; padding-top: 0; border-radius: 20px; box-sizing: content-box !important; z-index: 10; /* animation */ border: 1px solid transparent; transition: background 0.5s, padding 0.5s, margin 0.5s, border 0.5s; overflow: hidden; } .volume-controls:hover { padding-top: 140px; /* add original margin */ margin-top: -126px; background-color: #F2F2F2; border: 1px solid grey; transition: background 0.5s, padding 0.5s, margin 0.5s; } .volume-controls:hover > .volume-control { display: block; } .volume-controls .volume-control { opacity: 0; margin-top: -126px; margin-left: 13px; position: absolute; transition: 0.5s all; } .volume-controls:hover .volume-control { opacity: 1; } .volume-controls .volume-indicator { cursor: pointer; display: block; } .player-radio-link { width: calc(100% - 65px - 84px - 37px - 12px); } .player-radio-name { width: calc(100% - 74px - 10px); } .player-mytuner-logo { margin-left: 47px; } @media (max-width: 480px) { .player-radio-link { width: calc(100% - 65px - 84px - 12px); } .player-mytuner-logo { margin-left: 10px; } .volume-controls { display: none; } } </style><div id="eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU=top-bar" style="background: rgb(0, 0, 0); height: 75px; width: 100%; display: block; padding: 5px; line-height: 65px;"><div id="eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU=play-button" class="main-play-button disabled" data-id="eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU="><div class="play-image"></div></div><a class="player-radio-link" style="height: 100%; display: inline-block; line-height: 65px; cursor: pointer;" href="http://mytuner-radio.com/radio/evropa-2-400689/?utm_source=widget&amp;utm_medium=player" rel="nofollow" target="_blank"><img src="https://static2.mytuner.mobi/media/tvos_radios/4eYJ2UArA8.png" alt="Evropa 2" style="float: left; height: 74px; margin-top: -5px; box-shadow: black 0px 0px 3px -1px;"><span class="player-radio-name" style="margin-left: 10px; color: rgb(61, 61, 61); font-weight: bold; font-size: 20px; float: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">Evropa 2</span></a><div class="volume-controls"><input id="eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU=volume-control" class="volume-control slider" max="100" min="1" orient="vertical" type="range" value="100"><svg id="eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU=volume-indicator" class="volume-indicator" height="30" width="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="fill: grey; margin: 2px;"><path d="M3 10v4c0 .55.45 1 1 1h3l3.29 3.29c.63.63 1.71.18 1.71-.71V6.41c0-.89-1.08-1.34-1.71-.71L7 9H4c-.55 0-1 .45-1 1zm13.5 2c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 4.45v.2c0 .38.25.71.6.85C17.18 6.53 19 9.06 19 12s-1.82 5.47-4.4 6.5c-.36.14-.6.47-.6.85v.2c0 .63.63 1.07 1.21.85C18.6 19.11 21 15.84 21 12s-2.4-7.11-5.79-8.4c-.58-.23-1.21.22-1.21.85z"></path></svg></div><a class="player-mytuner-logo" href="https://mytuner-radio.com?utm_source=widget&amp;utm_medium=player" rel="nofollow" style="display: inline-block; vertical-align: top;" target="_blank"><img src="https://mytuner-radio.com/static/icons/widgets/MyTuner_Logo/MyTunerLogo_White.png" alt="Listen on myTuner radio!" style="height: 36px; width: 84px; vertical-align: middle;"></a></div><ul id="eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU=song-history" style="width: 100%; background-color: rgb(238, 238, 238); max-height: calc(415px); padding: 0px; margin: 0px; overflow-y: scroll;" data-border="1" data-bordercolor="#817f80"></ul><script>
+    // var widget_id = widget_id || "eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU=";
+    var mytuner_scripts = mytuner_scripts || {};
+    mytuner_scripts["player-v1.js_queue"] = mytuner_scripts["player-v1.js_queue"] || [];
+    if (mytuner_scripts["player-v1.js-imported"] == undefined) {
+        mytuner_scripts["player-v1.js-imported"] = false;
+        mytuner_scripts["player-v1.js"] = function(){};
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = "https://mytuner-radio.com/static/js/widgets/player-v1.js";
+        s.defer = true;
+        if (s.readyState){  //IE
+            s.onreadystatechange = function(){
+                if (s.readyState == "loaded" || s.readyState == "complete"){
+                    s.onreadystatechange = null;
+                    runQueue();
+                }
+            };
+        } else {  //Others
+            s.onload = function(){ runQueue(); };
+        }
+        document.getElementsByTagName('head')[0].appendChild(s);
+
+        function runQueue() {
+            mytuner_scripts["player-v1.js_queue"].forEach(function(func) {
+                func();
+            });
+        }
+        mytuner_scripts["player-v1.js_queue"].push(function(){mytuner_scripts["player-v1.js"]("eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU=")});
+    } else {
+        let widget = document.getElementById("eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU=");
+        if (widget && widget.dataset.requires_initialization === "true") {
+            if (mytuner_scripts["player-v1.js-imported"]) {
+                mytuner_scripts["player-v1.js"]("eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU=");
+                widget.dataset.requires_initialization = "false";
+            } else {
+                mytuner_scripts["player-v1.js_queue"].push(function(){
+                    mytuner_scripts["player-v1.js"]("eCZEbcK6eHtDJzXDtnUjw60jwqNiPnwowrU=");
+                    widget.dataset.requires_initialization = "false";
+                });
+            }
+        }
+    }</script><script>
+    var mytuner_scripts = mytuner_scripts || {};
+    if (mytuner_scripts["widget-player-v1.js-imported"] == undefined) {
+        mytuner_scripts["widget-player-v1.js-imported"] = false;
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = "https://mytuner-radio.com/static/js/widgets/widget-player-v1.js";
+        s.defer = true;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    }</script></div>
   
     <script>
       let isNightMode = false;

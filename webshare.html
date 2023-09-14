@@ -1,409 +1,494 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <header class="header text-center py-5">
-    <header class="container">
-    <div class="button-container">
-      <img src="icons/logo.PNG" alt="Logo CaseyCZ" class="custom-logo">
-      <a href="/index.html" class="btn btn-primary">Domů</a>
-      <a href="/webshare.html" class="btn btn-primary">Webshare</a>
-      <a href="/livescore.html" class="btn btn-primary">Livescore</a>
-      <a href="/newindex.html" class="btn btn-primary">Kontakt</a>
-    <div style="text-align: center; margin-top: 0px;">
-      <p style="text-align: center; margin: 0;">
-        <a onclick="toggleNightMode();" role="button" style="display: inline-block; width: 24px; height: 24px;">
-          <img width="24" height="24" src="./icons/DarkMode-Light.png" id="toggleDark" alt="Toggle Mode" style="display: block;" loading="lazy" />
-        </a>        
-      </p>
-    </div>
-    </div>
-  </header>
-  <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none';">
-  <meta name="description" content="Vítejte na mé osobní stránce, kde se můžete dozvědět více o mně, mých zájmech a projektech.">
-  <meta charset="UTF-8">
-  <title>CaseyCZ</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-  <link rel="manifest" href="icons/site.webmanifest">
-  <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#a124d0">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
-  <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
-  <link rel="icon" type="image/png" sizes="192x192" href="icons/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="icons/android-chrome-512x512.png">
-  <link rel="icon" type="image/png" sizes="150x150" href="icons/mstile-150x150.png">
-  <meta name="msapplication-config" content="icons/browserconfig.xml">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  <link rel="stylesheet" href="webshare.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <head>
-  <style>
-    .header {
-      background-image: linear-gradient(to right, #667eea, #764ba2);
-      transition: background-color 0.3s ease;
-    }
-    .header:hover {
-      background-color: #ff9900;
-    }
-    .social-icon {
-      font-size: 24px;
-      color: #333;
-      transition: color 0.3s ease;
-    }
-    .social-icon:hover {
-      color: #ff9900;
-    }
-    body:not(.night-mode) .card {
-      background-color: #1f1f1f; /* Bílé pozadí pro karty pouze v denním režimu */
-    }  .custom-btn {
-    background-image: linear-gradient(to right, #667eea, #764ba2);
-    color: white;
-    border: none;
-  }
-    /* Styly pro černé pozadí .card-body v nočním režimu */
-    body.night-mode .card-body {
-      background-color: #fff; /* Černé pozadí pro .card-body v nočním režimu */
-    }
-    .card {
-      transition: transform 0.3s ease;
-      background-color: #f0f0f0;
-      border: 1px solid #ddd;
-    }
-    .card:hover {
-      transform: scale(1.05);
-    }
-    .card .card-title {
-      color: #764ba2;
-    }
-    .tabs a {
-      margin-right: 50px; /* Přidá větší mezeru mezi jednotlivými tlačíky */
-    }
-    .tabs {
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-    }
-    .tab {
-      padding: 10px 20px;
-      margin: 0 10px;
-      background-color: #ddd;
-      border-radius: 5px;
-      text-decoration: none;
-      color: #333;
-      transition: background-color 0.3s;
-    }
-    .tab:hover {
-      background-color: #aaa;
-    }
-    .night-mode {
-      background-color: #F8F8FF; /* Nastavte vhodnou barvu pozadí pro režim noci */
-      color: #000000; /* Nastavte barvu textu pro režim noci */
-      /* Zde můžete definovat další styly specifické pro režim noci */
-    }
-    .nightModeButton {
-      margin-right: 20px; /* Změňte tuto hodnotu podle vašich potřeb */
-    }/* Denní režim */
-body:not(.night-mode) {
-  background-color: black;
-  color: white;
-}
-/* Barva pozadí pro nadpisy karet v denním režimu */
-body:not(.night-mode) .card-header {
-  background-color: #2f2f2f;
-}
-/* Barva pozadí karet v denním režimu */
-body:not(.night-mode) .card {
-  background-color: black;
-}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <header class="header text-center py-5">
+      <header class="container">
+        <div class="button-container">
+          <img src="icons/logo.PNG" alt="Logo CaseyCZ" class="custom-logo" />
+          <a href="/index.html" class="btn btn-primary">Domů</a>
+          <a href="/webshare.html" class="btn btn-primary">Webshare</a>
+          <a href="/livescore.html" class="btn btn-primary">Livescore</a>
+          <a href="/newindex.html" class="btn btn-primary">Kontakt</a>
+          <div style="text-align: center; margin-top: 0px;">
+            <p style="text-align: center; margin: 0;">
+              <a
+                onclick="toggleNightMode();"
+                role="button"
+                style="display: inline-block; width: 24px; height: 24px;"
+              >
+                <img
+                  width="24"
+                  height="24"
+                  src="./icons/DarkMode-Light.png"
+                  id="toggleDark"
+                  alt="Toggle Mode"
+                  style="display: block;"
+                  loading="lazy"
+                />
+              </a>
+            </p>
+          </div>
+        </div>
+      </header>
+      <meta
+        http-equiv="Content-Security-Policy"
+        content="script-src 'self'; object-src 'none';"
+      />
+      <meta
+        name="description"
+        content="Vítejte na mé osobní stránce, kde se můžete dozvědět více o mně, mých zájmech a projektech."
+      />
+      <meta charset="UTF-8" />
+      <title>CaseyCZ</title>
+      <link
+        rel="apple-touch-icon"
+        sizes="180x180"
+        href="icons/apple-touch-icon.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="icons/favicon-32x32.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="16x16"
+        href="icons/favicon-16x16.png"
+      />
+      <link rel="manifest" href="icons/site.webmanifest" />
+      <link
+        rel="mask-icon"
+        href="icons/safari-pinned-tab.svg"
+        color="#a124d0"
+      />
+      <meta name="msapplication-TileColor" content="#ffffff" />
+      <meta name="theme-color" content="#ffffff" />
+      <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="192x192"
+        href="icons/android-chrome-192x192.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="512x512"
+        href="icons/android-chrome-512x512.png"
+      />
+      <link
+        rel="icon"
+        type="image/png"
+        sizes="150x150"
+        href="icons/mstile-150x150.png"
+      />
+      <meta name="msapplication-config" content="icons/browserconfig.xml" />
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+        crossorigin="anonymous"
+      />
+      <link rel="stylesheet" href="webshare.css" />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      />
+      <head>
+        <style>
+              .header {
+                background-image: linear-gradient(to right, #667eea, #764ba2);
+                transition: background-color 0.3s ease;
+              }
+              .header:hover {
+                background-color: #ff9900;
+              }
+              .social-icon {
+                font-size: 24px;
+                color: #333;
+                transition: color 0.3s ease;
+              }
+              .social-icon:hover {
+                color: #ff9900;
+              }
+              body:not(.night-mode) .card {
+                background-color: #1f1f1f; /* Bílé pozadí pro karty pouze v denním režimu */
+              }  .custom-btn {
+              background-image: linear-gradient(to right, #667eea, #764ba2);
+              color: white;
+              border: none;
+            }
+              /* Styly pro černé pozadí .card-body v nočním režimu */
+              body.night-mode .card-body {
+                background-color: #fff; /* Černé pozadí pro .card-body v nočním režimu */
+              }
+              .card {
+                transition: transform 0.3s ease;
+                background-color: #f0f0f0;
+                border: 1px solid #ddd;
+              }
+              .card:hover {
+                transform: scale(1.05);
+              }
+              .card .card-title {
+                color: #764ba2;
+              }
+              .tabs a {
+                margin-right: 50px; /* Přidá větší mezeru mezi jednotlivými tlačíky */
+              }
+              .tabs {
+                display: flex;
+                justify-content: center;
+                padding: 10px;
+              }
+              .tab {
+                padding: 10px 20px;
+                margin: 0 10px;
+                background-color: #ddd;
+                border-radius: 5px;
+                text-decoration: none;
+                color: #333;
+                transition: background-color 0.3s;
+              }
+              .tab:hover {
+                background-color: #aaa;
+              }
+              .night-mode {
+                background-color: #F8F8FF; /* Nastavte vhodnou barvu pozadí pro režim noci */
+                color: #000000; /* Nastavte barvu textu pro režim noci */
+                /* Zde můžete definovat další styly specifické pro režim noci */
+              }
+              .nightModeButton {
+                margin-right: 20px; /* Změňte tuto hodnotu podle vašich potřeb */
+              }/* Denní režim */
+          body:not(.night-mode) {
+            background-color: black;
+            color: white;
+          }
+          /* Barva pozadí pro nadpisy karet v denním režimu */
+          body:not(.night-mode) .card-header {
+            background-color: #2f2f2f;
+          }
+          /* Barva pozadí karet v denním režimu */
+          body:not(.night-mode) .card {
+            background-color: black;
+          }
+        </style>
 
-<body>
-    <p>Projděte si tuto stranku  <a href="https://ymovie.streamcinema.cz">Ymovie</a> Webshare Filmy a serialy</p>
-    <p>Staci se zaregistrovat na <a href="https://webshare.cz/#/">Webshare</a> a vybrat predplatne</p>
-    <div class="container">
-        <h1 class="movie-list-title">Nebo zacit hledat soubor</h1>
-        <div class="filter">
-            <label for="fileType">Filtr podle typu souborů:</label>
-            <select id="fileType">
+        <body>
+          <p>
+            Projděte si tuto stranku
+            <a href="https://ymovie.streamcinema.cz">Ymovie</a> Webshare Filmy a
+            serialy
+          </p>
+          <p>
+            Staci se zaregistrovat na
+            <a href="https://webshare.cz/#/">Webshare</a> a vybrat predplatne
+          </p>
+          <div class="container">
+            <h1 class="movie-list-title">Nebo zacit hledat soubor</h1>
+            <div class="filter">
+              <label for="fileType">Filtr podle typu souborů:</label>
+              <select id="fileType">
                 <option value="all">Všechny</option>
                 <option value="video">Video</option>
                 <option value="audio">Audio</option>
                 <option value="images">Obrázky</option>
                 <option value="docs">Dokumenty</option>
                 <option value="archives">Archivy</option>
-            </select>
-            <button id="filterButton">Filtrovat</button>
-        </div>
-        <input type="text" id="movieNameInput" placeholder="Zadej text">
-        <button id="searchButton">Hledat</button>
-        <div id="movieList" class="movie-list-wrapper"></div>
-    </div>
+              </select>
+              <button id="filterButton">Filtrovat</button>
+            </div>
+            <input type="text" id="movieNameInput" placeholder="Zadej text" />
+            <button id="searchButton">Hledat</button>
+            <div id="movieList" class="movie-list-wrapper"></div>
+          </div>
 
-<script>
-    let isNightMode = false;
-    function toggleNightMode() {
-      isNightMode = !isNightMode;
-      document.body.classList.toggle('night-mode');
-    }
+          <script>
+            let isNightMode = false;
+            function toggleNightMode() {
+              isNightMode = !isNightMode;
+              document.body.classList.toggle("night-mode");
+            }
             // Funkce pro získání přímého odkazu ke stažení souboru
             async function getDirectDownloadLink(fileIdent, filePassword) {
-            try {
+              try {
                 // Vytvoření dat pro požadavek
                 const requestData = new URLSearchParams();
-                requestData.append('ident', fileIdent);
+                requestData.append("ident", fileIdent);
                 if (filePassword) {
-                    requestData.append('password', filePassword);
+                  requestData.append("password", filePassword);
                 }
 
                 // Vytvoření požadavku na API pro získání přímého odkazu ke stažení souboru
-                const response = await fetch('https://webshare.cz/api/file_link/', {
-                    method: 'POST',
+                const response = await fetch(
+                  "https://webshare.cz/api/file_link/",
+                  {
+                    method: "POST",
                     headers: {
-                        'Accept': 'text/xml; charset=UTF-8',
-                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                      Accept: "text/xml; charset=UTF-8",
+                      "Content-Type":
+                        "application/x-www-form-urlencoded; charset=UTF-8",
                     },
                     body: requestData.toString(),
-                });
+                  }
+                );
 
                 if (response.ok) {
-                    const xmlData = await response.text();
+                  const xmlData = await response.text();
 
-                    // Zde můžete zpracovat XML odpověď a získat přímý odkaz ke stažení souboru
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
-                    const link = xmlDoc.querySelector('link').textContent;
+                  // Zde můžete zpracovat XML odpověď a získat přímý odkaz ke stažení souboru
+                  const parser = new DOMParser();
+                  const xmlDoc = parser.parseFromString(xmlData, "text/xml");
+                  const link = xmlDoc.querySelector("link").textContent;
 
-                    // Otevřít odkaz ke stažení v novém okně prohlížeče
-                    window.open(link, '_blank');
+                  // Otevřít odkaz ke stažení v novém okně prohlížeče
+                  window.open(link, "_blank");
                 } else {
-                    console.error('Chyba při získávání přímého odkazu ke stažení souboru.');
+                  console.error(
+                    "Chyba při získávání přímého odkazu ke stažení souboru."
+                  );
                 }
-            } catch (error) {
-                console.error('Chyba při komunikaci s API:', error);
+              } catch (error) {
+                console.error("Chyba při komunikaci s API:", error);
+              }
             }
-        }
 
-        // Funkce pro vytvoření HTML prvku pro film s tlačítkem pro stáhnutí
-        function createMovieItem(movieName, fileIdent) {
-            const movieItem = document.createElement('div');
-            movieItem.classList.add('movie-list-item');
+            // Funkce pro vytvoření HTML prvku pro film s tlačítkem pro stáhnutí
+            function createMovieItem(movieName, fileIdent) {
+              const movieItem = document.createElement("div");
+              movieItem.classList.add("movie-list-item");
 
-            const movieTitle = document.createElement('span');
-            movieTitle.textContent = movieName;
-            movieTitle.classList.add('movie-list-item-title');
-            movieItem.appendChild(movieTitle);
+              const movieTitle = document.createElement("span");
+              movieTitle.textContent = movieName;
+              movieTitle.classList.add("movie-list-item-title");
+              movieItem.appendChild(movieTitle);
 
-            const downloadButton = document.createElement('button');
-            downloadButton.textContent = 'Stáhnout';
-            downloadButton.classList.add('movie-list-item-button');
-            downloadButton.addEventListener('click', () => {
+              const downloadButton = document.createElement("button");
+              downloadButton.textContent = "Stáhnout";
+              downloadButton.classList.add("movie-list-item-button");
+              downloadButton.addEventListener("click", () => {
                 // Zde voláme funkci pro získání přímého odkazu ke stažení
                 getDirectDownloadLink(fileIdent);
-            });
-            movieItem.appendChild(downloadButton);
+              });
+              movieItem.appendChild(downloadButton);
 
-            return movieItem;
-        }
+              return movieItem;
+            }
 
-        // Funkce pro vyhledání filmu na webshare.cz s omezením na počet výsledků
-        async function searchMovie(movieName) {
-            try {
+            // Funkce pro vyhledání filmu na webshare.cz s omezením na počet výsledků
+            async function searchMovie(movieName) {
+              try {
                 const limit = 999999999; // Počet výsledků, které chcete načíst
 
                 // Vytvoření dat pro požadavek
                 const requestData = new URLSearchParams();
-                requestData.append('what', movieName);
-                requestData.append('limit', limit);
+                requestData.append("what", movieName);
+                requestData.append("limit", limit);
 
                 // Vytvoření požadavku na vyhledávání filmu na webshare.cz API
-                const response = await fetch('https://webshare.cz/api/search/', {
-                    method: 'POST',
+                const response = await fetch(
+                  "https://webshare.cz/api/search/",
+                  {
+                    method: "POST",
                     headers: {
-                        'Accept': 'text/xml; charset=UTF-8',
-                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                      Accept: "text/xml; charset=UTF-8",
+                      "Content-Type":
+                        "application/x-www-form-urlencoded; charset=UTF-8",
                     },
                     body: requestData.toString(),
-                });
+                  }
+                );
 
                 if (response.ok) {
-                    const xmlData = await response.text();
+                  const xmlData = await response.text();
 
-                    // Zde můžete zpracovat XML odpověď s výsledky vyhledávání
-                    // Například zobrazte délku seznamu nalezených položek a názvy filmů na stránce
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
-                    const fileNodes = xmlDoc.querySelectorAll('file');
+                  // Zde můžete zpracovat XML odpověď s výsledky vyhledávání
+                  // Například zobrazte délku seznamu nalezených položek a názvy filmů na stránce
+                  const parser = new DOMParser();
+                  const xmlDoc = parser.parseFromString(xmlData, "text/xml");
+                  const fileNodes = xmlDoc.querySelectorAll("file");
 
-                    const movieList = document.getElementById('movieList');
-                    movieList.innerHTML = ''; // Vymažeme předchozí výsledky vyhledávání
+                  const movieList = document.getElementById("movieList");
+                  movieList.innerHTML = ""; // Vymažeme předchozí výsledky vyhledávání
 
-                    const totalCount = fileNodes.length; // Počet nalezených položek
-                    const totalCountElement = document.createElement('p');
-                    totalCountElement.textContent = `Celkem nalezeno položek: ${totalCount}`;
-                    movieList.appendChild(totalCountElement);
+                  const totalCount = fileNodes.length; // Počet nalezených položek
+                  const totalCountElement = document.createElement("p");
+                  totalCountElement.textContent = `Celkem nalezeno položek: ${totalCount}`;
+                  movieList.appendChild(totalCountElement);
 
-                    fileNodes.forEach(fileNode => {
-                        const name = fileNode.querySelector('name').textContent;
-                        const ident = fileNode.querySelector('ident').textContent;
-                        const movieItem = createMovieItem(name, ident);
-                        movieList.appendChild(movieItem);
-                    });
+                  fileNodes.forEach((fileNode) => {
+                    const name = fileNode.querySelector("name").textContent;
+                    const ident = fileNode.querySelector("ident").textContent;
+                    const movieItem = createMovieItem(name, ident);
+                    movieList.appendChild(movieItem);
+                  });
                 } else {
-                    console.error('Chyba při vyhledávání filmu na webshare.cz.');
+                  console.error("Chyba při vyhledávání filmu na webshare.cz.");
                 }
-            } catch (error) {
-                console.error('Chyba při komunikaci s API:', error);
+              } catch (error) {
+                console.error("Chyba při komunikaci s API:", error);
+              }
             }
-        }
 
-        // Obsluha události pro tlačítko pro vyhledávání
-        const searchButton = document.getElementById('searchButton');
-        searchButton.addEventListener('click', function () {
-            const movieNameInput = document.getElementById('movieNameInput');
-            const movieNameToSearch = movieNameInput.value.trim();
-            if (movieNameToSearch !== '') {
+            // Obsluha události pro tlačítko pro vyhledávání
+            const searchButton = document.getElementById("searchButton");
+            searchButton.addEventListener("click", function () {
+              const movieNameInput = document.getElementById("movieNameInput");
+              const movieNameToSearch = movieNameInput.value.trim();
+              if (movieNameToSearch !== "") {
                 searchMovie(movieNameToSearch);
-            }
-        });
-        // script.js
-
-// Funkce pro načtení filmů a jejich zobrazení jako seznamu
-async function searchMovie(movieName, fileType) {
-    try {
-        const limit = 999999999; // Počet výsledků, které chcete načíst
-
-        // Vytvoření dat pro požadavek
-        const requestData = new URLSearchParams();
-        requestData.append('what', movieName);
-        requestData.append('limit', limit);
-        if (fileType !== 'all') {
-            requestData.append('category', fileType);
-        }
-
-        // Vytvoření požadavku na vyhledávání filmu na webshare.cz API
-        const response = await fetch('https://webshare.cz/api/search/', {
-            method: 'POST',
-            headers: {
-                'Accept': 'text/xml; charset=UTF-8',
-                'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-            },
-            body: requestData.toString(),
-        });
-
-        if (response.ok) {
-            const xmlData = await response.text();
-
-            // Zde můžete zpracovat XML odpověď s výsledky vyhledávání
-            // Například zobrazte filmové položky v seznamu
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
-            const fileNodes = xmlDoc.querySelectorAll('file');
-
-            const movieList = document.getElementById('movieList');
-            movieList.innerHTML = ''; // Vymažeme předchozí výsledky vyhledávání
-
-            const totalCount = fileNodes.length; // Počet nalezených položek
-            const totalCountElement = document.createElement('p');
-            totalCountElement.textContent = `Celkem nalezeno položek: ${totalCount}`;
-            movieList.appendChild(totalCountElement);
-
-            fileNodes.forEach(fileNode => {
-                const name = fileNode.querySelector('name').textContent;
-                const movieItem = createMovieItem(name);
-                movieList.appendChild(movieItem);
+              }
             });
-        } else {
-            console.error('Chyba při vyhledávání filmu na webshare.cz.');
-        }
-    } catch (error) {
-        console.error('Chyba při komunikaci s API:', error);
-    }
-}
+            // script.js
 
-// Funkce pro získání vybraného typu souborů z filtru
-function getSelectedFileType() {
-    const fileTypeSelect = document.getElementById('fileType');
-    return fileTypeSelect.value;
-}
-
-// Obsluha události pro tlačítko pro vyhledávání s filtrem
-const filterButton = document.getElementById('filterButton');
-filterButton.addEventListener('click', function () {
-    const movieNameInput = document.getElementById('movieNameInput');
-    const movieNameToSearch = movieNameInput.value.trim();
-    const selectedFileType = getSelectedFileType();
-    if (movieNameToSearch !== '') {
-        searchMovie(movieNameToSearch, selectedFileType);
-    }
-});
-
-// ... (zbytek kódu zůstává stejný)
-        // Funkce pro načtení filmů a jejich zobrazení jako seznamu
-        async function searchMovie() {
-            try {
+            // Funkce pro načtení filmů a jejich zobrazení jako seznamu
+            async function searchMovie(movieName, fileType) {
+              try {
                 const limit = 999999999; // Počet výsledků, které chcete načíst
-                const movieNameInput = document.getElementById('movieNameInput');
-                const fileTypeSelect = document.getElementById('fileType');
+
+                // Vytvoření dat pro požadavek
+                const requestData = new URLSearchParams();
+                requestData.append("what", movieName);
+                requestData.append("limit", limit);
+                if (fileType !== "all") {
+                  requestData.append("category", fileType);
+                }
+
+                // Vytvoření požadavku na vyhledávání filmu na webshare.cz API
+                const response = await fetch(
+                  "https://webshare.cz/api/search/",
+                  {
+                    method: "POST",
+                    headers: {
+                      Accept: "text/xml; charset=UTF-8",
+                      "Content-Type":
+                        "application/x-www-form-urlencoded; charset=UTF-8",
+                    },
+                    body: requestData.toString(),
+                  }
+                );
+
+                if (response.ok) {
+                  const xmlData = await response.text();
+
+                  // Zde můžete zpracovat XML odpověď s výsledky vyhledávání
+                  // Například zobrazte filmové položky v seznamu
+                  const parser = new DOMParser();
+                  const xmlDoc = parser.parseFromString(xmlData, "text/xml");
+                  const fileNodes = xmlDoc.querySelectorAll("file");
+
+                  const movieList = document.getElementById("movieList");
+                  movieList.innerHTML = ""; // Vymažeme předchozí výsledky vyhledávání
+
+                  const totalCount = fileNodes.length; // Počet nalezených položek
+                  const totalCountElement = document.createElement("p");
+                  totalCountElement.textContent = `Celkem nalezeno položek: ${totalCount}`;
+                  movieList.appendChild(totalCountElement);
+
+                  fileNodes.forEach((fileNode) => {
+                    const name = fileNode.querySelector("name").textContent;
+                    const movieItem = createMovieItem(name);
+                    movieList.appendChild(movieItem);
+                  });
+                } else {
+                  console.error("Chyba při vyhledávání filmu na webshare.cz.");
+                }
+              } catch (error) {
+                console.error("Chyba při komunikaci s API:", error);
+              }
+            }
+
+            // Funkce pro získání vybraného typu souborů z filtru
+            function getSelectedFileType() {
+              const fileTypeSelect = document.getElementById("fileType");
+              return fileTypeSelect.value;
+            }
+
+            // Obsluha události pro tlačítko pro vyhledávání s filtrem
+            const filterButton = document.getElementById("filterButton");
+            filterButton.addEventListener("click", function () {
+              const movieNameInput = document.getElementById("movieNameInput");
+              const movieNameToSearch = movieNameInput.value.trim();
+              const selectedFileType = getSelectedFileType();
+              if (movieNameToSearch !== "") {
+                searchMovie(movieNameToSearch, selectedFileType);
+              }
+            });
+
+            // ... (zbytek kódu zůstává stejný)
+            // Funkce pro načtení filmů a jejich zobrazení jako seznamu
+            async function searchMovie() {
+              try {
+                const limit = 999999999; // Počet výsledků, které chcete načíst
+                const movieNameInput =
+                  document.getElementById("movieNameInput");
+                const fileTypeSelect = document.getElementById("fileType");
 
                 const movieName = movieNameInput.value.trim();
                 const fileType = fileTypeSelect.value;
 
                 // Vytvoření dat pro požadavek
                 const requestData = new URLSearchParams();
-                requestData.append('what', movieName);
-                requestData.append('limit', limit);
-                if (fileType !== 'all') {
-                    requestData.append('category', fileType);
+                requestData.append("what", movieName);
+                requestData.append("limit", limit);
+                if (fileType !== "all") {
+                  requestData.append("category", fileType);
                 }
 
                 // Vytvoření požadavku na vyhledávání filmu na webshare.cz API
-                const response = await fetch('https://webshare.cz/api/search/', {
-                    method: 'POST',
+                const response = await fetch(
+                  "https://webshare.cz/api/search/",
+                  {
+                    method: "POST",
                     headers: {
-                        'Accept': 'text/xml; charset=UTF-8',
-                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
+                      Accept: "text/xml; charset=UTF-8",
+                      "Content-Type":
+                        "application/x-www-form-urlencoded; charset=UTF-8",
                     },
                     body: requestData.toString(),
-                });
+                  }
+                );
 
                 if (response.ok) {
-                    const xmlData = await response.text();
+                  const xmlData = await response.text();
 
-                    // Zde můžete zpracovat XML odpověď s výsledky vyhledávání
-                    // Například zobrazte filmové položky v seznamu
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
-                    const fileNodes = xmlDoc.querySelectorAll('file');
+                  // Zde můžete zpracovat XML odpověď s výsledky vyhledávání
+                  // Například zobrazte filmové položky v seznamu
+                  const parser = new DOMParser();
+                  const xmlDoc = parser.parseFromString(xmlData, "text/xml");
+                  const fileNodes = xmlDoc.querySelectorAll("file");
 
-                    const movieList = document.getElementById('movieList');
+                  const movieList = document.getElementById("movieList");
 
-                    const totalCount = fileNodes.length; // Počet nalezených položek
-                    const totalCountElement = document.createElement('p');
-                    totalCountElement.textContent = `Celkem nalezeno položek: ${totalCount}`;
-                    movieList.innerHTML = ''; // Vymažeme předchozí výsledky vyhledávání
-                    movieList.appendChild(totalCountElement);
+                  const totalCount = fileNodes.length; // Počet nalezených položek
+                  const totalCountElement = document.createElement("p");
+                  totalCountElement.textContent = `Celkem nalezeno položek: ${totalCount}`;
+                  movieList.innerHTML = ""; // Vymažeme předchozí výsledky vyhledávání
+                  movieList.appendChild(totalCountElement);
 
-                    fileNodes.forEach(fileNode => {
-                        const name = fileNode.querySelector('name').textContent;
-                        const movieItem = createMovieItem(name);
-                        movieList.appendChild(movieItem);
-                    });
+                  fileNodes.forEach((fileNode) => {
+                    const name = fileNode.querySelector("name").textContent;
+                    const movieItem = createMovieItem(name);
+                    movieList.appendChild(movieItem);
+                  });
 
-                    // Zobrazit filtr po vyhledání
-                    const filter = document.getElementById('filter');
-                    filter.style.display = 'block';
+                  // Zobrazit filtr po vyhledání
+                  const filter = document.getElementById("filter");
+                  filter.style.display = "block";
                 } else {
-                    console.error('Chyba při vyhledávání filmu na webshare.cz.');
+                  console.error("Chyba při vyhledávání filmu na webshare.cz.");
                 }
-            } catch (error) {
-                console.error('Chyba při komunikaci s API:', error);
+              } catch (error) {
+                console.error("Chyba při komunikaci s API:", error);
+              }
             }
-        }
-  </script>
-</body>
+          </script>
+        </body>
+      </head>
+    </header>
   </head>
-  </header>
-</head>
 </html>

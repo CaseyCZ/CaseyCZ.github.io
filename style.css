@@ -19,15 +19,18 @@ body {
 .movie-list-title {
   font-size: 24px;
   margin-bottom: 20px;
-  color: #000000; /* Změna barvy titulu */
+  color: #000000;
+  /* Změna barvy titulu */
 }
 
 #movieNameInput {
   padding: 5px;
   font-size: 14px;
   width: 60%;
-  border: 1px solid #ccc; /* Přidáme rámec kolem pole */
-  border-radius: 5px; /* Zaoblené rohy pole */
+  border: 1px solid #ccc;
+  /* Přidáme rámec kolem pole */
+  border-radius: 5px;
+  /* Zaoblené rohy pole */
 }
 
 #searchButton {
@@ -37,64 +40,85 @@ body {
   padding: 5px 10px;
   font-size: 14px;
   cursor: pointer;
-  border-radius: 15px; /* Zaoblené rohy tlačítka */
+  border-radius: 15px;
+  /* Zaoblené rohy tlačítka */
   margin-left: 10px;
 }
 
 /* Seznam filmů */
 .movie-list-wrapper {
-  text-align: left; /* Zarovnání textu v seznamu na levou stranu */
+  text-align: left;
+  /* Zarovnání textu v seznamu na levou stranu */
 }
 
 .movie-list-item {
-  background-color: #333; /* Trochu tmavší barva pozadí */
+  background-color: #333;
+  /* Trochu tmavší barva pozadí */
   border-radius: 15px;
   padding: 10px;
   font-size: 14px;
-  margin-bottom: 10px; /* Zvýšil jsem mezery mezi filmovými položkami */
+  margin-bottom: 10px;
+  /* Zvýšil jsem mezery mezi filmovými položkami */
   color: #ffffff;
-  position: relative; /* Přidáme pozici relativní pro absolutní tlačítko */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Přidáme stín */
-  min-height: 20px; /* Minimální výška položky na dvou řádcích */
-  word-wrap: break-word; /* Zalomení textu na dvou řádcích */
+  position: relative;
+  /* Přidáme pozici relativní pro absolutní tlačítko */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Přidáme stín */
+  min-height: 20px;
+  /* Minimální výška položky na dvou řádcích */
+  word-wrap: break-word;
+  /* Zalomení textu na dvou řádcích */
 }
 
 .movie-list-item-title {
   font-size: 14px;
-  margin-bottom: 5px; /* Snížil jsem mezery pod názvem položky */
+  margin-bottom: 5px;
+  /* Snížil jsem mezery pod názvem položky */
 }
 
 .movie-list-item-button {
   position: absolute;
-  bottom: 5px; /* Umístíme tlačítko na spodní část položky */
-  right: 10px; /* Umístíme tlačítko na pravý dolní roh */
+  bottom: 5px;
+  /* Umístíme tlačítko na spodní část položky */
+  right: 10px;
+  /* Umístíme tlačítko na pravý dolní roh */
   background-color: #000000;
   border: none;
   color: white;
-  padding: 5px 5px; /* Menší velikost tlačítka */
-  font-size: 11px; /* Menší fontová velikost tlačítka */
+  padding: 5px 5px;
+  /* Menší velikost tlačítka */
+  font-size: 11px;
+  /* Menší fontová velikost tlačítka */
   cursor: pointer;
-  border-radius: 10px; /* Zaoblené rohy tlačítka */
+  border-radius: 10px;
+  /* Zaoblené rohy tlačítka */
 }
 
 /* Styl pro <p> element */
 p {
   font-size: 16px;
-  color: #ffffff; /* Barva textu (černá) */
+  color: #ffffff;
+  /* Barva textu (černá) */
 }
 
 /* Styl pro odkaz <a> uvnitř <p> elementu */
 p a {
-  text-decoration: none; /* Odkazy bez podtržení */
-  color: #000000; /* Barva odkazu (modrá) */
-  font-weight: bold; /* Tučné písmo pro odkaz */
-  transition: color 0.3s, font-size 0.3s; /* Animace pro změnu barvy textu a velikosti písma */
+  text-decoration: none;
+  /* Odkazy bez podtržení */
+  color: #000000;
+  /* Barva odkazu (modrá) */
+  font-weight: bold;
+  /* Tučné písmo pro odkaz */
+  transition: color 0.3s, font-size 0.3s;
+  /* Animace pro změnu barvy textu a velikosti písma */
 }
 
 /* Styl pro odkaz <a> po najetí myší */
 p a:hover {
-  color: orange; /* Změna barvy na oranžovou */
-  font-size: 18px; /* Zvýšení velikosti písma na 18px */
+  color: orange;
+  /* Změna barvy na oranžovou */
+  font-size: 18px;
+  /* Zvýšení velikosti písma na 18px */
 }
 
 .button-container {
@@ -116,34 +140,43 @@ p a:hover {
   text-decoration: none;
   color: #333;
   transition: color 0.3s;
-  background: none; /* Odstranění pozadí */
-  border: none; /* Odstranění rámečku */
-  padding: 0; /* Odstranění vnitřního odsazení */
-  outline: none; /* Odstranění modrého pozadí po stisknutí */
+  background: none;
+  /* Odstranění pozadí */
+  border: none;
+  /* Odstranění rámečku */
+  padding: 0;
+  /* Odstranění vnitřního odsazení */
+  outline: none;
+  /* Odstranění modrého pozadí po stisknutí */
 }
 
 .button-container a:hover,
 .button-container button:hover {
-  background: none; /* Odstranění pozadí */
+  background: none;
+  /* Odstranění pozadí */
   color: #ffffff;
 }
 
 /* Denní režim */
 body:not(.night-mode) .card {
-  background-color: black; /* Bílé pozadí pro karty pouze v denním režimu */
+  background-color: black;
+  /* Bílé pozadí pro karty pouze v denním režimu */
 }
 
 /* Noční režim */
 .night-mode .body {
   margin: 1em;
-  background-color: white; /* Černé pozadí v nočním režimu */
-  color: black; /* Bílá barva textu v nočním režimu */
+  background-color: white;
+  /* Černé pozadí v nočním režimu */
+  color: black;
+  /* Bílá barva textu v nočním režimu */
 }
 
 /* Barva pozadí pro nadpisy karet v nočním režimu */
 @media (prefers-color-scheme: dark) {
   .card-header {
-    background-color: #333; /* Barva pozadí pro nadpisy karet v nočním režimu */
+    background-color: #333;
+    /* Barva pozadí pro nadpisy karet v nočním režimu */
   }
 }
 
@@ -152,27 +185,36 @@ body:not(.night-mode) .card {
     background-color: #1f1f1f;
     color: white;
   }
+
   .card-header {
     background-color: #2f2f2f;
   }
+
   body:not(.night-mode) .card {
-    background-color: #fff; /* Bílé pozadí pro karty pouze v denním režimu */
+    background-color: #fff;
+    /* Bílé pozadí pro karty pouze v denním režimu */
   }
+
   /* Styly pro černé pozadí .card-body v nočním režimu */
   body.night-mode .card-body {
-    background-color: #1f1f1f; /* Černé pozadí pro .card-body v nočním režimu */
+    background-color: #1f1f1f;
+    /* Černé pozadí pro .card-body v nočním režimu */
   }
+
   .jumbotron {
     background-color: #2f2f2f;
   }
+
   .list-group-item {
     background-color: #1f1f1f;
     border-color: #2f2f2f;
   }
+
   html.can-touch .link-item:hover {
     /* disable hover effect when input is touch */
     background-color: #1f1f1f;
   }
+
   html.can-touch .link-item:active {
     /* disable hover effect when input is touch */
     background-color: #1f1f1f;
@@ -192,11 +234,16 @@ body:not(.night-mode) .card {
 }
 
 .custom-logo {
-  width: 200px; /* změňte na požadovanou šířku */
-  height: auto; /* zachovává poměr stran pro zachování kvality */
-  position: absolute; /* Použijte absolutní pozici pro přesné umístění */
-  top: 10px; /* Vzdálenost od horního okraje stránky (upravte podle potřeby) */
-  left: -900px; /* Vzdálenost od levého okraje stránky (upravte podle potřeby) */
+  width: 200px;
+  /* změňte na požadovanou šířku */
+  height: auto;
+  /* zachovává poměr stran pro zachování kvality */
+  position: absolute;
+  /* Použijte absolutní pozici pro přesné umístění */
+  top: 10px;
+  /* Vzdálenost od horního okraje stránky (upravte podle potřeby) */
+  left: -900px;
+  /* Vzdálenost od levého okraje stránky (upravte podle potřeby) */
 }
 
 /* new css */
@@ -220,7 +267,8 @@ body:not(.night-mode) .card {
 }
 
 body:not(.night-mode) .card {
-  background-color: #1f1f1f; /* Bílé pozadí pro karty pouze v denním režimu */
+  background-color: #1f1f1f;
+  /* Bílé pozadí pro karty pouze v denním režimu */
 }
 
 .custom-btn {
@@ -231,14 +279,16 @@ body:not(.night-mode) .card {
 
 /* Styly pro černé pozadí .card-body v nočním režimu */
 body.night-mode .card-body {
-  background-color: #fff; /* Černé pozadí pro .card-body v nočním režimu */
+  background-color: #fff;
+  /* Černé pozadí pro .card-body v nočním režimu */
 }
 
 .card {
   transition: transform 0.3s ease;
   background-color: #f0f0f0;
   border: 1px solid #ddd;
-  margin-bottom: 20px; /* Přidá mezeru mezi kartami */
+  margin-bottom: 20px;
+  /* Přidá mezeru mezi kartami */
 }
 
 .card:hover {
@@ -250,7 +300,8 @@ body.night-mode .card-body {
 }
 
 .tabs a {
-  margin-right: 50px; /* Přidá větší mezeru mezi jednotlivými tlačíky */
+  margin-right: 50px;
+  /* Přidá větší mezeru mezi jednotlivými tlačíky */
 }
 
 .tabs {
@@ -274,11 +325,14 @@ body.night-mode .card-body {
 }
 
 .night-mode {
-  background-color: #F8F8FF; /* Nastavte vhodnou barvu pozadí pro režim noci */
-  color: #000000; /* Nastavte barvu textu pro režim noci */
+  background-color: #F8F8FF;
+  /* Nastavte vhodnou barvu pozadí pro režim noci */
+  color: #000000;
+  /* Nastavte barvu textu pro režim noci */
   /* Zde můžete definovat další styly specifické pro režim noci */
 }
 
 .nightModeButton {
-  margin-right: 20px; /* Změňte tuto hodnotu podle vašich potřeb */
+  margin-right: 20px;
+  /* Změňte tuto hodnotu podle vašich potřeb */
 }

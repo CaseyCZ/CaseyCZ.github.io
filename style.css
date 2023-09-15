@@ -287,7 +287,7 @@ div.col-md-4 {
   margin: 20px;
   padding: 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   /* Tři sloupce se stejnou šířkou */
   gap: 20px;
   /* Mezera mezi kartami */
@@ -296,11 +296,11 @@ div.col-md-4 {
 }
 
 /* Media query pro menší šířku okna */
-@media (max-width: 710px) {
+@media (max-width: 950px) {
 
   /* Změna uspořádání karet na jeden a půl sloupce */
   .row {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     /* Jeden a půl sloupce */
   }
 

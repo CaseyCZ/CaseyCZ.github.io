@@ -301,7 +301,14 @@ div.col-md-4 {
   /* Změna uspořádání karet na jeden a půl sloupce */
   .row {
     grid-template-columns: repeat(2, 1fr);
-    /* Jeden a půl sloupce */
+
+      margin: 0px;
+      padding: 0px;
+      display: grid;
+
+      gap: 0px;
+      justify-items: center;
+  }
   }
 
   /* Skrytí logo */

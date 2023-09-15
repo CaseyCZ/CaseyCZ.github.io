@@ -1,12 +1,13 @@
 
 .footer {
-    padding: 20px 0;
+    padding: auto;
     background-image: linear-gradient(to right, #667eea, #764ba2);
 }
 
 .social-items {
     color: #fff;
     text-align: center;
+
 }
 
 .social-items a {
@@ -43,7 +44,7 @@
 }
 
 .list li {
-    padding: 0 15px;
+    padding: 10px 15px;
     display: inline-block;
 }
 

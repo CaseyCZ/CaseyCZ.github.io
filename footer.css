@@ -25,6 +25,7 @@
 
 .social-items a:hover {
     opacity: 1;
+    color: #ff9900;
 }
 
 .list {
@@ -39,7 +40,7 @@
 
 .list a {
     opacity: 0.8;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
 }
 
@@ -50,12 +51,13 @@
 
 .list a:hover {
     opacity: 1;
+    color: #ff9900;
 }
 
 .copyright {
     font-size: 14px;
     margin-top: 15px;
     text-align: center;
-    color: rgb(181, 175, 175);
+    color: #ffffff;
 }
 

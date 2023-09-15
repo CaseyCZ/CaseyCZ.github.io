@@ -13,47 +13,14 @@ body {
 
   margin: 0 auto;
   padding: 10px;
+
 }
 
-
-#searchButton {
-  background-color: #000000;
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 15px;
-  /* Zaoblené rohy tlačítka */
-  margin-left: 10px;
-}
-
-/* Styl pro odkaz <a> uvnitř <p> elementu */
-p a {
-  text-decoration: none;
-  /* Odkazy bez podtržení */
-  color: #000000;
-  /* Barva odkazu */
-  font-weight: bold;
-  /* Tučné písmo pro odkaz */
-  transition: color 0.3s, font-size 0.3s;
-  /* Animace pro změnu barvy textu a velikosti písma */
-}
-
-/* Styl pro odkaz <a> po najetí myší */
-p a:hover {
-  color: orange;
-  /* Změna barvy na oranžovou */
-  font-size: 18px;
-  /* Zvýšení velikosti písma na 18px */
-}
 
 .card-text {
   font-size: 18px;
   margin: 20px;
 }
-
-
 
 
 /* Denní režim */
@@ -159,22 +126,6 @@ body:not(.night-mode) .card {
   transition: background-color 0.3s ease;
 }
 
-.header:hover {
-  background-color: #ff9900;
-}
-
-
-.social-icon {
-  margin-right: 10px;
-  font-size: 24px;
-  color: #333;
-  transition: color 0.3s ease;
-}
-
-.social-icon:hover {
-  color: #ff9900;
-}
-
 body:not(.night-mode) .card {
   background-color: #000000;
   /* Bílé pozadí pro karty pouze v denním režimu */
@@ -245,25 +196,6 @@ div .card {
   /* Přidá větší mezeru mezi jednotlivými tlačíky */
 }
 
-.tabs {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-}
-
-.tab {
-  padding: 10px 20px;
-  margin: 0 10px;
-  background-color: #ddd;
-  border-radius: 5px;
-  text-decoration: none;
-  color: #000000;
-  transition: background-color 0.3s;
-}
-
-.tab:hover {
-  background-color: #aaa;
-}
 
 .night-mode {
   background-color: #F8F8FF;
@@ -282,7 +214,6 @@ div.col-md-4 {
 
   margin-bottom: 20px;
 }
-
 .row {
   margin: 20px;
   padding: 20px;
@@ -322,7 +253,6 @@ div.col-md-4 {
     width: calc(50% - 10px);
     /* Karta bude zabírat polovinu šířky s mezerou mezi nimi */
   }
-}
 
 h2 {
   margin: 10px;
@@ -346,13 +276,14 @@ h5 {
   margin-top: 20px;
   /* Posune obsah dolů o 20px */
   margin-left: 20px;
+  
 }
 
 .button-odkazy a,
 .button-odkazy button {
   margin-left: 10px;
   text-decoration: none;
-  color: #333;
+  color: #ffffff;
   transition: color 0.3s;
   background: none;
   /* Odstranění pozadí */
@@ -368,5 +299,5 @@ h5 {
 .button-odkazy button:hover {
   background: none;
   /* Odstranění pozadí */
-  color: #ffffff;
+  color: #ff9900;
 }

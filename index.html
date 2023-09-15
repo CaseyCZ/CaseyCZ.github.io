@@ -2,14 +2,71 @@
 <html lang="cs">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <div class="button-container">
-      <img src="icons/logo.PNG" alt="Logo CaseyCZ" class="custom-logo" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline' 'unsafe-eval' http://ecdn.onlineradiobox.com;"
+    />
+    <meta
+      name="description"
+      content="Vítejte na mé osobní stránce, kde se můžete dozvědět více o mně, mých zájmech a projektech."
+    />
+    <meta charset="UTF-8" />
+    <title>CaseyCZ</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="icons/site.webmanifest" />
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#a124d0" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="icons/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="icons/android-chrome-512x512.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="150x150"
+      href="icons/mstile-150x150.png"
+    />
+    <meta name="msapplication-config" content="icons/browserconfig.xml" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="button-odkazy">
       <a href="/index.html" class="btn btn-primary">Domů</a>
       <a href="/webshare.html" class="btn btn-primary">Webshare</a>
       <a href="/livescore.html" class="btn btn-primary">Livescore</a>
-      <a href="/newindex.html" class="btn btn-primary">Kontakt</a>
-      <div style="text-align: center; margin-top: 0px;">
-        <p style="text-align: center; margin: 0;">
+      <a href="/oldindex.html" class="btn btn-primary">Kontakt</a>
+      <div style="text-align: center; margin-top: 0px">
+        <div style="text-align: center; margin: 0">
           <a onclick="toggleNightMode();" role="button">
             <img
               width="24"
@@ -17,162 +74,15 @@
               src="./icons/DarkMode-Light.png"
               id="toggleDark"
               alt="Toggle Mode"
-              style="display: inline-block;"
+              style="display: inline-block"
             />
           </a>
-        </p>
+        </div>
       </div>
-      <meta
-        http-equiv="Content-Security-Policy"
-        content="script-src 'self'; object-src 'none';"
-      />
-      <meta
-        name="description"
-        content="Vítejte na mé osobní stránce, kde se můžete dozvědět více o mně, mých zájmech a projektech."
-      />
-      <meta charset="UTF-8" />
-      <title>CaseyCZ</title>
-      <link
-        rel="apple-touch-icon"
-        sizes="180x180"
-        href="icons/apple-touch-icon.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="32x32"
-        href="icons/favicon-32x32.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="16x16"
-        href="icons/favicon-16x16.png"
-      />
-      <link rel="manifest" href="icons/site.webmanifest" />
-      <link
-        rel="mask-icon"
-        href="icons/safari-pinned-tab.svg"
-        color="#a124d0"
-      />
-      <meta name="msapplication-TileColor" content="#ffffff" />
-      <meta name="theme-color" content="#ffffff" />
-      <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="192x192"
-        href="icons/android-chrome-192x192.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="512x512"
-        href="icons/android-chrome-512x512.png"
-      />
-      <link
-        rel="icon"
-        type="image/png"
-        sizes="150x150"
-        href="icons/mstile-150x150.png"
-      />
-      <meta name="msapplication-config" content="icons/browserconfig.xml" />
-      <link
-        rel="stylesheet"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-        crossorigin="anonymous"
-      />
-      <link rel="stylesheet" href="style.css" />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      />
-      <style>
-            .header {
-              background-image: linear-gradient(to right, #667eea, #764ba2);
-              transition: background-color 0.3s ease;
-            }
-            .header:hover {
-              background-color: #ff9900;
-            }
-            .social-icon {
-              font-size: 24px;
-              color: #333;
-              transition: color 0.3s ease;
-            }
-            .social-icon:hover {
-              color: #ff9900;
-            }
-            body:not(.night-mode) .card {
-              background-color: #1f1f1f; /* Bílé pozadí pro karty pouze v denním režimu */
-            }  .custom-btn {
-            background-image: linear-gradient(to right, #667eea, #764ba2);
-            color: white;
-            border: none;
-          }
-            /* Styly pro černé pozadí .card-body v nočním režimu */
-            body.night-mode .card-body {
-              background-color: #fff; /* Černé pozadí pro .card-body v nočním režimu */
-            }
-            .card {
-              transition: transform 0.3s ease;
-              background-color: #f0f0f0;
-              border: 1px solid #ddd;
-              margin-bottom: 20px; /* Přidá mezeru mezi kartami */
-            }
-            .card:hover {
-              transform: scale(1.05);
-            }
-            .card .card-title {
-              color: #764ba2;
-            }
-            .tabs a {
-              margin-right: 50px; /* Přidá větší mezeru mezi jednotlivými tlačíky */
-            }
-            .tabs {
-              display: flex;
-              justify-content: center;
-              padding: 10px;
-            }
-            .tab {
-              padding: 10px 20px;
-              margin: 0 10px;
-              background-color: #ddd;
-              border-radius: 5px;
-              text-decoration: none;
-              color: #333;
-              transition: background-color 0.3s;
-            }
-            .tab:hover {
-              background-color: #aaa;
-            }
-            .night-mode {
-              background-color: #F8F8FF; /* Nastavte vhodnou barvu pozadí pro režim noci */
-              color: #000000; /* Nastavte barvu textu pro režim noci */
-              /* Zde můžete definovat další styly specifické pro režim noci */
-            }
-            .nightModeButton {
-              margin-right: 20px; /* Změňte tuto hodnotu podle vašich potřeb */
-            }/* Denní režim */
-        body:not(.night-mode) {
-          background-color: black;
-          color: white;
-        }
-        /* Barva pozadí pro nadpisy karet v denním režimu */
-        body:not(.night-mode) .card-header {
-          background-color: #2f2f2f;
-        }
-        /* Barva pozadí karet v denním režimu */
-        body:not(.night-mode) .card {
-          background-color: black;
-        }
-      </style>
     </div>
-  </head>
-  <body>
-    <header class="header text-center py-5">
+    <header class="header text">
       <div class="container">
+        <img src="icons/logo.PNG" alt="Logo CaseyCZ" class="custom-logo" />
         <h1 class="text-white">Lukáš Kysela</h1>
         <p class="text-white">Vítejte na mé stránce</p>
         <a
@@ -213,101 +123,657 @@
         ></a>
       </div>
     </header>
-    <div class="container text-center my-5">
-      <h2>Novinky</h2>
-      <p>Zde naleznete aktuální novinky o mých projektech a aktivitách.</p>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Work</h5>
-              <p class="card-text">SAP-Excel-HTML</p>
-              <a href="work.html" class="btn btn-xs custom-btn"
-                >Více informací</a
-              >
-            </div>
+
+    <h2>Novinky</h2>
+    <p>Zde naleznete aktuální novinky o mých projektech a aktivitách.</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Work</h5>
+            <p class="card-text">SAP-Excel-HTML</p>
+            <a href="work.html" class="btn btn-xs custom-btn">Více informací</a>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Produkty</h5>
-              <p class="card-text">Apple,Microsoft</p>
-              <a
-                href="depictions/?p=com.supermamon.oldpackage"
-                class="btn btn-xs custom-btn"
-                >Více informací</a
-              >
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Produkty</h5>
+            <p class="card-text">Apple,Microsoft</p>
+            <a
+              href="depictions/?p=com.supermamon.oldpackage"
+              class="btn btn-xs custom-btn"
+              >Více informací</a
+            >
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Sport</h5>
-              <p class="card-text">Florbal,Hokejbal</p>
-              <a
-                href="depictions/?p=com.supermamon.newpackage"
-                class="btn btn-xs custom-btn"
-                >Více informací</a
-              >
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Sport</h5>
+            <p class="card-text">Florbal,Hokejbal</p>
+            <a
+              href="depictions/?p=com.supermamon.newpackage"
+              class="btn btn-xs custom-btn"
+              >Více informací</a
+            >
           </div>
         </div>
       </div>
     </div>
-    <div class="container text-center my-5">
-      <h2>Featured Packages</h2>
-      <p>Zde jsou zvýrazněné balíčky a projekty, na kterých pracuji.</p>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Fotbal</h5>
-              <p class="card-text">Slovan Liberec U7.</p>
-              <a
-                href="depictions/?p=com.CaseyCZ.Cocoatop"
-                class="btn btn-xs custom-btn"
-                >Více informací</a
-              >
-            </div>
+
+    <h2>Featured Packages</h2>
+    <p>Zde jsou zvýrazněné balíčky a projekty, na kterých pracuji.</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Fotbal</h5>
+            <p class="card-text">Slovan Liberec U7.</p>
+            <a
+              href="depictions/?p=com.CaseyCZ.Cocoatop"
+              class="btn btn-xs custom-btn"
+              >Více informací</a
+            >
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Hry</h5>
-              <p class="card-text">Xbox - Pc</p>
-              <a
-                href="depictions/?p=com.CaseyCZ.Cocoatop"
-                class="btn btn-xs custom-btn"
-                >Více informací</a
-              >
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Hry</h5>
+            <p class="card-text">Xbox - Pc</p>
+            <a
+              href="depictions/?p=com.CaseyCZ.Cocoatop"
+              class="btn btn-xs custom-btn"
+              >Více informací</a
+            >
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Dron</h5>
-              <p class="card-text">Mavic Mini</p>
-              <a
-                href="depictions/?p=com.CaseyCZ.Cocoatop"
-                class="btn btn-xs custom-btn"
-                >Více informací</a
-              >
-            </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Dron</h5>
+            <p class="card-text">Mavic Mini</p>
+            <a
+              href="depictions/?p=com.CaseyCZ.Cocoatop"
+              class="btn btn-xs custom-btn"
+              >Více informací</a
+            >
           </div>
         </div>
       </div>
     </div>
-  
+    <!--OnlineRadioBox Player widget-->
+    <div class="orbP cmpct" id="orb_player_1937fee67e287d3d" vlm="1">
+      <style media="screen">
+        /* General */
+        .orbP {
+          position: relative;
+          box-sizing: border-box;
+          overflow: hidden;
+          font-weight: normal;
+          border: 1px solid transparent;
+          user-select: none;
+          text-align: left;
+        }
+        .orbP br,
+        .orbP > br {
+          display: none !important;
+        }
+        .orbP p,
+        .orbP > p {
+          margin: 0 !important;
+          padding: 0 !important;
+          line-height: normal !important;
+          font-size: inherit !important;
+        }
+        .orbPh {
+          display: block;
+          position: absolute;
+          z-index: 100;
+          top: 50%;
+          margin-top: -12px !important;
+          right: 10px;
+          width: 21px !important;
+          text-decoration: none !important;
+          cursor: pointer;
+        }
+        .orbPh > img {
+          margin: 0 !important;
+          border: none;
+          height: 24px !important;
+          -webkit-filter: drop-shadow(2px 2px 0 rgba(47, 99, 160, 0.2));
+          filter: drop-shadow(2px 2px 0 rgba(47, 99, 160, 0.2));
+        }
+        .orbPt {
+          text-decoration: none !important;
+        }
+        .orbPti {
+          float: left;
+          margin: 0 10px 0 0 !important;
+          vertical-align: top !important;
+          height: 48px !important;
+          width: 89px !important;
+          border: none !important;
+          border-radius: 2px !important;
+          opacity: 1 !important;
+        }
+        .orbPtn {
+          display: block;
+          margin-right: 52px;
+          line-height: 24px !important;
+          font-size: 17px !important;
+          font-weight: bold !important;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .orbPtt {
+          display: block;
+          margin-right: 52px;
+          text-decoration: none !important;
+          line-height: 24px !important;
+          font-size: 12px !important;
+          opacity: 0.85;
+          transition: opacity 0.2s;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+        }
+        .orbPtt:hover {
+          opacity: 1;
+        }
+        .orbPp,
+        .orbPs {
+          float: left !important;
+          margin: 0 10px 0 0 !important;
+          padding: 0 !important;
+          height: 48px !important;
+          width: 48px !important;
+          line-height: 48px !important;
+          border-radius: 2px !important;
+          border: none !important;
+          text-align: center !important;
+          cursor: pointer;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none !important;
+        }
+        .orbPp::before,
+        .orbPs::before {
+          display: inline-block;
+          vertical-align: middle;
+          content: "";
+          width: 0;
+          height: 0;
+          border-style: solid;
+        }
+        .orbPp::before {
+          border-width: 16px 0 16px 26px;
+        }
+        .orbPs::before {
+          border-width: 16px;
+        }
+        .orbPp:hover,
+        .orbPs:hover {
+          -webkit-transform: scale(1.087);
+          transform: scale(1.087);
+        }
+        .orbPhc {
+          position: relative !important;
+          box-sizing: border-box !important;
+          padding: 10px !important;
+          overflow: hidden;
+        }
+        /* Playlist */
+        .orbPpl {
+          position: relative;
+          overflow: auto;
+          overflow-x: hidden;
+          overflow-y: auto;
+          margin: 0 !important;
+          padding: 0 !important;
+          list-style: none !important;
+        }
+        .orbPpli {
+          box-sizing: border-box;
+          margin: 0 !important;
+          padding: 0 10px !important;
+          list-style: none !important;
+          background-image: none;
+          float: none !important;
+          height: auto !important;
+        }
+        .orbPpli > a,
+        .orbPpli > span {
+          display: block !important;
+          padding: 0 !important;
+          margin: 0 !important;
+          height: auto !important;
+          font-weight: normal !important;
+          text-decoration: none !important;
+          line-height: 32px !important;
+          font-size: 14px !important;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          transition: color 0.125s;
+          border: none !important;
+        }
+        .orbPpli > a:hover,
+        .orbPpli > span:hover {
+          background: transparent !important;
+        }
+        .orbPpli > a > time,
+        .orbPpli > span > time {
+          display: inline-block;
+          font-size: 12px !important;
+          width: 3em !important;
+        }
+        .orbPpli + li {
+          border-style: solid !important;
+          border-width: 1px 0 0 !important;
+        }
+        /* Volume */
+        .orbV {
+          position: absolute;
+          z-index: 1 !important;
+          width: 24px !important;
+          right: 48px !important;
+          top: 0 !important;
+          bottom: 0 !important;
+          line-height: 1 !important;
+          overflow: hidden !important;
+          transition: width 0.3s;
+        }
+        .orbV:hover {
+          width: 160px !important;
+        }
+        .orbVC {
+          position: absolute !important;
+          height: 18px !important;
+          left: 24px !important;
+          top: 50% !important;
+          margin: -9px 0 0 11px !important;
+        }
+        .orbVC::after {
+          display: block;
+          content: "";
+          margin-top: 4px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 4px 100px 4px 0;
+          opacity: 0.33;
+        }
+        .orbVCs {
+          position: absolute !important;
+          z-index: 2 !important;
+          top: 0 !important;
+          width: 18px !important;
+          height: 18px !important;
+          border-radius: 50% !important;
+          cursor: ew-resize !important;
+          box-shadow: 0 6px 8px -2px rgba(0, 9, 18, 0.36);
+        }
+        .orbVb {
+          position: absolute !important;
+          width: 24px !important;
+          height: 24px !important;
+          top: 50% !important;
+          left: 0 !important;
+          margin-top: -12px;
+          white-space: nowrap !important;
+          cursor: pointer;
+          transition: opacity 0.3s;
+        }
+        .orbVb::before {
+          display: inline-block;
+          content: "";
+          vertical-align: middle;
+          width: 7px;
+          height: 12px;
+        }
+        .orbVb::after {
+          display: inline-block;
+          content: "";
+          vertical-align: middle;
+          border-width: 12px 12px 12px 0;
+          border-style: solid;
+          height: 0;
+          width: 0;
+          margin-left: -6px;
+        }
+        .orbV:hover .orbVb {
+          opacity: 0.33 !important;
+          cursor: default;
+        }
+        .orbVb > ._m {
+          display: block !important;
+          width: 7px !important;
+          height: 18px !important;
+          position: absolute !important;
+          top: 50%;
+          margin-top: -9px !important;
+          right: 0;
+          overflow: hidden !important;
+        }
+        .orbVb > ._m::before {
+          display: block;
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 28px;
+          height: 24px;
+          margin-top: -12px;
+          border: 1px solid;
+          border-radius: 50%;
+        }
+        .orbVb > ._m::after {
+          display: block;
+          content: "";
+          position: absolute;
+          right: 4px;
+          top: 50%;
+          width: 14px;
+          height: 14px;
+          margin-top: -7px;
+          border: 1px solid;
+          border-radius: 50%;
+        }
+        /* Flags*/
+        .orbF {
+          padding: 0 0 10px 10px !important;
+          border-top: 1px solid;
+          display: -ms-flexbox;
+          display: -webkit-box;
+          display: flex;
+          -ms-flex-flow: row nowrap !important;
+          flex-flow: row nowrap !important;
+        }
+        .orbFl {
+          margin: 0 !important;
+          padding: 0 !important;
+          list-style: none !important;
+        }
+        .orbFli,
+        .orbFh {
+          display: inline-block !important;
+          vertical-align: top !important;
+          line-height: 18px !important;
+          white-space: nowrap !important;
+          margin: 10px 7px 0 0 !important;
+          padding: 0 6px 0 0 !important;
+          text-indent: 0 !important;
+          list-style: none !important;
+          font-size: 11px !important;
+          text-align: right;
+        }
+        .orbFlif {
+          float: left !important;
+          width: 27px !important;
+          height: 18px !important;
+          margin-right: 5px !important;
+        }
+        .orbFhi {
+          position: relative !important;
+          display: inline-block !important;
+          vertical-align: baseline !important;
+          width: 8px !important;
+          height: 9px !important;
+          margin: 0 8px 0 5px !important;
+          border-style: solid !important;
+          border-width: 2px 1px 0 1px !important;
+          border-radius: 5px 5px 0 0 !important;
+          opacity: 0.5;
+        }
+        .orbFhi::before,
+        .orbFhi::after {
+          display: block;
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          width: 0;
+          height: 3px;
+          border-style: solid;
+          border-width: 2px;
+          border-radius: 3px;
+        }
+        .orbFhi::before {
+          left: -4px;
+        }
+        .orbFhi::after {
+          right: -4px;
+        }
+        /* Multiselect */
+        .orbPm {
+          margin: 0 !important;
+          padding: 0 !important;
+          list-style: none !important;
+        }
+        .orbPmi {
+          position: relative;
+          margin: 0 !important;
+          padding: 10px !important;
+          list-style: none !important;
+          border: dotted rgba(204, 204, 204, 0.5);
+          border-width: 1px 0 0;
+          font-size: 12px !important;
+          overflow: hidden;
+          white-space: nowrap;
+          line-height: 1 !important;
+          cursor: pointer;
+        }
+        .orbPmi::before {
+          display: block;
+          content: "";
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          right: 10px;
+          margin-top: -8px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 8px 0 8px 13px;
+          opacity: 0.5;
+          filter: alpha(opacity=50);
+          transition: opacity 0.2s;
+        }
+        .orbPmi:hover::before {
+          opacity: 1;
+          filter: alpha(opacity=100);
+        }
+        .orbPmi::after {
+          display: block;
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          width: 36px;
+        }
+        .orbPmii {
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 10px;
+          width: 30px;
+          height: 16px;
+          border: none !important;
+          border-radius: 2px !important;
+        }
+        .orbPmin {
+          display: inline-block;
+          vertical-align: middle;
+        }
+
+        /* Compact General */
+        .cmpct .orbPti {
+          height: 24px !important;
+          width: 44px !important;
+        }
+        .cmpct .orbPtn {
+          line-height: 12px !important;
+          font-size: 12px !important;
+        }
+        .cmpct .orbPtt {
+          line-height: 12px !important;
+          font-size: 10px !important;
+        }
+        .cmpct .orbPp,
+        .cmpct .orbPs {
+          height: 24px !important;
+          width: 24px !important;
+          line-height: 24px !important;
+        }
+        .cmpct .orbPp::before {
+          border-width: 8px 0 8px 13px !important;
+        }
+        .cmpct .orbPs::before {
+          border-width: 8px !important;
+        }
+        /* Compact w/Playlist */
+        .cmpct .orbPpli > a,
+        .cmpct .orbPpli > span {
+          line-height: 24px !important;
+          font-size: 12px !important;
+        }
+        .cmpct .orbPpli > a > time,
+        .cmpct .orbPpli > span > time {
+          font-size: 11px !important;
+        }
+      </style>
+      <style media="screen" id="orb_player_1937fee67e287d3d_settings">
+         .orbP {
+           background-color: #715cbb !important;
+         } /*common player background*/
+         .orbP {
+           border: none;
+         } /*common player container border, radius, width*/
+         .orbP.cmpct {
+         position: fixed;
+         bottom: 0;
+         left: 0;
+         width: 100%;
+         background-color: #715cbb; /* Můžete upravit barvu podle svých preferencí */
+         z-index: 9999; /* Zajišťuje, že bude navrchu ostatního obsahu */
+         text-align: center; /* Ustřední obsah v přehrávači */
+        }
+         .orbPp,
+         .orbPs {
+           background: #715cbb !important;
+         } /*buttons play/stop bg*/
+         .orbPp::before {
+           border-color: transparent transparent transparent #ffffff !important;
+         } /* play button color */
+         .orbPs::before {
+           border-color: #ffffff !important;
+         } /* stop button color */
+         .orbPtn,
+         .orbPtt,
+         .orbPtt:hover {
+           color: #ffffff !important;
+         } /*station name & track link color*/
+         .orbV {
+           background-color: #715cbb !important;
+           box-shadow: 0 0 32px 32px #715cbb !important;
+         } /*volume control color */
+         .orbVC::after,
+         .orbVb::after {
+           border-color: transparent #ffffff transparent transparent !important;
+         }
+         .orbVb::before,
+         .orbVCs {
+           background: #ffffff !important;
+         } /* volume bg color */
+         .orbVb > ._m::before,
+         .orbVb > ._m::after {
+           border-color: #ffffff !important;
+         }
+      </style>
+
+      <div class="orbPhc" bis_skin_checked="1">
+        <a
+          class="orbPh"
+          href="https://onlineradiobox.com/cz/"
+          title="Listen on Online Radio Box!"
+          target="_blank"
+          ><img
+            src="//ecdn.onlineradiobox.com/img/wl.svg"
+            alt="Listen on Online Radio Box!"
+        /></a>
+        <audio
+          id="orb_player_1937fee67e287d3d_p"
+          crossorigin="true"
+          style="width: 1px; height: 1px; overflow: hidden; position: absolute"
+        ></audio>
+
+        <button
+          class="orbPp"
+          title="Poslouchej živě"
+          country="cz"
+          alias="evropa2"
+          stream="1"
+        ></button>
+        <a
+          class="orbPt"
+          href="https://onlineradiobox.com/cz/evropa2/"
+          target="_blank"
+        >
+          <img
+            class="orbPti"
+            src="//cdn.onlineradiobox.com/img/l/0/17560.v8.png"
+            alt="Evropa 2"
+          />
+          <span class="orbPtn">Evropa 2</span>
+        </a>
+        <span
+          class="orbPtt"
+          loading="načítání"
+          playing="hraje"
+          error="chyba přehrávání"
+          not_supported="this browser can't play it"
+          external="Poslouchejte nyní (otevře se v přehrávači v novém okně)"
+          geo_blocked="Není dostupné ve vaší zemi"
+        ></span>
+        <div class="orbV" bis_skin_checked="1">
+          <div class="orbVb" bis_skin_checked="1"><i class="_m"></i></div>
+          <div class="orbVC" bis_skin_checked="1">
+            <div class="orbVCs" bis_skin_checked="1"></div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        var orbp_w = orbp_w || { lang: "cs-cz" };
+        orbp_w.cmd = orbp_w.cmd || [];
+        orbp_w.apiUrl = "https://onlineradiobox.com";
+        orbp_w.cmd.push(function () {
+          orbp_w.init("orb_player_1937fee67e287d3d");
+        });
+        var s, t;
+        s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//ecdn.onlineradiobox.com/js/pwidget2.min.235ca64e.js";
+        t = document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(s, t);
+      </script>
+    </div>
+    <!--OnlineRadioBox Player widget-->
+
     <script>
       let isNightMode = false;
       function toggleNightMode() {
         isNightMode = !isNightMode;
         document.body.classList.toggle("night-mode");
       }
+      src =
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js";
     </script>
   </body>
 </html>

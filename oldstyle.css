@@ -1,6 +1,8 @@
+/* styles.css */
+
 /* Základní styly */
 body {
-  background-color: #000000;
+  background-color: #282c35;
   color: #ffffff;
   font-family: Arial, sans-serif;
   text-align: center;
@@ -8,13 +10,28 @@ body {
   padding: 0;
 }
 
-
 .container {
-
+  max-width: 800px;
   margin: 0 auto;
   padding: 10px;
 }
 
+.movie-list-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #000000;
+  /* Změna barvy titulu */
+}
+
+#movieNameInput {
+  padding: 5px;
+  font-size: 14px;
+  width: 60%;
+  border: 1px solid #ccc;
+  /* Přidáme rámec kolem pole */
+  border-radius: 5px;
+  /* Zaoblené rohy pole */
+}
 
 #searchButton {
   background-color: #000000;
@@ -28,12 +45,68 @@ body {
   margin-left: 10px;
 }
 
+/* Seznam filmů */
+.movie-list-wrapper {
+  text-align: left;
+  /* Zarovnání textu v seznamu na levou stranu */
+}
+
+.movie-list-item {
+  background-color: #333;
+  /* Trochu tmavší barva pozadí */
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  /* Zvýšil jsem mezery mezi filmovými položkami */
+  color: #ffffff;
+  position: relative;
+  /* Přidáme pozici relativní pro absolutní tlačítko */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* Přidáme stín */
+  min-height: 20px;
+  /* Minimální výška položky na dvou řádcích */
+  word-wrap: break-word;
+  /* Zalomení textu na dvou řádcích */
+}
+
+.movie-list-item-title {
+  font-size: 14px;
+  margin-bottom: 5px;
+  /* Snížil jsem mezery pod názvem položky */
+}
+
+.movie-list-item-button {
+  position: absolute;
+  bottom: 5px;
+  /* Umístíme tlačítko na spodní část položky */
+  right: 10px;
+  /* Umístíme tlačítko na pravý dolní roh */
+  background-color: #000000;
+  border: none;
+  color: white;
+  padding: 5px 5px;
+  /* Menší velikost tlačítka */
+  font-size: 11px;
+  /* Menší fontová velikost tlačítka */
+  cursor: pointer;
+  border-radius: 10px;
+  /* Zaoblené rohy tlačítka */
+}
+
+/* Styl pro <p> element */
+p {
+  font-size: 16px;
+  color: #ffffff;
+  /* Barva textu (černá) */
+}
+
 /* Styl pro odkaz <a> uvnitř <p> elementu */
 p a {
   text-decoration: none;
   /* Odkazy bez podtržení */
   color: #000000;
-  /* Barva odkazu */
+  /* Barva odkazu (modrá) */
   font-weight: bold;
   /* Tučné písmo pro odkaz */
   transition: color 0.3s, font-size 0.3s;
@@ -48,13 +121,41 @@ p a:hover {
   /* Zvýšení velikosti písma na 18px */
 }
 
-.card-text {
-  font-size: 18px;
-  margin: 20px;
+.button-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  justify-content: flex-end;
 }
 
+.button-container a,
+.button-container button {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+  background: none;
+  /* Odstranění pozadí */
+  border: none;
+  /* Odstranění rámečku */
+  padding: 0;
+  /* Odstranění vnitřního odsazení */
+  outline: none;
+  /* Odstranění modrého pozadí po stisknutí */
+}
 
-
+.button-container a:hover,
+.button-container button:hover {
+  background: none;
+  /* Odstranění pozadí */
+  color: #ffffff;
+}
 
 /* Denní režim */
 body:not(.night-mode) .card {
@@ -65,7 +166,7 @@ body:not(.night-mode) .card {
 /* Noční režim */
 .night-mode .body {
   margin: 1em;
-  background-color: rgb(0, 0, 0);
+  background-color: white;
   /* Černé pozadí v nočním režimu */
   color: black;
   /* Bílá barva textu v nočním režimu */
@@ -74,26 +175,19 @@ body:not(.night-mode) .card {
 /* Barva pozadí pro nadpisy karet v nočním režimu */
 @media (prefers-color-scheme: dark) {
   .card-header {
-    background-color: #000000;
+    background-color: #333;
     /* Barva pozadí pro nadpisy karet v nočním režimu */
   }
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #000000;
-
-  }
-
-  p {
-    font-size: 16px;
-    margin: 10px;
-
+    background-color: #1f1f1f;
+    color: white;
   }
 
   .card-header {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #2f2f2f;
   }
 
   body:not(.night-mode) .card {
@@ -102,28 +196,28 @@ body:not(.night-mode) .card {
   }
 
   /* Styly pro černé pozadí .card-body v nočním režimu */
-  body.night-mode .card {
-    background-color: #000000;
-    color: #000000;
+  body.night-mode .card-body {
+    background-color: #1f1f1f;
+    /* Černé pozadí pro .card-body v nočním režimu */
   }
 
   .jumbotron {
-    background-color: #000000;
+    background-color: #2f2f2f;
   }
 
   .list-group-item {
-    background-color: #000000;
-    border-color: #000000;
+    background-color: #1f1f1f;
+    border-color: #2f2f2f;
   }
 
   html.can-touch .link-item:hover {
     /* disable hover effect when input is touch */
-    background-color: #000000;
+    background-color: #1f1f1f;
   }
 
   html.can-touch .link-item:active {
     /* disable hover effect when input is touch */
-    background-color: #000000;
+    background-color: #1f1f1f;
   }
 }
 
@@ -146,14 +240,13 @@ body:not(.night-mode) .card {
   /* zachovává poměr stran pro zachování kvality */
   position: absolute;
   /* Použijte absolutní pozici pro přesné umístění */
-  top: -10px;
+  top: 10px;
   /* Vzdálenost od horního okraje stránky (upravte podle potřeby) */
-  left: -20px;
+  left: -900px;
   /* Vzdálenost od levého okraje stránky (upravte podle potřeby) */
 }
 
-
-/* Nové styly */
+/* new css */
 .header {
   background-image: linear-gradient(to right, #667eea, #764ba2);
   transition: background-color 0.3s ease;
@@ -163,9 +256,7 @@ body:not(.night-mode) .card {
   background-color: #ff9900;
 }
 
-
 .social-icon {
-  margin-right: 10px;
   font-size: 24px;
   color: #333;
   transition: color 0.3s ease;
@@ -176,55 +267,23 @@ body:not(.night-mode) .card {
 }
 
 body:not(.night-mode) .card {
-  background-color: #000000;
+  background-color: #1f1f1f;
   /* Bílé pozadí pro karty pouze v denním režimu */
 }
 
 .custom-btn {
   background-image: linear-gradient(to right, #667eea, #764ba2);
-  color: rgb(255, 255, 255);
-  border-radius: 5px;
-  text-decoration: none;
-  /* Odstraní podtržení textu */
-  align-items: center;
-  padding: 10px;
-
-
-
-}
-
-.custom-btn:hover {
-  background-image: linear-gradient(to right, #667eea, #764ba2);
-  color: black;
-  text-decoration: none;
-  /* Odstraní podtržení textu */
-  align-items: center;
-  padding: 10px;
-
-
+  color: white;
+  border: none;
 }
 
 /* Styly pro černé pozadí .card-body v nočním režimu */
-body.night-mode .card {
+body.night-mode .card-body {
   background-color: #fff;
   /* Černé pozadí pro .card-body v nočním režimu */
 }
 
-div .card {
-
-  width: 200px;
-  /* Nastavte požadovanou maximální šířku */
-  margin: 0 auto;
-  /* Zarovná tělo do středu karty */
-}
-
-.card-title {
-  margin: 5px;
-
-}
-
 .card {
-
   transition: transform 0.3s ease;
   background-color: #f0f0f0;
   border: 1px solid #ddd;
@@ -257,7 +316,7 @@ div .card {
   background-color: #ddd;
   border-radius: 5px;
   text-decoration: none;
-  color: #000000;
+  color: #333;
   transition: background-color 0.3s;
 }
 
@@ -276,90 +335,4 @@ div .card {
 .nightModeButton {
   margin-right: 20px;
   /* Změňte tuto hodnotu podle vašich potřeb */
-}
-
-div.col-md-4 {
-
-  margin-bottom: 20px;
-}
-
-.row {
-  margin: 20px;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* Tři sloupce se stejnou šířkou */
-  gap: 20px;
-  /* Mezera mezi kartami */
-  justify-items: center;
-  /* Zarovná kartu na střed v rámci sloupce */
-}
-
-/* Media query pro menší šířku okna */
-@media (max-width: 710px) {
-
-  /* Změna uspořádání karet na jeden a půl sloupce */
-  .row {
-    grid-template-columns: repeat(1, 1fr);
-    /* Jeden a půl sloupce */
-  }
-
-  /* Skrytí logo */
-  .custom-logo {
-    display: none;
-  }
-
-  /* Další styly pro karty v režimu s jedním a půl sloupce */
-  .card {
-    margin-bottom: 10px;
-    width: calc(50% - 10px);
-    /* Karta bude zabírat polovinu šířky s mezerou mezi nimi */
-  }
-}
-
-h2 {
-  margin: 10px;
-}
-
-h5 {
-  font-size: 20px;
-}
-
-.button-odkazy {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 400px;
-  box-sizing: border-box;
-  margin-top: 20px;
-  /* Posune obsah dolů o 20px */
-  margin-left: 20px;
-}
-
-.button-odkazy a,
-.button-odkazy button {
-  margin-left: 10px;
-  text-decoration: none;
-  color: #333;
-  transition: color 0.3s;
-  background: none;
-  /* Odstranění pozadí */
-  border: none;
-  /* Odstranění rámečku */
-  padding: 0;
-  /* Odstranění vnitřního odsazení */
-  outline: none;
-  /* Odstranění modrého pozadí po stisknutí */
-}
-
-.button-odkazy a:hover,
-.button-odkazy button:hover {
-  background: none;
-  /* Odstranění pozadí */
-  color: #ffffff;
 }

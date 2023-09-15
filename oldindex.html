@@ -5,24 +5,19 @@
     <div class="button-container">
       <img src="icons/logo.PNG" alt="Logo CaseyCZ" class="custom-logo" />
       <a href="/index.html" class="btn btn-primary">Domů</a>
-      <a href="/Webshare.html" class="btn btn-primary">Webshare</a>
+      <a href="/webshare.html" class="btn btn-primary">Webshare</a>
       <a href="/livescore.html" class="btn btn-primary">Livescore</a>
       <a href="/oldindex.html" class="btn btn-primary">Kontakt</a>
       <div style="text-align: center; margin-top: 0px;">
         <p style="text-align: center; margin: 0;">
-          <a
-            onclick="toggleNightMode();"
-            role="button"
-            style="display: inline-block; width: 24px; height: 24px;"
-          >
+          <a onclick="toggleNightMode();" role="button">
             <img
               width="24"
               height="24"
               src="./icons/DarkMode-Light.png"
               id="toggleDark"
               alt="Toggle Mode"
-              style="display: block;"
-              loading="lazy"
+              style="display: inline-block;"
             />
           </a>
         </p>
@@ -88,7 +83,7 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
         crossorigin="anonymous"
       />
-      <link rel="stylesheet" href="livescore.css" />
+      <link rel="stylesheet" href="oldstyle.css" />
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -124,6 +119,7 @@
               transition: transform 0.3s ease;
               background-color: #f0f0f0;
               border: 1px solid #ddd;
+              margin-bottom: 20px; /* Přidá mezeru mezi kartami */
             }
             .card:hover {
               transform: scale(1.05);
@@ -183,77 +179,135 @@
           href="https://twitter.com/Searcasey"
           target="_blank"
           class="mr-3 social-icon"
-          aria-hidden="true"
-          ><i class="fab fa-twitter" loading="lazy"></i
-          ><span class="sr-only">Odkaz na mé Twitterové konto</span></a
-        >
+          ><i class="fab fa-twitter"></i
+        ></a>
         <a
           href="https://www.youtube.com/channel/UCTT4ob7-2lkjdQf3yuqrjDw"
           target="_blank"
           class="mr-3 social-icon"
-          aria-hidden="true"
-          ><i class="fab fa-youtube" loading="lazy"></i
-          ><span class="sr-only">Odkaz na můj YouTube kanál</span></a
-        >
+          ><i class="fab fa-youtube"></i
+        ></a>
         <a
           href="https://www.reddit.com/user/CaseyCZ"
           target="_blank"
           class="mr-3 social-icon"
-          aria-hidden="true"
-          ><i class="fab fa-reddit" loading="lazy"></i
-          ><span class="sr-only">Odkaz na mé Reddit konto</span></a
-        >
+          ><i class="fab fa-reddit"></i
+        ></a>
         <a
           href="https://github.com/CaseyCZ"
           target="_blank"
           class="mr-3 social-icon"
-          aria-hidden="true"
-          ><i class="fab fa-github" loading="lazy"></i
-          ><span class="sr-only">Odkaz na mé GitHub konto</span></a
-        >
+          ><i class="fab fa-github"></i
+        ></a>
         <a
           href="https://www.facebook.com/CaseyCZ"
           target="_blank"
           class="mr-3 social-icon"
-          aria-hidden="true"
-          ><i class="fab fa-facebook" loading="lazy"></i
-          ><span class="sr-only">Odkaz na mé Facebook konto</span></a
-        >
+          ><i class="fab fa-facebook"></i
+        ></a>
         <a
           href="https://www.xbox.com/gamertag/CaseyCZ"
           target="_blank"
           class="mr-3 social-icon"
-          aria-hidden="true"
-          ><i class="fab fa-xbox" loading="lazy"></i
-          ><span class="sr-only">Odkaz na mé Xbox konto</span></a
-        >
+          ><i class="fab fa-xbox"></i
+        ></a>
       </div>
     </header>
-    <iframe
-      src="https://www.scorebat.com/embed/livescore/"
-      frameborder="0"
-      width="600"
-      height="760"
-      allowfullscreen
-      allow="autoplay; fullscreen"
-      style="width:100%; height:760px; overflow:hidden; display:block;"
-      class="_scorebatEmbeddedPlayer_"
-    ></iframe>
+    <div class="container text-center my-5">
+      <h2>Novinky</h2>
+      <p>Zde naleznete aktuální novinky o mých projektech a aktivitách.</p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Work</h5>
+              <p class="card-text">SAP-Excel-HTML</p>
+              <a href="work.html" class="btn btn-xs custom-btn"
+                >Více informací</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Produkty</h5>
+              <p class="card-text">Apple,Microsoft</p>
+              <a
+                href="depictions/?p=com.supermamon.oldpackage"
+                class="btn btn-xs custom-btn"
+                >Více informací</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Sport</h5>
+              <p class="card-text">Florbal,Hokejbal</p>
+              <a
+                href="depictions/?p=com.supermamon.newpackage"
+                class="btn btn-xs custom-btn"
+                >Více informací</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container text-center my-5">
+      <h2>Featured Packages</h2>
+      <p>Zde jsou zvýrazněné balíčky a projekty, na kterých pracuji.</p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Fotbal</h5>
+              <p class="card-text">Slovan Liberec U7.</p>
+              <a
+                href="depictions/?p=com.CaseyCZ.Cocoatop"
+                class="btn btn-xs custom-btn"
+                >Více informací</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Hry</h5>
+              <p class="card-text">Xbox - Pc</p>
+              <a
+                href="depictions/?p=com.CaseyCZ.Cocoatop"
+                class="btn btn-xs custom-btn"
+                >Více informací</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Dron</h5>
+              <p class="card-text">Mavic Mini</p>
+              <a
+                href="depictions/?p=com.CaseyCZ.Cocoatop"
+                class="btn btn-xs custom-btn"
+                >Více informací</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
     <script>
       let isNightMode = false;
       function toggleNightMode() {
         isNightMode = !isNightMode;
         document.body.classList.toggle("night-mode");
       }
-      (function (d, s, id) {
-        var js,
-          fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "https://www.scorebat.com/embed/embed.js?v=arrv";
-        fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "scorebat-jssdk");
     </script>
   </body>
 </html>

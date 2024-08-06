@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline' 'unsafe-eval' http://ecdn.onlineradiobox.com;"
+    />
+    <meta
+      name="description"
+      content="Vítejte na mé osobní stránce, kde se můžete dozvědět více o mně, mých zájmech a projektech."
+    />
+    <meta charset="UTF-8" />
+    <title>CaseyCZ</title>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="icons/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="icons/favicon-16x16.png"
+    />
+    <link rel="manifest" href="icons/site.webmanifest" />
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#a124d0" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="icons/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="icons/android-chrome-512x512.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="150x150"
+      href="icons/mstile-150x150.png"
+    />
+    <meta name="msapplication-config" content="icons/browserconfig.xml" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="button-odkazy">
+      <a href="/index.html" class="btn btn-primary">Domů</a>
+      <a href="/webshare.html" class="btn btn-primary">Webshare</a>
+      <a href="/livescore.html" class="btn btn-primary">Livescore</a>
+      <a href="/oldindex.html" class="btn btn-primary">Kontakt</a>
+      <div style="text-align: center; margin-top: 0px">
+        <div style="text-align: center; margin: 0">
+          <a onclick="toggleNightMode();" role="button">
+            <img
+              width="24"
+              height="24"
+              src="./icons/DarkMode-Light.png"
+              id="toggleDark"
+              alt="Toggle Mode"
+              style="display: inline-block"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+    <header class="header text">
+      <div class="container">
+        <img src="icons/logo.PNG" alt="Logo CaseyCZ" class="custom-logo" />
+        <h1 class="text-white">Lukáš Kysela</h1>
+        <p class="text-white">Vítejte na mé stránce</p>
+      </div>
+    </header>
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Packing List Aplikace</title>
+      <style>
+          /* Původní CSS styly zůstávají nezměněny */
+          /* ... */
+  
+          .category-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+          }
+  
+          .category-actions {
+              display: flex;
+              gap: 10px;
+          }
+  
+          .category-count {
+              font-size: 14px;
+              color: #666;
+          }
+  
+          .delete-category, .delete-item {
+              background-color: #ff4d4d;
+              color: white;
+              border: none;
+              padding: 5px 10px;
+              border-radius: 4px;
+              cursor: pointer;
+          }
+  
+          .delete-category:hover, .delete-item:hover {
+              background-color: #ff3333;
+          }
+  
+          #add-category {
+              margin-top: 20px;
+              display: flex;
+              gap: 10px;
+          }
+  
+          #add-category input {
+              flex: 1;
+              padding: 10px;
+              font-size: 16px;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+          }
+  
+          #add-category button {
+              padding: 10px 20px;
+              font-size: 16px;
+              background-color: #4CAF50;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+          }
+  
+          #add-category button:hover {
+              background-color: #45a049;
+          }
+      </style>
+  </head>
+  
+  <body>
+      <div class="app-container">
+          <h1 id="app-title">Seznam na Cesty</h1>
+          <div class="trip-name">
+              <input type="text" id="trip-name-input" placeholder="Název cesty" value="Portugalsko" style="width: 100%; padding: 10px;">
+          </div>
+  
+          <div class="language-switcher">
+              <button class="active" onclick="switchLanguage('cs')">Česky</button>
+              <button onclick="switchLanguage('en')">English</button>
+              <button onclick="switchLanguage('de')">Deutsch</button>
+          </div>
+  
+          <div id="categories-container">
+              <!-- Kategorie budou dynamicky přidávány pomocí JavaScriptu -->
+          </div>
+  
+          <div id="add-category">
+              <input type="text" id="new-category-name" placeholder="Název nové kategorie">
+              <button onclick="addCategory()">Přidat kategorii</button>
+          </div>
+      </div>
+  
+      <script>
+          const translations = {
+              cs: {
+                  "app-title": "Seznam na Cesty",
+                  "trip-name-placeholder": "Název cesty",
+                  "new-item-placeholder": "Nová položka...",
+                  "add-button": "Přidat",
+                  "delete-button": "Smazat",
+                  "add-category-placeholder": "Název nové kategorie",
+                  "add-category-button": "Přidat kategorii"
+              },
+              en: {
+                  "app-title": "Packing List",
+                  "trip-name-placeholder": "Trip Name",
+                  "new-item-placeholder": "New item...",
+                  "add-button": "Add",
+                  "delete-button": "Delete",
+                  "add-category-placeholder": "New category name",
+                  "add-category-button": "Add category"
+              },
+              de: {
+                  "app-title": "Packliste",
+                  "trip-name-placeholder": "Reisenname",
+                  "new-item-placeholder": "Neuer Gegenstand...",
+                  "add-button": "Hinzufügen",
+                  "delete-button": "Löschen",
+                  "add-category-placeholder": "Neuer Kategoriename",
+                  "add-category-button": "Kategorie hinzufügen"
+              }
+          };
+  
+          let currentLanguage = 'cs';
+  
+          const initialCategories = [
+              {
+                  id: 'essentials',
+                  name: 'Základní Věci',
+                  items: [
+                      { text: 'Pas', checked: false },
+                      { text: 'Občanský průkaz', checked: false },
+                      { text: 'Hotovost / Cizí měna', checked: false },
+                      { text: 'Kreditní a debetní karty', checked: false },
+                      { text: 'Peněženka', checked: false },
+                      { text: 'Itinerář', checked: false },
+                      { text: 'Kopie dokumentů / ID / Lístků', checked: false },
+                      { text: 'Rezervace ubytování a kontaktní informace', checked: false },
+                      { text: 'Opasek na peníze', checked: false }
+                  ]
+              },
+              {
+                  id: 'clothing',
+                  name: 'Oblečení',
+                  items: [
+                      { text: 'Trička', checked: false },
+                      { text: 'Kalhoty', checked: false },
+                      { text: 'Ponožky', checked: false },
+                      { text: 'Spodní prádlo', checked: false },
+                      { text: 'Bunda', checked: false }
+                  ]
+              },
+              {
+                  id: 'toiletries',
+                  name: 'Toaletní Potřeby',
+                  items: [
+                      { text: 'Zubní kartáček', checked: false },
+                      { text: 'Zubní pasta', checked: false },
+                      { text: 'Floss', checked: false },
+                      { text: 'Deodorant', checked: false }
+                  ]
+              },
+              {
+                  id: 'gadgets',
+                  name: 'Elektronika',
+                  items: [
+                      { text: 'Telefon', checked: false },
+                      { text: 'Nabíječka', checked: false },
+                      { text: 'Sluchátka', checked: false },
+                      { text: 'Notebook', checked: false },
+                      { text: 'Powerbanka', checked: false }
+                  ]
+              },
+              {
+                  id: 'health',
+                  name: 'Zdraví a Léky',
+                  items: [
+                      { text: 'Léky', checked: false },
+                      { text: 'Náplasti', checked: false },
+                      { text: 'Dezinfekční gel', checked: false },
+                      { text: 'Očkovací průkaz', checked: false }
+                  ]
+              }
+          ];
+  
+          let categories = [...initialCategories];
+  
+          function renderCategories() {
+              const container = document.getElementById('categories-container');
+              container.innerHTML = '';
+  
+              categories.forEach(category => {
+                  const categoryElement = createCategoryElement(category);
+                  container.appendChild(categoryElement);
+              });
+          }
+  
+          function createCategoryElement(category) {
+              const categoryDiv = document.createElement('div');
+              categoryDiv.className = 'category';
+              categoryDiv.id = category.id;
+  
+              const headerDiv = document.createElement('div');
+              headerDiv.className = 'category-header';
+  
+              const heading = document.createElement('h2');
+              heading.onclick = () => toggleCategory(category.id);
+              heading.innerHTML = `${category.name} <span class="category-count">(0/${category.items.length})</span> <span>+</span>`;
+  
+              const actionsDiv = document.createElement('div');
+              actionsDiv.className = 'category-actions';
+  
+              const deleteButton = document.createElement('button');
+              deleteButton.className = 'delete-category';
+              deleteButton.textContent = translations[currentLanguage]["delete-button"];
+              deleteButton.onclick = () => deleteCategory(category.id);
+  
+              actionsDiv.appendChild(deleteButton);
+              headerDiv.appendChild(heading);
+              headerDiv.appendChild(actionsDiv);
+  
+              const list = document.createElement('ul');
+              list.id = `${category.id}-list`;
+              list.className = 'open';
+  
+              category.items.forEach(item => {
+                  const li = createListItem(item, category.id);
+                  list.appendChild(li);
+              });
+  
+              const addItemDiv = document.createElement('div');
+              addItemDiv.className = 'add-item';
+              addItemDiv.innerHTML = `
+                  <input type="text" id="new-item-${category.id}" placeholder="${translations[currentLanguage]["new-item-placeholder"]}">
+                  <button onclick="addItem('${category.id}')">${translations[currentLanguage]["add-button"]}</button>
+              `;
+  
+              categoryDiv.appendChild(headerDiv);
+              categoryDiv.appendChild(list);
+              categoryDiv.appendChild(addItemDiv);
+  
+              return categoryDiv;
+          }
+  
+          function createListItem(item, categoryId) {
+              const li = document.createElement('li');
+              li.innerHTML = `
+                  <input type="checkbox" ${item.checked ? 'checked' : ''} onchange="toggleComplete(this, '${categoryId}')">
+                  <span>${item.text}</span>
+                  <button class="delete-item" onclick="deleteItem(this, '${categoryId}')">${translations[currentLanguage]["delete-button"]}</button>
+              `;
+              if (item.checked) {
+                  li.classList.add('completed');
+              }
+              return li;
+          }
+  
+          function switchLanguage(language) {
+              currentLanguage = language;
+              document.querySelectorAll('.language-switcher button').forEach(button => {
+                  button.classList.remove('active');
+              });
+              document.querySelector(`.language-switcher button[onclick="switchLanguage('${language}')"]`).classList.add('active');
+  
+              const langData = translations[language];
+  
+              document.getElementById('app-title').textContent = langData["app-title"];
+              document.getElementById('trip-name-input').placeholder = langData["trip-name-placeholder"];
+              document.getElementById('new-category-name').placeholder = langData["add-category-placeholder"];
+              document.querySelector('#add-category button').textContent = langData["add-category-button"];
+  
+              categories.forEach(category => {
+                  const categoryElement = document.getElementById(category.id);
+                  if (categoryElement) {
+                      const addItemInput = categoryElement.querySelector('.add-item input');
+                      const addItemButton = categoryElement.querySelector('.add-item button');
+                      const deleteButton = categoryElement.querySelector('.delete-category');
+  
+                      addItemInput.placeholder = langData["new-item-placeholder"];
+                      addItemButton.textContent = langData["add-button"];
+                      deleteButton.textContent = langData["delete-button"];
+  
+                      const deleteItemButtons = categoryElement.querySelectorAll('.delete-item');
+                      deleteItemButtons.forEach(button => {
+                          button.textContent = langData["delete-button"];
+                      });
+                  }
+              });
+  
+              updateCategoryCounts();
+          }
+  
+          function toggleComplete(checkbox, categoryId) {
+              const listItem = checkbox.parentElement;
+              listItem.classList.toggle('completed');
+  
+              const category = categories.find(cat => cat.id === categoryId);
+              const itemIndex = Array.from(listItem.parentElement.children).indexOf(listItem);
+              category.items[itemIndex].checked = checkbox.checked;
+  
+              updateCategoryCount(categoryId);
+              checkAllItemsPacked();
+          }
+  
+          function addItem(categoryId) {
+              const inputId = `new-item-${categoryId}`;
+              const input = document.getElementById(inputId);
+              const itemText = input.value.trim();
+  
+              if (itemText !== '') {
+                  const category = categories.find(cat => cat.id === categoryId);
+                  category.items.push({ text: itemText, checked: false });
+  
+                  const list = document.getElementById(`${categoryId}-list`);
+                  const listItem = createListItem({ text: itemText, checked: false }, categoryId);
+                  list.appendChild(listItem);
+  
+                  input.value = '';
+                  updateCategoryCount(categoryId);
+              }
+          }
+  
+          function deleteItem(button, categoryId) {
+              const listItem = button.parentElement;
+              const list = listItem.parentElement;
+              const itemIndex = Array.from(list.children).indexOf(listItem);
+  
+              const category = categories.find(cat => cat.id === categoryId);
+              category.items.splice(itemIndex, 1);
+  
+              list.removeChild(listItem);
+              updateCategoryCount(categoryId);
+          }
+  
+          function toggleCategory(categoryId) {
+              const list = document.getElementById(`${categoryId}-list`);
+              const isOpen = list.classList.toggle('open');
+              const categoryHeader = document.querySelector(`#${categoryId} h2`);
+              const toggleSymbol = categoryHeader.querySelector('span:last-child');
+  
+              toggleSymbol.textContent = isOpen ? '-' : '+';
+          }
+  
+          function addCategory() {
+              const input = document.getElementById('new-category-name');
+              const categoryName = input.value.trim();
+  
+              if (categoryName !== '') {
+                  const categoryId = 'category-' + Date.now();
+                  const newCategory = {
+                      id: categoryId,
+                      name: categoryName,
+                      items: []
+                  };
+  
+                  categories.push(newCategory);
+                  const categoryElement = createCategoryElement(newCategory);
+                  document.getElementById('categories-container').appendChild(categoryElement);
+  
+                  input.value = '';
+              }
+          }
+  
+          function deleteCategory(categoryId) {
+              categories = categories.filter(category => category.id !== categoryId);
+              const categoryElement = document.getElementById(categoryId);
+              categoryElement.parentElement.removeChild(categoryElement);
+          }
+  
+          function updateCategoryCount(categoryId) {
+              const category = categories.find(cat => cat.id === categoryId);
+              const checkedItems = category.items.filter(item => item.checked).length;
+              const totalItems = category.items.length;
+  
+              const countSpan = document.querySelector(`#${categoryId} .category-count`);
+              countSpan.textContent = `(${checkedItems}/${totalItems})`;
+  
+              checkAllItemsPacked();
+          }
+  
+          function updateCategoryCounts() {
+              categories.forEach(category => {
+                  updateCategoryCount(category.id);
+              });
+          }
+  
+          function checkAllItemsPacked() {
+              const allPacked = categories.every(category => 
+                  category.items.length > 0 && category.items.every(item => item.checked)
+              );
+  
+              document.querySelectorAll('.add-item').forEach(addItemDiv => {
+                  addItemDiv.style.display = allPacked ? 'none' : 'block';
+              });
+          }
+  
+          // Initialize
+          renderCategories();
+          switchLanguage('cs');
+      </script>
+  </body>
+
+    <script>
+      let isNightMode = false;
+      function toggleNightMode() {
+        isNightMode = !isNightMode;
+        document.body.classList.toggle("night-mode");
+      }
+      src =
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js";
+    </script>
+    <footer class="footer">
+      <div class="social-items">
+        <a
+          href="https://twitter.com/Searcasey"
+          target="_blank"
+          class="mr-3 social-icon"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a
+          href="https://www.youtube.com/channel/UCTT4ob7-2lkjdQf3yuqrjDw"
+          target="_blank"
+          class="mr-3 social-icon"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a
+          href="https://www.reddit.com/user/CaseyCZ"
+          target="_blank"
+          class="mr-3 social-icon"
+          ><i class="fab fa-reddit"></i
+        ></a>
+        <a
+          href="https://github.com/CaseyCZ"
+          target="_blank"
+          class="mr-3 social-icon"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a
+          href="https://www.facebook.com/CaseyCZ"
+          target="_blank"
+          class="mr-3 social-icon"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a
+          href="https://xboxgamertag.com/search/CaseyCZ"
+          target="_blank"
+          class="mr-3 social-icon"
+          ><i class="fab fa-xbox"></i
+        ></a>
+      </div>
+      <ul class="list">
+        <li>
+          <a href="index.html">Domů</a>
+        </li>
+        <li>
+          <a href="index.html">Services</a>
+        </li>
+        <li>
+          <a href="index.html">About</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

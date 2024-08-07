@@ -93,70 +93,69 @@
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Packing List Aplikace</title>
+      <title>Checklist</title>
       <style>
-          /* Původní CSS styly zůstávají nezměněny */
-          /* ... */
-  
+          body {
+              font-family: Arial, sans-serif;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              min-height: 100vh;
+              margin: 0;
+              background-color: #f0f0f0;
+          }
+          .app-container {
+              background-color: white;
+              padding: 20px;
+              border-radius: 8px;
+              box-shadow: 0 0 10px rgba(0,0,0,0.1);
+              max-width: 600px;
+              width: 100%;
+          }
+          .category {
+              margin-bottom: 20px;
+          }
           .category-header {
               display: flex;
               justify-content: space-between;
               align-items: center;
-          }
-  
-          .category-actions {
-              display: flex;
-              gap: 10px;
-          }
-  
-          .category-count {
-              font-size: 14px;
-              color: #666;
-          }
-  
-          .delete-category, .delete-item {
-              background-color: #ff4d4d;
-              color: white;
-              border: none;
-              padding: 5px 10px;
-              border-radius: 4px;
               cursor: pointer;
           }
-  
-          .delete-category:hover, .delete-item:hover {
-              background-color: #ff3333;
+          .category-header h2 {
+              margin: 0;
           }
-  
-          #add-category {
-              margin-top: 20px;
+          .category-list {
+              display: none;
+              list-style-type: none;
+              padding: 0;
+          }
+          .category-list.open {
+              display: block;
+          }
+          .category-list li {
               display: flex;
-              gap: 10px;
+              align-items: center;
+              margin-bottom: 5px;
           }
-  
-          #add-category input {
-              flex: 1;
-              padding: 10px;
-              font-size: 16px;
-              border: 1px solid #ccc;
-              border-radius: 4px;
-          }
-  
-          #add-category button {
-              padding: 10px 20px;
-              font-size: 16px;
-              background-color: #4CAF50;
-              color: white;
+          .delete-button {
+              background: none;
               border: none;
-              border-radius: 4px;
+              color: red;
               cursor: pointer;
+              font-size: 20px;
+              transition: transform 0.3s ease;
           }
-  
-          #add-category button:hover {
-              background-color: #45a049;
+          .delete-button:hover {
+              transform: rotate(90deg);
+          }
+          .add-item {
+              margin-top: 10px;
+          }
+          .add-item input {
+              margin-right: 5px;
           }
       </style>
   </head>
-  
   <body>
       <div class="app-container">
           <h1 id="app-title">Seznam na Cesty</h1>
@@ -180,102 +179,141 @@
           </div>
       </div>
   
-      <script>
-          const translations = {
+      <script>const translations = {
               cs: {
                   "app-title": "Seznam na Cesty",
                   "trip-name-placeholder": "Název cesty",
                   "new-item-placeholder": "Nová položka...",
                   "add-button": "Přidat",
-                  "delete-button": "Smazat",
+                  "delete-button": "✖",
                   "add-category-placeholder": "Název nové kategorie",
-                  "add-category-button": "Přidat kategorii"
+                  "add-category-button": "Přidat kategorii",
+                  "categories": {
+                      "essentials": "Základní Věci",
+                      "clothing": "Oblečení",
+                      "toiletries": "Toaletní Potřeby",
+                      "gadgets": "Elektronika",
+                      "health": "Zdraví a Léky",
+                      "backpack": "Batoh",
+                      "camping": "Kempování",
+                      "swimming": "Plavání",
+                      "food": "Jídlo",
+                      "exercise": "Cvičení",
+                      "work": "Práce",
+                      "children": "Děti"
+                  },
+                  "items": {
+                      "essentials": ["Pas", "Občanský průkaz", "Hotovost / Cizí měna", "Kreditní a debetní karty", "Peněženka", "Itinerář", "Kopie dokumentů / ID / Lístků", "Rezervace ubytování a kontaktní informace", "Opasek na peníze"],
+                      "clothing": ["Trička", "Kalhoty", "Ponožky", "Spodní prádlo", "Bunda"],
+                      "toiletries": ["Zubní kartáček", "Zubní pasta", "Floss", "Deodorant"],
+                      "gadgets": ["Telefon", "Nabíječka", "Sluchátka", "Notebook", "Powerbanka"],
+                      "health": ["Léky", "Náplasti", "Dezinfekční gel", "Očkovací průkaz"],
+                      "backpack": ["Batoh", "Pláštěnka na batoh", "Organizéry"],
+                      "camping": ["Stan", "Spacák", "Karimatka", "Vařič"],
+                      "swimming": ["Plavky", "Ručník", "Opalovací krém"],
+                      "food": ["Svačina", "Láhev na vodu", "Energetické tyčinky"],
+                      "exercise": ["Sportovní oblečení", "Běžecké boty", "Fitness tracker"],
+                      "work": ["Laptop", "Nabíječka na laptop", "Vizitky", "Poznámkový blok"],
+                      "children": ["Plenky", "Vlhčené ubrousky", "Dětské oblečení", "Hračky"]
+                  }
               },
               en: {
                   "app-title": "Packing List",
                   "trip-name-placeholder": "Trip Name",
                   "new-item-placeholder": "New item...",
                   "add-button": "Add",
-                  "delete-button": "Delete",
+                  "delete-button": "✖",
                   "add-category-placeholder": "New category name",
-                  "add-category-button": "Add category"
+                  "add-category-button": "Add category",
+                  "categories": {
+                      "essentials": "Essentials",
+                      "clothing": "Clothing",
+                      "toiletries": "Toiletries",
+                      "gadgets": "Electronics",
+                      "health": "Health and Medicine",
+                      "backpack": "Backpack",
+                      "camping": "Camping",
+                      "swimming": "Swimming",
+                      "food": "Food",
+                      "exercise": "Exercise",
+                      "work": "Work",
+                      "children": "Children"
+                  },
+                  "items": {
+                      "essentials": ["Passport", "ID card", "Cash / Foreign currency", "Credit and debit cards", "Wallet", "Itinerary", "Copies of documents / ID / Tickets", "Accommodation reservations and contact information", "Money belt"],
+                      "clothing": ["T-shirts", "Pants", "Socks", "Underwear", "Jacket"],
+                      "toiletries": ["Toothbrush", "Toothpaste", "Floss", "Deodorant"],
+                      "gadgets": ["Phone", "Charger", "Headphones", "Laptop", "Power bank"],
+                      "health": ["Medications", "Band-aids", "Hand sanitizer", "Vaccination card"],
+                      "backpack": ["Backpack", "Rain cover for backpack", "Organizers"],
+                      "camping": ["Tent", "Sleeping bag", "Sleeping pad", "Camping stove"],
+                      "swimming": ["Swimwear", "Towel", "Sunscreen"],
+                      "food": ["Snacks", "Water bottle", "Energy bars"],
+                      "exercise": ["Workout clothes", "Running shoes", "Fitness tracker"],
+                      "work": ["Laptop", "Laptop charger", "Business cards", "Notebook"],
+                      "children": ["Diapers", "Wet wipes", "Children's clothes", "Toys"]
+                  }
               },
               de: {
                   "app-title": "Packliste",
-                  "trip-name-placeholder": "Reisenname",
+                  "trip-name-placeholder": "Reisename",
                   "new-item-placeholder": "Neuer Gegenstand...",
                   "add-button": "Hinzufügen",
-                  "delete-button": "Löschen",
+                  "delete-button": "✖",
                   "add-category-placeholder": "Neuer Kategoriename",
-                  "add-category-button": "Kategorie hinzufügen"
+                  "add-category-button": "Kategorie hinzufügen",
+                  "categories": {
+                      "essentials": "Grundlagen",
+                      "clothing": "Kleidung",
+                      "toiletries": "Toilettenartikel",
+                      "gadgets": "Elektronik",
+                      "health": "Gesundheit und Medizin",
+                      "backpack": "Rucksack",
+                      "camping": "Camping",
+                      "swimming": "Schwimmen",
+                      "food": "Essen",
+                      "exercise": "Sport",
+                      "work": "Arbeit",
+                      "children": "Kinder"
+                  },
+                  "items": {
+                      "essentials": ["Reisepass", "Personalausweis", "Bargeld / Fremdwährung", "Kredit- und EC-Karten", "Geldbörse", "Reiseplan", "Kopien von Dokumenten / Ausweis / Tickets", "Unterkunftsreservierungen und Kontaktinformationen", "Geldgürtel"],
+                      "clothing": ["T-Shirts", "Hosen", "Socken", "Unterwäsche", "Jacke"],
+                      "toiletries": ["Zahnbürste", "Zahnpasta", "Zahnseide", "Deodorant"],
+                      "gadgets": ["Handy", "Ladegerät", "Kopfhörer", "Laptop", "Powerbank"],
+                      "health": ["Medikamente", "Pflaster", "Handdesinfektionsmittel", "Impfpass"],
+                      "backpack": ["Rucksack", "Regenhülle für Rucksack", "Organizer"],
+                      "camping": ["Zelt", "Schlafsack", "Isomatte", "Campingkocher"],
+                      "swimming": ["Badekleidung", "Handtuch", "Sonnencreme"],
+                      "food": ["Snacks", "Wasserflasche", "Energieriegel"],
+                      "exercise": ["Sportkleidung", "Laufschuhe", "Fitness-Tracker"],
+                      "work": ["Laptop", "Laptop-Ladegerät", "Visitenkarten", "Notizbuch"],
+                      "children": ["Windeln", "Feuchttücher", "Kinderkleidung", "Spielzeug"]
+                  }
               }
           };
   
           let currentLanguage = 'cs';
   
           const initialCategories = [
-              {
-                  id: 'essentials',
-                  name: 'Základní Věci',
-                  items: [
-                      { text: 'Pas', checked: false },
-                      { text: 'Občanský průkaz', checked: false },
-                      { text: 'Hotovost / Cizí měna', checked: false },
-                      { text: 'Kreditní a debetní karty', checked: false },
-                      { text: 'Peněženka', checked: false },
-                      { text: 'Itinerář', checked: false },
-                      { text: 'Kopie dokumentů / ID / Lístků', checked: false },
-                      { text: 'Rezervace ubytování a kontaktní informace', checked: false },
-                      { text: 'Opasek na peníze', checked: false }
-                  ]
-              },
-              {
-                  id: 'clothing',
-                  name: 'Oblečení',
-                  items: [
-                      { text: 'Trička', checked: false },
-                      { text: 'Kalhoty', checked: false },
-                      { text: 'Ponožky', checked: false },
-                      { text: 'Spodní prádlo', checked: false },
-                      { text: 'Bunda', checked: false }
-                  ]
-              },
-              {
-                  id: 'toiletries',
-                  name: 'Toaletní Potřeby',
-                  items: [
-                      { text: 'Zubní kartáček', checked: false },
-                      { text: 'Zubní pasta', checked: false },
-                      { text: 'Floss', checked: false },
-                      { text: 'Deodorant', checked: false }
-                  ]
-              },
-              {
-                  id: 'gadgets',
-                  name: 'Elektronika',
-                  items: [
-                      { text: 'Telefon', checked: false },
-                      { text: 'Nabíječka', checked: false },
-                      { text: 'Sluchátka', checked: false },
-                      { text: 'Notebook', checked: false },
-                      { text: 'Powerbanka', checked: false }
-                  ]
-              },
-              {
-                  id: 'health',
-                  name: 'Zdraví a Léky',
-                  items: [
-                      { text: 'Léky', checked: false },
-                      { text: 'Náplasti', checked: false },
-                      { text: 'Dezinfekční gel', checked: false },
-                      { text: 'Očkovací průkaz', checked: false }
-                  ]
-              }
+              { id: 'essentials', name: 'Základní Věci', icon: '📌' },
+              { id: 'clothing', name: 'Oblečení', icon: '👕' },
+              { id: 'toiletries', name: 'Toaletní Potřeby', icon: '🧴' },
+              { id: 'gadgets', name: 'Elektronika', icon: '📱' },
+              { id: 'health', name: 'Zdraví a Léky', icon: '💊' },
+              { id: 'backpack', name: 'Batoh', icon: '🎒' },
+              { id: 'camping', name: 'Kempování', icon: '⛺' },
+              { id: 'swimming', name: 'Plavání', icon: '🏊' },
+              { id: 'food', name: 'Jídlo', icon: '🍎' },
+              { id: 'exercise', name: 'Cvičení', icon: '🏋️' },
+              { id: 'work', name: 'Práce', icon: '💼' },
+              { id: 'children', name: 'Děti', icon: '👶' }
           ];
   
-          let categories = [...initialCategories];
-  
-          function renderCategories() {
+          let categories = initialCategories.map(category => ({
+              ...category,
+              items: translations.cs.items[category.id].map(item => ({ text: item, checked: false }))
+          }));function renderCategories() {
               const container = document.getElementById('categories-container');
               container.innerHTML = '';
   
@@ -292,26 +330,21 @@
   
               const headerDiv = document.createElement('div');
               headerDiv.className = 'category-header';
+              headerDiv.onclick = () => toggleCategory(category.id);
   
               const heading = document.createElement('h2');
-              heading.onclick = () => toggleCategory(category.id);
-              heading.innerHTML = `${category.name} <span class="category-count">(0/${category.items.length})</span> <span>+</span>`;
+              heading.innerHTML = `${category.icon} ${category.name} <span class="category-count">(0/${category.items.length})</span>`;
   
-              const actionsDiv = document.createElement('div');
-              actionsDiv.className = 'category-actions';
+              const toggleButton = document.createElement('span');
+              toggleButton.textContent = '+';
+              toggleButton.style.marginLeft = '10px';
   
-              const deleteButton = document.createElement('button');
-              deleteButton.className = 'delete-category';
-              deleteButton.textContent = translations[currentLanguage]["delete-button"];
-              deleteButton.onclick = () => deleteCategory(category.id);
-  
-              actionsDiv.appendChild(deleteButton);
               headerDiv.appendChild(heading);
-              headerDiv.appendChild(actionsDiv);
+              headerDiv.appendChild(toggleButton);
   
               const list = document.createElement('ul');
               list.id = `${category.id}-list`;
-              list.className = 'open';
+              list.className = 'category-list';
   
               category.items.forEach(item => {
                   const li = createListItem(item, category.id);
@@ -337,7 +370,7 @@
               li.innerHTML = `
                   <input type="checkbox" ${item.checked ? 'checked' : ''} onchange="toggleComplete(this, '${categoryId}')">
                   <span>${item.text}</span>
-                  <button class="delete-item" onclick="deleteItem(this, '${categoryId}')">${translations[currentLanguage]["delete-button"]}</button>
+                  <button class="delete-button" onclick="deleteItem(this, '${categoryId}')">${translations[currentLanguage]["delete-button"]}</button>
               `;
               if (item.checked) {
                   li.classList.add('completed');
@@ -352,32 +385,19 @@
               });
               document.querySelector(`.language-switcher button[onclick="switchLanguage('${language}')"]`).classList.add('active');
   
-              const langData = translations[language];
-  
-              document.getElementById('app-title').textContent = langData["app-title"];
-              document.getElementById('trip-name-input').placeholder = langData["trip-name-placeholder"];
-              document.getElementById('new-category-name').placeholder = langData["add-category-placeholder"];
-              document.querySelector('#add-category button').textContent = langData["add-category-button"];
+              document.getElementById('app-title').textContent = translations[language]["app-title"];
+              document.getElementById('trip-name-input').placeholder = translations[language]["trip-name-placeholder"];
+              document.getElementById('new-category-name').placeholder = translations[language]["add-category-placeholder"];
+              document.querySelector('#add-category button').textContent = translations[language]["add-category-button"];
   
               categories.forEach(category => {
-                  const categoryElement = document.getElementById(category.id);
-                  if (categoryElement) {
-                      const addItemInput = categoryElement.querySelector('.add-item input');
-                      const addItemButton = categoryElement.querySelector('.add-item button');
-                      const deleteButton = categoryElement.querySelector('.delete-category');
-  
-                      addItemInput.placeholder = langData["new-item-placeholder"];
-                      addItemButton.textContent = langData["add-button"];
-                      deleteButton.textContent = langData["delete-button"];
-  
-                      const deleteItemButtons = categoryElement.querySelectorAll('.delete-item');
-                      deleteItemButtons.forEach(button => {
-                          button.textContent = langData["delete-button"];
-                      });
-                  }
+                  category.name = translations[language].categories[category.id];
+                  category.items.forEach((item, index) => {
+                      item.text = translations[language].items[category.id][index];
+                  });
               });
   
-              updateCategoryCounts();
+              renderCategories();
           }
   
           function toggleComplete(checkbox, categoryId) {
@@ -389,7 +409,6 @@
               category.items[itemIndex].checked = checkbox.checked;
   
               updateCategoryCount(categoryId);
-              checkAllItemsPacked();
           }
   
           function addItem(categoryId) {
@@ -425,10 +444,10 @@
           function toggleCategory(categoryId) {
               const list = document.getElementById(`${categoryId}-list`);
               const isOpen = list.classList.toggle('open');
-              const categoryHeader = document.querySelector(`#${categoryId} h2`);
-              const toggleSymbol = categoryHeader.querySelector('span:last-child');
+              const categoryHeader = document.querySelector(`#${categoryId} .category-header`);
+              const toggleButton = categoryHeader.querySelector('span:last-child');
   
-              toggleSymbol.textContent = isOpen ? '-' : '+';
+              toggleButton.textContent = isOpen ? '-' : '+';
           }
   
           function addCategory() {
@@ -440,6 +459,7 @@
                   const newCategory = {
                       id: categoryId,
                       name: categoryName,
+                      icon: '📁',
                       items: []
                   };
   
@@ -451,12 +471,6 @@
               }
           }
   
-          function deleteCategory(categoryId) {
-              categories = categories.filter(category => category.id !== categoryId);
-              const categoryElement = document.getElementById(categoryId);
-              categoryElement.parentElement.removeChild(categoryElement);
-          }
-  
           function updateCategoryCount(categoryId) {
               const category = categories.find(cat => cat.id === categoryId);
               const checkedItems = category.items.filter(item => item.checked).length;
@@ -464,29 +478,10 @@
   
               const countSpan = document.querySelector(`#${categoryId} .category-count`);
               countSpan.textContent = `(${checkedItems}/${totalItems})`;
-  
-              checkAllItemsPacked();
-          }
-  
-          function updateCategoryCounts() {
-              categories.forEach(category => {
-                  updateCategoryCount(category.id);
-              });
-          }
-  
-          function checkAllItemsPacked() {
-              const allPacked = categories.every(category => 
-                  category.items.length > 0 && category.items.every(item => item.checked)
-              );
-  
-              document.querySelectorAll('.add-item').forEach(addItemDiv => {
-                  addItemDiv.style.display = allPacked ? 'none' : 'block';
-              });
           }
   
           // Initialize
           renderCategories();
-          switchLanguage('cs');
       </script>
   </body>
 

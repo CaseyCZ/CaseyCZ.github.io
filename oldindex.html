@@ -90,110 +90,339 @@
       </div>
     </header>
 
-    <h2>Novinky</h2>
-    <p>Zde naleznete aktuální novinky o mých projektech a aktivitách.</p>
     <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Work</h5>
-            <p class="card-text">SAP-Excel-HTML</p>
-            <a href="work.html" class="btn btn-xs custom-btn">Více informací</a>
-          </div>
+      <h1 id="app-title">Seznam na Cesty</h1>
+        <div class="trip-name">
+            <input type="text" id="trip-name-input" placeholder="Název cesty" value="Portugalsko" style="width: 100%; padding: 10px;">
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Produkty</h5>
-            <p class="card-text">Apple,Microsoft</p>
-            <a
-              href="depictions/?p=com.supermamon.oldpackage"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
+
+        <div class="language-switcher">
+            <button class="active" onclick="switchLanguage('cs')">Česky</button>
+            <button onclick="switchLanguage('en')">English</button>
+            <button onclick="switchLanguage('de')">Deutsch</button>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Fotbal</h5>
-            <p class="card-text">Slovan Liberec U7.</p>
-            <a
-              href="depictions/?p=com.CaseyCZ.Cocoatop"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
+
+        <div id="categories-container">
+            <!-- Kategorie budou dynamicky přidávány pomocí JavaScriptu -->
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Sport</h5>
-            <p class="card-text">Florbal,Hokejbal</p>
-            <a
-              href="depictions/?p=com.supermamon.newpackage"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
+
+        <div id="add-category">
+            <input type="text" id="new-category-name" placeholder="Název nové kategorie">
+            <button onclick="addCategory()">Přidat kategorii</button>
         </div>
-      </div>
     </div>
 
-    <h2>Featured Packages</h2>
-    <p>Zde jsou zvýrazněné balíčky a projekty, na kterých pracuji.</p>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Hry</h5>
-            <p class="card-text">Xbox</p>
-            <a href="hry.html" class="btn btn-xs custom-btn">Více informací</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Software</h5>
-            <p class="card-text">Mac OS - Windows</p>
-            <a
-              href="depictions/?p=com.CaseyCZ.Cocoatop"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Tv</h5>
-            <p class="card-text">SSC - Plex</p>
-            <a
-              href="depictions/?p=com.CaseyCZ.Cocoatop"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Dron</h5>
-            <p class="card-text">Mavic Mini</p>
-            <a
-              href="depictions/?p=com.CaseyCZ.Cocoatop"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
-        </div>
-      </div>
+    <script>
+const translations = {
+            cs: {
+                "app-title": "Seznam na Cesty",
+                "trip-name-placeholder": "Název cesty",
+                "new-item-placeholder": "Nová položka...",
+                "add-button": "Přidat",
+                "delete-button": "✖",
+                "add-category-placeholder": "Název nové kategorie",
+                "add-category-button": "Přidat kategorii",
+                "categories": {
+                    "essentials": "Základní Věci",
+                    "clothing": "Oblečení",
+                    "toiletries": "Toaletní Potřeby",
+                    "gadgets": "Elektronika",
+                    "health": "Zdraví a Léky",
+                    "backpack": "Batoh",
+                    "camping": "Kempování",
+                    "swimming": "Plavání",
+                    "food": "Jídlo",
+                    "exercise": "Cvičení",
+                    "work": "Práce",
+                    "children": "Děti"
+                },
+                "items": {
+                    "essentials": ["Pas", "Občanský průkaz", "Hotovost / Cizí měna", "Kreditní a debetní karty", "Peněženka", "Itinerář", "Kopie dokumentů / ID / Lístků", "Rezervace ubytování a kontaktní informace", "Opasek na peníze"],
+                    "clothing": ["Trička", "Kalhoty", "Ponožky", "Spodní prádlo", "Bunda"],
+                    "toiletries": ["Zubní kartáček", "Zubní pasta", "Floss", "Deodorant"],
+                    "gadgets": ["Telefon", "Nabíječka", "Sluchátka", "Notebook", "Powerbanka"],
+                    "health": ["Léky", "Náplasti", "Dezinfekční gel", "Očkovací průkaz"],
+                    "backpack": ["Batoh", "Pláštěnka na batoh", "Organizéry"],
+                    "camping": ["Stan", "Spacák", "Karimatka", "Vařič"],
+                    "swimming": ["Plavky", "Ručník", "Opalovací krém"],
+                    "food": ["Svačina", "Láhev na vodu", "Energetické tyčinky"],
+                    "exercise": ["Sportovní oblečení", "Běžecké boty", "Fitness tracker"],
+                    "work": ["Laptop", "Nabíječka na laptop", "Vizitky", "Poznámkový blok"],
+                    "children": ["Plenky", "Vlhčené ubrousky", "Dětské oblečení", "Hračky"]
+                }
+            },
+            en: {
+                "app-title": "Packing List",
+                "trip-name-placeholder": "Trip Name",
+                "new-item-placeholder": "New item...",
+                "add-button": "Add",
+                "delete-button": "✖",
+                "add-category-placeholder": "New category name",
+                "add-category-button": "Add category",
+                "categories": {
+                    "essentials": "Essentials",
+                    "clothing": "Clothing",
+                    "toiletries": "Toiletries",
+                    "gadgets": "Electronics",
+                    "health": "Health and Medicine",
+                    "backpack": "Backpack",
+                    "camping": "Camping",
+                    "swimming": "Swimming",
+                    "food": "Food",
+                    "exercise": "Exercise",
+                    "work": "Work",
+                    "children": "Children"
+                },
+                "items": {
+                    "essentials": ["Passport", "ID card", "Cash / Foreign currency", "Credit and debit cards", "Wallet", "Itinerary", "Copies of documents / ID / Tickets", "Accommodation reservations and contact information", "Money belt"],
+                    "clothing": ["T-shirts", "Pants", "Socks", "Underwear", "Jacket"],
+                    "toiletries": ["Toothbrush", "Toothpaste", "Floss", "Deodorant"],
+                    "gadgets": ["Phone", "Charger", "Headphones", "Laptop", "Power bank"],
+                    "health": ["Medications", "Band-aids", "Hand sanitizer", "Vaccination card"],
+                    "backpack": ["Backpack", "Rain cover for backpack", "Organizers"],
+                    "camping": ["Tent", "Sleeping bag", "Sleeping pad", "Camping stove"],
+                    "swimming": ["Swimwear", "Towel", "Sunscreen"],
+                    "food": ["Snacks", "Water bottle", "Energy bars"],
+                    "exercise": ["Workout clothes", "Running shoes", "Fitness tracker"],
+                    "work": ["Laptop", "Laptop charger", "Business cards", "Notebook"],
+                    "children": ["Diapers", "Wet wipes", "Children's clothes", "Toys"]
+                }
+            },
+            de: {
+                "app-title": "Packliste",
+                "trip-name-placeholder": "Reisename",
+                "new-item-placeholder": "Neuer Gegenstand...",
+                "add-button": "Hinzufügen",
+                "delete-button": "✖",
+                "add-category-placeholder": "Neuer Kategoriename",
+                "add-category-button": "Kategorie hinzufügen",
+                "categories": {
+                    "essentials": "Grundlagen",
+                    "clothing": "Kleidung",
+                    "toiletries": "Toilettenartikel",
+                    "gadgets": "Elektronik",
+                    "health": "Gesundheit und Medizin",
+                    "backpack": "Rucksack",
+                    "camping": "Camping",
+                    "swimming": "Schwimmen",
+                    "food": "Essen",
+                    "exercise": "Sport",
+                    "work": "Arbeit",
+                    "children": "Kinder"
+                },
+                "items": {
+                    "essentials": ["Reisepass", "Personalausweis", "Bargeld / Fremdwährung", "Kredit- und EC-Karten", "Geldbörse", "Reiseplan", "Kopien von Dokumenten / Ausweis / Tickets", "Unterkunftsreservierungen und Kontaktinformationen", "Geldgürtel"],
+                    "clothing": ["T-Shirts", "Hosen", "Socken", "Unterwäsche", "Jacke"],
+                    "toiletries": ["Zahnbürste", "Zahnpasta", "Zahnseide", "Deodorant"],
+                    "gadgets": ["Handy", "Ladegerät", "Kopfhörer", "Laptop", "Powerbank"],
+                    "health": ["Medikamente", "Pflaster", "Handdesinfektionsmittel", "Impfpass"],
+                    "backpack": ["Rucksack", "Regenhülle für Rucksack", "Organizer"],
+                    "camping": ["Zelt", "Schlafsack", "Isomatte", "Campingkocher"],
+                    "swimming": ["Badekleidung", "Handtuch", "Sonnencreme"],
+                    "food": ["Snacks", "Wasserflasche", "Energieriegel"],
+                    "exercise": ["Sportkleidung", "Laufschuhe", "Fitness-Tracker"],
+                    "work": ["Laptop", "Laptop-Ladegerät", "Visitenkarten", "Notizbuch"],
+                    "children": ["Windeln", "Feuchttücher", "Kinderkleidung", "Spielzeug"]
+                }
+            }
+        };
+
+        let currentLanguage = 'cs';
+
+        const initialCategories = [
+            { id: 'essentials', name: 'Základní Věci', icon: '📌' },
+            { id: 'clothing', name: 'Oblečení', icon: '👕' },
+            { id: 'toiletries', name: 'Toaletní Potřeby', icon: '🧴' },
+            { id: 'gadgets', name: 'Elektronika', icon: '📱' },
+            { id: 'health', name: 'Zdraví a Léky', icon: '💊' },
+            { id: 'backpack', name: 'Batoh', icon: '🎒' },
+            { id: 'camping', name: 'Kempování', icon: '⛺' },
+            { id: 'swimming', name: 'Plavání', icon: '🏊' },
+            { id: 'food', name: 'Jídlo', icon: '🍎' },
+            { id: 'exercise', name: 'Cvičení', icon: '🏋️' },
+            { id: 'work', name: 'Práce', icon: '💼' },
+            { id: 'children', name: 'Děti', icon: '👶' }
+        ];
+
+        let categories = initialCategories.map(category => ({
+            ...category,
+            items: translations.cs.items[category.id].map(item => ({ text: item, checked: false }))
+        }));
+        function renderCategories() {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = '';
+
+            categories.forEach(category => {
+                const categoryElement = createCategoryElement(category);
+                container.appendChild(categoryElement);
+            });
+        }
+
+        function createCategoryElement(category) {
+            const categoryDiv = document.createElement('div');
+            categoryDiv.className = 'category';
+            categoryDiv.id = category.id;
+
+            const headerDiv = document.createElement('div');
+            headerDiv.className = 'category-header';
+            headerDiv.onclick = () => toggleCategory(category.id);
+
+            const heading = document.createElement('h2');
+            heading.innerHTML = `${category.icon} ${category.name} <span class="category-count">(0/${category.items.length})</span>`;
+
+            const toggleButton = document.createElement('span');
+            toggleButton.textContent = '+';
+            toggleButton.style.marginLeft = '10px';
+
+            headerDiv.appendChild(heading);
+            headerDiv.appendChild(toggleButton);
+
+            const list = document.createElement('ul');
+            list.id = `${category.id}-list`;
+            list.className = 'category-list';
+
+            category.items.forEach(item => {
+                const li = createListItem(item, category.id);
+                list.appendChild(li);
+            });
+
+            const addItemDiv = document.createElement('div');
+            addItemDiv.className = 'add-item';
+            addItemDiv.innerHTML = `
+                <input type="text" id="new-item-${category.id}" placeholder="${translations[currentLanguage]["new-item-placeholder"]}">
+                <button onclick="addItem('${category.id}')">${translations[currentLanguage]["add-button"]}</button>
+            `;
+
+            categoryDiv.appendChild(headerDiv);
+            categoryDiv.appendChild(list);
+            categoryDiv.appendChild(addItemDiv);
+
+            return categoryDiv;
+        }
+
+        function createListItem(item, categoryId) {
+            const li = document.createElement('li');
+            li.innerHTML = `
+                <input type="checkbox" ${item.checked ? 'checked' : ''} onchange="toggleComplete(this, '${categoryId}')">
+                <span>${item.text}</span>
+                <button class="delete-button" onclick="deleteItem(this, '${categoryId}')">${translations[currentLanguage]["delete-button"]}</button>
+            `;
+            if (item.checked) {
+                li.classList.add('completed');
+            }
+            return li;
+        }
+
+        function switchLanguage(language) {
+            currentLanguage = language;
+            document.querySelectorAll('.language-switcher button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector(`.language-switcher button[onclick="switchLanguage('${language}')"]`).classList.add('active');
+
+            document.getElementById('app-title').textContent = translations[language]["app-title"];
+            document.getElementById('trip-name-input').placeholder = translations[language]["trip-name-placeholder"];
+            document.getElementById('new-category-name').placeholder = translations[language]["add-category-placeholder"];
+            document.querySelector('#add-category button').textContent = translations[language]["add-category-button"];
+
+            categories.forEach(category => {
+                category.name = translations[language].categories[category.id];
+                category.items.forEach((item, index) => {
+                    item.text = translations[language].items[category.id][index];
+                });
+            });
+
+            renderCategories();
+        }
+
+        function toggleComplete(checkbox, categoryId) {
+            const listItem = checkbox.parentElement;
+            listItem.classList.toggle('completed');
+
+            const category = categories.find(cat => cat.id === categoryId);
+            const itemIndex = Array.from(listItem.parentElement.children).indexOf(listItem);
+            category.items[itemIndex].checked = checkbox.checked;
+
+            updateCategoryCount(categoryId);
+        }
+
+        function addItem(categoryId) {
+            const inputId = `new-item-${categoryId}`;
+            const input = document.getElementById(inputId);
+            const itemText = input.value.trim();
+
+            if (itemText !== '') {
+                const category = categories.find(cat => cat.id === categoryId);
+                category.items.push({ text: itemText, checked: false });
+
+                const list = document.getElementById(`${categoryId}-list`);
+                const listItem = createListItem({ text: itemText, checked: false }, categoryId);
+                list.appendChild(listItem);
+
+                input.value = '';
+                updateCategoryCount(categoryId);
+            }
+        }
+
+        function deleteItem(button, categoryId) {
+            const listItem = button.parentElement;
+            const list = listItem.parentElement;
+            const itemIndex = Array.from(list.children).indexOf(listItem);
+
+            const category = categories.find(cat => cat.id === categoryId);
+            category.items.splice(itemIndex, 1);
+
+            list.removeChild(listItem);
+            updateCategoryCount(categoryId);
+        }
+
+        function toggleCategory(categoryId) {
+            const list = document.getElementById(`${categoryId}-list`);
+            const isOpen = list.classList.toggle('open');
+            const categoryHeader = document.querySelector(`#${categoryId} .category-header`);
+            const toggleButton = categoryHeader.querySelector('span:last-child');
+
+            toggleButton.textContent = isOpen ? '-' : '+';
+        }
+
+        function addCategory() {
+            const input = document.getElementById('new-category-name');
+            const categoryName = input.value.trim();
+
+            if (categoryName !== '') {
+                const categoryId = 'category-' + Date.now();
+                const newCategory = {
+                    id: categoryId,
+                    name: categoryName,
+                    icon: '📁',
+                    items: []
+                };
+
+                categories.push(newCategory);
+                const categoryElement = createCategoryElement(newCategory);
+                document.getElementById('categories-container').appendChild(categoryElement);
+
+                input.value = '';
+            }
+        }
+
+        function updateCategoryCount(categoryId) {
+            const category = categories.find(cat => cat.id === categoryId);
+            const checkedItems = category.items.filter(item => item.checked).length;
+            const totalItems = category.items.length;
+
+            const countSpan = document.querySelector(`#${categoryId} .category-count`);
+            countSpan.textContent = `(${checkedItems}/${totalItems})`;
+        }
+
+        // Initialize
+        renderCategories();
+    </script>
+
+
+
+
+
     </div>
 
     <script>

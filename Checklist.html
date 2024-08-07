@@ -59,113 +59,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        background-color: #f0f0f0;
-      }
-
-      .app-container {
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        max-width: 600px;
-        width: 100%;
-      }
-
-      .button-odkazy {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 20px;
-      }
-
-      .btn {
-        margin: 5px;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        text-decoration: none;
-        border-radius: 4px;
-      }
-
-      .btn:hover {
-        background-color: #0056b3;
-      }
-
-      .download-btn {
-        margin-top: 20px;
-      }
-
-      .category {
-        margin-bottom: 20px;
-      }
-
-      .category-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-      }
-
-      .category-header h2 {
-        margin: 0;
-      }
-
-      .category-list {
-        display: none;
-        list-style-type: none;
-        padding: 0;
-      }
-
-      .category-list.open {
-        display: block;
-      }
-
-      .category-list li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 5px;
-      }
-
-      .delete-button {
-        background: none;
-        border: none;
-        color: red;
-        cursor: pointer;
-        font-size: 20px;
-        transition: transform 0.3s ease;
-      }
-
-      .delete-button:hover {
-        transform: rotate(90deg);
-      }
-
-      .add-item {
-        margin-top: 10px;
-      }
-
-      .add-item input {
-        margin-right: 5px;
-      }
-
-      .language-switcher button.active {
-        background-color: #007bff;
-        color: white;
-      }
-
-      .language-switcher button {
-        margin-right: 5px;
-        padding: 5px 10px;
-        cursor: pointer;
-      }
-    </style>
   </head>
   <body>
     <div class="button-odkazy">
@@ -174,23 +67,21 @@
       <a href="/livescore.html" class="btn btn-primary">Livescore</a>
       <a href="/Checklist.html" class="btn btn-primary">Checklist</a>
       <a href="/oldindex.html" class="btn btn-primary">Kontakt</a>
-
-      <a href="file.pdf" class="btn download-btn" download>Download PDF</a>
-
-      <div style="text-align: center; margin-top: 20px">
-        <a onclick="toggleNightMode();" role="button">
-          <img
-            width="24"
-            height="24"
-            src="./icons/DarkMode-Light.png"
-            id="toggleDark"
-            alt="Toggle Mode"
-            style="display: inline-block"
-          />
-        </a>
+      <div style="text-align: center; margin-top: 0px">
+        <div style="text-align: center; margin: 0">
+          <a onclick="toggleNightMode();" role="button">
+            <img
+              width="24"
+              height="24"
+              src="./icons/DarkMode-Light.png"
+              id="toggleDark"
+              alt="Toggle Mode"
+              style="display: inline-block"
+            />
+          </a>
+        </div>
       </div>
     </div>
-
     <header class="header text">
       <div class="container">
         <img src="icons/logo.PNG" alt="Logo CaseyCZ" class="custom-logo" />

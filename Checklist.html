@@ -2,63 +2,281 @@
 <html lang="cs">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline' 'unsafe-eval' http://ecdn.onlineradiobox.com;"
-    />
-    <meta
-      name="description"
-      content="Vítejte na mé osobní stránce, kde se můžete dozvědět více o mně, mých zájmech a projektech."
-    />
     <meta charset="UTF-8" />
     <title>CaseyCZ</title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="icons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="icons/favicon-16x16.png"
-    />
-    <link rel="manifest" href="icons/site.webmanifest" />
-    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#a124d0" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="icons/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="icons/android-chrome-512x512.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="150x150"
-      href="icons/mstile-150x150.png"
-    />
-    <meta name="msapplication-config" content="icons/browserconfig.xml" />
+    <meta name="description" content="Vítejte na mé osobní stránce, kde se můžete dozvědět více o mně, mých zájmech a projektech." />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="footer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+    <!-- Ikony a manifesty ... -->
+    <style>
+      /* Základní styl pro stránku */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        min-height: 100vh;
+        color: #222;
+        transition: background 0.3s, color 0.3s;
+      }
+      .night-mode {
+        background-color: #181818 !important;
+        color: #e0e0e0 !important;
+      }
+      .app-container {
+        background: #fff;
+        padding: 24px;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.12);
+        max-width: 600px;
+        margin: 32px auto;
+        width: 100%;
+        transition: background 0.3s, color 0.3s;
+      }
+      .night-mode .app-container {
+        background: #232323;
+        color: #e0e0e0;
+      }
+      .category {
+        margin-bottom: 24px;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 12px;
+      }
+      .night-mode .category {
+        border-bottom: 1px solid #444;
+      }
+      .category-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        padding: 6px 0;
+      }
+      .category-header h2 {
+        margin: 0;
+        font-size: 1.2em;
+        font-weight: 600;
+      }
+      .category-list {
+        display: none;
+        list-style-type: none;
+        padding: 0;
+        margin: 8px 0 0 0;
+      }
+      .category-list.open {
+        display: block;
+      }
+      .category-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 6px;
+        padding: 4px 0;
+        border-radius: 4px;
+        transition: background 0.2s;
+      }
+      .category-list li.completed span {
+        text-decoration: line-through;
+        color: #888;
+      }
+      .night-mode .category-list li.completed span {
+        color: #666;
+      }
+      .delete-button {
+        background: none;
+        border: none;
+        color: #d32f2f;
+        cursor: pointer;
+        font-size: 18px;
+        margin-left: 8px;
+        transition: transform 0.3s;
+      }
+      .delete-button:hover {
+        transform: rotate(90deg) scale(1.2);
+      }
+      .add-item {
+        margin-top: 10px;
+        display: flex;
+        gap: 6px;
+      }
+      .add-item input {
+        flex: 1;
+        padding: 6px;
+        border-radius: 4px;
+        border: 1px solid #bbb;
+        background: #fafafa;
+        color: #222;
+      }
+      .night-mode .add-item input {
+        background: #222;
+        color: #e0e0e0;
+        border: 1px solid #444;
+      }
+      .add-item button {
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: none;
+        background: #a124d0;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .add-item button:hover {
+        background: #7e1cae;
+      }
+      .language-switcher {
+        display: flex;
+        gap: 8px;
+        margin: 16px 0;
+        justify-content: center;
+      }
+      .language-switcher button {
+        padding: 6px 14px;
+        border-radius: 4px;
+        border: none;
+        background: #e0e0e0;
+        color: #222;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .language-switcher button.active,
+      .language-switcher button:hover {
+        background: #a124d0;
+        color: #fff;
+      }
+      .night-mode .language-switcher button {
+        background: #333;
+        color: #e0e0e0;
+      }
+      .night-mode .language-switcher button.active,
+      .night-mode .language-switcher button:hover {
+        background: #a124d0;
+        color: #fff;
+      }
+      #add-category {
+        margin-top: 18px;
+        display: flex;
+        gap: 8px;
+      }
+      #add-category input {
+        flex: 1;
+        padding: 6px;
+        border-radius: 4px;
+        border: 1px solid #bbb;
+        background: #fafafa;
+        color: #222;
+      }
+      .night-mode #add-category input {
+        background: #222;
+        color: #e0e0e0;
+        border: 1px solid #444;
+      }
+      #add-category button {
+        padding: 6px 12px;
+        border-radius: 4px;
+        border: none;
+        background: #a124d0;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      #add-category button:hover {
+        background: #7e1cae;
+      }
+      /* Odkazy nahoře */
+      .button-odkazy {
+        display: flex;
+        flex-wrap: nowrap; /* změna z wrap na nowrap */
+        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        margin: 18px 0 0 0;
+      }
+      .btn.btn-primary {
+        background: #a124d0;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 7px 16px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      .btn.btn-primary:hover {
+        background: #7e1cae;
+      }
+      .night-mode .btn.btn-primary {
+        background: #7e1cae;
+        color: #fff;
+      }
+      /* Logo a header */
+      .header.text {
+        background: #a124d0;
+        color: #fff;
+        padding: 18px 0;
+        text-align: center;
+        margin-bottom: 0;
+      }
+      .header.text .custom-logo {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        margin-bottom: 8px;
+        border: 2px solid #fff;
+      }
+      .header.text h1,
+      .header.text p {
+        margin: 0;
+        color: #fff;
+      }
+      .night-mode .header.text {
+        background: #232323;
+        color: #e0e0e0;
+      }
+      .footer {
+        background: #a124d0;
+        color: #fff;
+        padding: 18px 0 8px 0;
+        text-align: center;
+        margin-top: 32px;
+      }
+      .night-mode .footer {
+        background: #232323;
+        color: #e0e0e0;
+      }
+      .social-items a {
+        color: #fff;
+        margin: 0 8px;
+        font-size: 22px;
+        transition: color 0.2s;
+      }
+      .social-items a:hover {
+        color: #ffd700;
+      }
+      .list {
+        list-style: none;
+        padding: 0;
+        margin: 12px 0 0 0;
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+      }
+      .list a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+      .list a:hover {
+        color: #ffd700;
+      }
+      .night-mode #toggleDark {
+        filter: invert(1) brightness(1.2);
+      }
+    </style>
   </head>
   <body>
     <div class="button-odkazy">
@@ -82,104 +300,33 @@
         </div>
       </div>
     </div>
-  </head>
     <header class="header text">
       <div class="container">
         <img src="icons/logo.PNG" alt="Logo CaseyCZ" class="custom-logo" />
         <h1 class="text-white">Lukáš Kysela</h1>
         <p class="text-white">Vítejte na mé stránce</p>
       </div>
-      <div class="app-container">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seznam na Cesty</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .app-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            max-width: 600px;
-            width: 100%;
-        }
-        .category {
-            margin-bottom: 20px;
-        }
-        .category-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
-        .category-header h2 {
-            margin: 0;
-        }
-        .category-list {
-            display: none;
-            list-style-type: none;
-            padding: 0;
-        }
-        .category-list.open {
-            display: block;
-        }
-        .category-list li {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
-        .delete-button {
-            background: none;
-            border: none;
-            color: red;
-            cursor: pointer;
-            font-size: 20px;
-            transition: transform 0.3s ease;
-        }
-        .delete-button:hover {
-            transform: rotate(90deg);
-        }
-        .add-item {
-            margin-top: 10px;
-        }
-        .add-item input {
-            margin-right: 5px;
-        }
-    </style>
-</head>
-<body>
+    </header>
     <div class="app-container">
-        <h1 id="app-title">Seznam na Cesty</h1>
-        <div class="trip-name">
-            <input type="text" id="trip-name-input" placeholder="Název cesty" value="Portugalsko" style="width: 100%; padding: 10px;">
-        </div>
-
-        <div class="language-switcher">
-            <button class="active" onclick="switchLanguage('cs')">Česky</button>
-            <button onclick="switchLanguage('en')">English</button>
-            <button onclick="switchLanguage('de')">Deutsch</button>
-        </div>
-
-        <div id="categories-container">
-            <!-- Kategorie budou dynamicky přidávány pomocí JavaScriptu -->
-        </div>
-
-        <div id="add-category">
-            <input type="text" id="new-category-name" placeholder="Název nové kategorie">
-            <button onclick="addCategory()">Přidat kategorii</button>
-        </div>
+      <h1 id="app-title">Seznam na Cesty</h1>
+      <div class="trip-name">
+        <input type="text" id="trip-name-input" placeholder="Název cesty" value="Portugalsko" style="width: 100%; padding: 10px;">
+      </div>
+      <div class="language-switcher">
+        <button class="active" onclick="switchLanguage('cs')">Česky</button>
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('de')">Deutsch</button>
+      </div>
+      <div id="categories-container">
+        <!-- Kategorie budou dynamicky přidávány pomocí JavaScriptu -->
+      </div>
+      <div id="add-category">
+        <input type="text" id="new-category-name" placeholder="Název nové kategorie">
+        <button onclick="addCategory()">Přidat kategorii</button>
+      </div>
     </div>
-
     <script>
-const translations = {
+      const translations = {
             cs: {
                 "app-title": "Seznam na Cesty",
                 "trip-name-placeholder": "Název cesty",
@@ -321,6 +468,8 @@ const translations = {
             categories.forEach(category => {
                 const categoryElement = createCategoryElement(category);
                 container.appendChild(categoryElement);
+                // Po renderu vždy aktualizovat počet
+                updateCategoryCount(category.id);
             });
         }
 
@@ -333,15 +482,11 @@ const translations = {
             headerDiv.className = 'category-header';
             headerDiv.onclick = () => toggleCategory(category.id);
 
+            // Záhlaví: ikona, název, počet splněných
             const heading = document.createElement('h2');
-            heading.innerHTML = `${category.icon} ${category.name} <span class="category-count">(0/${category.items.length})</span>`;
-
-            const toggleButton = document.createElement('span');
-            toggleButton.textContent = '+';
-            toggleButton.style.marginLeft = '10px';
+            heading.innerHTML = `${category.icon} ${category.name} <span class="category-count"></span>`;
 
             headerDiv.appendChild(heading);
-            headerDiv.appendChild(toggleButton);
 
             const list = document.createElement('ul');
             list.id = `${category.id}-list`;
@@ -362,6 +507,9 @@ const translations = {
             categoryDiv.appendChild(headerDiv);
             categoryDiv.appendChild(list);
             categoryDiv.appendChild(addItemDiv);
+
+            // Aktualizace počtu hned po vytvoření
+            setTimeout(() => updateCategoryCount(category.id), 0);
 
             return categoryDiv;
         }
@@ -444,11 +592,7 @@ const translations = {
 
         function toggleCategory(categoryId) {
             const list = document.getElementById(`${categoryId}-list`);
-            const isOpen = list.classList.toggle('open');
-            const categoryHeader = document.querySelector(`#${categoryId} .category-header`);
-            const toggleButton = categoryHeader.querySelector('span:last-child');
-
-            toggleButton.textContent = isOpen ? '-' : '+';
+            list.classList.toggle('open');
         }
 
         function addCategory() {
@@ -491,58 +635,20 @@ const translations = {
     isNightMode = !isNightMode;
     document.body.classList.toggle("night-mode");
   }
-  src =
-    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js";
 </script>
 <footer class="footer">
   <div class="social-items">
-    <a
-      href="https://twitter.com/Searcasey"
-      target="_blank"
-      class="mr-3 social-icon"
-      ><i class="fab fa-twitter"></i
-    ></a>
-    <a
-      href="https://www.youtube.com/channel/UCTT4ob7-2lkjdQf3yuqrjDw"
-      target="_blank"
-      class="mr-3 social-icon"
-      ><i class="fab fa-youtube"></i
-    ></a>
-    <a
-      href="https://www.reddit.com/user/CaseyCZ"
-      target="_blank"
-      class="mr-3 social-icon"
-      ><i class="fab fa-reddit"></i
-    ></a>
-    <a
-      href="https://github.com/CaseyCZ"
-      target="_blank"
-      class="mr-3 social-icon"
-      ><i class="fab fa-github"></i
-    ></a>
-    <a
-      href="https://www.facebook.com/CaseyCZ"
-      target="_blank"
-      class="mr-3 social-icon"
-      ><i class="fab fa-facebook"></i
-    ></a>
-    <a
-      href="https://xboxgamertag.com/search/CaseyCZ"
-      target="_blank"
-      class="mr-3 social-icon"
-      ><i class="fab fa-xbox"></i
-    ></a>
+    <a href="https://twitter.com/Searcasey" target="_blank" class="mr-3 social-icon"><i class="fab fa-twitter"></i></a>
+    <a href="https://www.youtube.com/channel/UCTT4ob7-2lkjdQf3yuqrjDw" target="_blank" class="mr-3 social-icon"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.reddit.com/user/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-reddit"></i></a>
+    <a href="https://github.com/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-github"></i></a>
+    <a href="https://www.facebook.com/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-facebook"></i></a>
+    <a href="https://xboxgamertag.com/search/CaseyCZ" target="_blank" class="mr-3 social-icon"><i class="fab fa-xbox"></i></a>
   </div>
   <ul class="list">
-    <li>
-      <a href="index.html">Domů</a>
-    </li>
-    <li>
-      <a href="index.html">Services</a>
-    </li>
-    <li>
-      <a href="index.html">About</a>
-    </li>
+    <li><a href="index.html">Domů</a></li>
+    <li><a href="index.html">Services</a></li>
+    <li><a href="index.html">About</a></li>
   </ul>
 </footer>
 </body>

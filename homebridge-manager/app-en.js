@@ -2,6 +2,15 @@ const root = document.documentElement;
 const toggle = document.getElementById('themeToggle');
 const themeColor = document.getElementById('themeColor');
 const preview = document.getElementById('previewScreen');
+const languageKey = 'hbm-product-language';
+
+if (!localStorage.getItem(languageKey)) {
+  localStorage.setItem(languageKey, 'en');
+}
+
+document.querySelector('.lang-button')?.addEventListener('click', () => {
+  localStorage.setItem(languageKey, 'cs');
+});
 
 function applyTheme(theme) {
   root.dataset.theme = theme;

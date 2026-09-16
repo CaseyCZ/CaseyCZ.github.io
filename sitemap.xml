@@ -13,23 +13,14 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://caseycz.github.io/webshare.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://caseycz.github.io/livescore.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.4</priority>
-  </url>
-  <url>
     <loc>https://caseycz.github.io/Checklist.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://caseycz.github.io/hry.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.2</priority>
   </url>
 </urlset>

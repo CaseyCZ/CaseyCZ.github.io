@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://caseycz.github.io/sitemap.xml
 Sitemap: https://caseycz.github.io/homebridge-manager/sitemap.xml

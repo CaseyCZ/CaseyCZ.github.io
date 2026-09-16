@@ -2,6 +2,28 @@ const root = document.documentElement;
 const toggle = document.getElementById('themeToggle');
 const themeColor = document.getElementById('themeColor');
 const preview = document.getElementById('previewScreen');
+const languageKey = 'hbm-product-language';
+
+function englishPageForCurrentPath() {
+  const file = location.pathname.split('/').pop() || 'index.html';
+  if (file === 'privacy.html') return 'privacy-en.html';
+  if (file === 'terms.html') return 'terms-en.html';
+  return 'en.html';
+}
+
+let savedLanguage = localStorage.getItem(languageKey);
+if (!savedLanguage) {
+  savedLanguage = 'en';
+  localStorage.setItem(languageKey, 'en');
+}
+
+document.querySelector('.lang-button')?.addEventListener('click', () => {
+  localStorage.setItem(languageKey, 'en');
+});
+
+if (root.lang === 'cs' && savedLanguage === 'en') {
+  location.replace(englishPageForCurrentPath() + location.search + location.hash);
+}
 
 function applyTheme(theme) {
   root.dataset.theme = theme;

@@ -13,15 +13,16 @@
   };
 
   function applyTheme(theme) {
-    root.dataset.theme = theme;
-    const isDark = theme === 'dark';
+    const selected = theme === 'light' ? 'light' : 'dark';
+    root.dataset.theme = selected;
+    const isDark = selected === 'dark';
     if (themeToggle) {
       themeToggle.textContent = isDark ? '☀' : '☾';
       themeToggle.setAttribute('aria-label', isDark ? 'Přepnout na světlé téma' : 'Přepnout na tmavé téma');
       themeToggle.title = isDark ? 'Světlé téma' : 'Tmavé téma';
     }
     if (themeColor) themeColor.setAttribute('content', isDark ? '#070b14' : '#eef3f8');
-    safeSet('caseycz-theme', theme);
+    safeSet('caseycz-theme', selected);
   }
 
   function applyLanguage(lang) {
@@ -36,15 +37,19 @@
       node.innerHTML = node.dataset[`${selected}Html`];
     });
 
+    document.querySelectorAll('[data-cs-placeholder][data-en-placeholder]').forEach((node) => {
+      node.placeholder = node.dataset[`${selected}Placeholder`];
+    });
+
     langButtons.forEach((button) => {
       const active = button.dataset.lang === selected;
       button.classList.toggle('active', active);
       button.setAttribute('aria-pressed', String(active));
     });
 
-    document.title = selected === 'en'
-      ? 'CaseyCZ — Apps, tools & projects'
-      : 'CaseyCZ — Aplikace, nástroje & projekty';
+    const titleCs = document.body?.dataset.titleCs || 'CaseyCZ — Aplikace, nástroje & projekty';
+    const titleEn = document.body?.dataset.titleEn || 'CaseyCZ — Apps, tools & projects';
+    document.title = selected === 'en' ? titleEn : titleCs;
 
     if (themeToggle) {
       const isDark = root.dataset.theme === 'dark';
@@ -60,12 +65,13 @@
   }
 
   const storedTheme = safeGet('caseycz-theme');
-  const systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const systemDark = Boolean(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
   applyTheme(storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : (systemDark ? 'dark' : 'light'));
 
   const storedLanguage = safeGet('caseycz-language');
-  const preferredLanguage = storedLanguage || (navigator.language || '').toLowerCase().startsWith('en') ? (storedLanguage || 'en') : 'cs';
-  applyLanguage(preferredLanguage === 'en' ? 'en' : 'cs');
+  const browserEnglish = (navigator.language || '').toLowerCase().startsWith('en');
+  const preferredLanguage = storedLanguage === 'cs' || storedLanguage === 'en' ? storedLanguage : (browserEnglish ? 'en' : 'cs');
+  applyLanguage(preferredLanguage);
 
   themeToggle?.addEventListener('click', () => {
     applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');

@@ -1,260 +1,187 @@
-<!DOCTYPE html>
-<html lang="cs">
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="script-src 'self' 'unsafe-inline' 'unsafe-eval' http://ecdn.onlineradiobox.com;"
-    />
-    <meta
-      name="description"
-      content="Vítejte na mé osobní stránce, kde se můžete dozvědět více o mně, mých zájmech a projektech."
-    />
-    <meta charset="UTF-8" />
-    <title>CaseyCZ</title>
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="icons/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="icons/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="icons/favicon-16x16.png"
-    />
-    <link rel="manifest" href="icons/site.webmanifest" />
-    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#a124d0" />
-    <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
-      href="icons/android-chrome-192x192.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="512x512"
-      href="icons/android-chrome-512x512.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="150x150"
-      href="icons/mstile-150x150.png"
-    />
-    <meta name="msapplication-config" content="icons/browserconfig.xml" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="footer.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div class="button-odkazy">
-      <a href="/index.html" class="btn btn-primary">Domů</a>
-      <a href="/webshare.html" class="btn btn-primary">Webshare</a>
-      <a href="/livescore.html" class="btn btn-primary">Livescore</a>
-      <a href="/Checklist.html" class="btn btn-primary">Checklist</a>
-      <a href="/oldindex.html" class="btn btn-primary">Kontakt</a>
-      <div style="text-align: center; margin-top: 0px">
-        <div style="text-align: center; margin: 0">
-          <a onclick="toggleNightMode();" role="button">
-            <img
-              width="24"
-              height="24"
-              src="./icons/DarkMode-Light.png"
-              id="toggleDark"
-              alt="Toggle Mode"
-              style="display: inline-block"
-            />
-          </a>
+<!doctype html>
+<html lang="cs" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070b14" id="themeColor">
+  <meta name="description" content="CaseyCZ — aplikace, nástroje a projekty pro Homebridge, Scriptable, sportovní data a multimédia.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CaseyCZ — Apps, tools & projects">
+  <meta property="og:description" content="Praktické aplikace, nástroje a experimenty. Homebridge Manager, Scriptable, GameS Calendar a další projekty CaseyCZ.">
+  <meta property="og:url" content="https://caseycz.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="CaseyCZ — Apps, tools & projects">
+  <meta name="twitter:description" content="Praktické aplikace, nástroje a projekty od CaseyCZ.">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="manifest" href="icons/site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+  <title>CaseyCZ — Apps, tools & projects</title>
+</head>
+<body>
+  <a class="skip" href="#content" data-cs="Přejít na obsah" data-en="Skip to content">Přejít na obsah</a>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="CaseyCZ — začátek">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span class="brand-copy"><strong>CaseyCZ</strong><small>apps · tools · projects</small></span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Hlavní navigace">
+        <a href="#projects" data-cs="Projekty" data-en="Projects">Projekty</a>
+        <a href="#archive" data-cs="Archiv" data-en="Archive">Archiv</a>
+        <a href="#about" data-cs="O mně" data-en="About">O mně</a>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="language-switch" aria-label="Language">
+          <button class="lang-button active" type="button" data-lang="cs" aria-pressed="true">CZ</button>
+          <button class="lang-button" type="button" data-lang="en" aria-pressed="false">EN</button>
         </div>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Přepnout téma" title="Přepnout téma">☀</button>
+        <a class="button compact desktop-only" href="https://github.com/CaseyCZ" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
-    <header class="header text">
+  </header>
+
+  <main id="content">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span><span data-cs="AKTIVNÍ VÝVOJ" data-en="ACTIVE DEVELOPMENT">AKTIVNÍ VÝVOJ</span><span class="version">2026</span></div>
+          <h1 data-cs-html="Nápady.<br>Nástroje.<br><span>Projekty.</span>" data-en-html="Ideas.<br>Tools.<br><span>Projects.</span>">Nápady.<br>Nástroje.<br><span>Projekty.</span></h1>
+          <p class="hero-lead" data-cs="Stavím praktické aplikace a nástroje, které řeší skutečné věci — od správy Homebridge přes iPhone až po widgety, sportovní data a multimédia." data-en="I build practical apps and tools for real-world needs — from managing Homebridge on iPhone to widgets, sports data and media projects.">Stavím praktické aplikace a nástroje, které řeší skutečné věci — od správy Homebridge přes iPhone až po widgety, sportovní data a multimédia.</p>
+          <div class="hero-actions">
+            <a class="button" href="#projects" data-cs="Prohlédnout projekty" data-en="Explore projects">Prohlédnout projekty</a>
+            <a class="button secondary" href="https://github.com/CaseyCZ" target="_blank" rel="noopener">GitHub ↗</a>
+          </div>
+          <div class="hero-notes">
+            <span data-cs="✓ iPhone & PWA" data-en="✓ iPhone & PWA">✓ iPhone & PWA</span>
+            <span data-cs="✓ Open-source projekty" data-en="✓ Open-source projects">✓ Open-source projekty</span>
+            <span data-cs="✓ Vlastní nástroje" data-en="✓ Independent tools">✓ Vlastní nástroje</span>
+          </div>
+        </div>
+
+        <div class="hero-panel" aria-label="CaseyCZ project overview">
+          <div class="panel-top"><span>CASEYCZ / PROJECTS</span><span class="live-pill" data-cs="ONLINE" data-en="ONLINE">ONLINE</span></div>
+          <div class="panel-feature">
+            <div class="project-icon hb" aria-hidden="true">⌂</div>
+            <div>
+              <span class="mini-label" data-cs="HLAVNÍ PROJEKT" data-en="FEATURED PROJECT">HLAVNÍ PROJEKT</span>
+              <h2>Homebridge Manager</h2>
+              <p data-cs="Mobilní správa Homebridge navržená pro iPhone. Pluginy, aktualizace, logy, child bridges, zálohy a konfigurace na jednom místě." data-en="Mobile Homebridge management designed for iPhone. Plugins, updates, logs, child bridges, backups and configuration in one place.">Mobilní správa Homebridge navržená pro iPhone. Pluginy, aktualizace, logy, child bridges, zálohy a konfigurace na jednom místě.</p>
+            </div>
+          </div>
+          <div class="panel-stats">
+            <span><small data-cs="Platforma" data-en="Platform">Platforma</small><strong>PWA / iOS</strong></span>
+            <span><small data-cs="Stav" data-en="Status">Stav</small><strong data-cs="Ve vývoji" data-en="In development">Ve vývoji</strong></span>
+            <span><small data-cs="Web" data-en="Website">Web</small><strong>Live</strong></span>
+          </div>
+          <a class="panel-link" href="homebridge-manager/" data-cs="Otevřít produktový web →" data-en="Open product website →">Otevřít produktový web →</a>
+        </div>
+      </div>
+
+      <div class="container project-strip" aria-label="Project categories">
+        <span data-cs="Co tu najdete" data-en="What you'll find">Co tu najdete</span>
+        <strong>Homebridge</strong><i></i><strong>Scriptable</strong><i></i><strong>GameS</strong><i></i><strong>Stremio</strong><i></i><strong>Web tools</strong>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
       <div class="container">
-        <img src="icons/logo.PNG" alt="Logo CaseyCZ" class="custom-logo" />
-        <h1 class="text-white">Lukáš Kysela</h1>
-        <p class="text-white">Vítejte na mé stránce</p>
-      </div>
-    </header>
+        <div class="section-heading">
+          <p class="kicker" data-cs="AKTUÁLNÍ PROJEKTY" data-en="CURRENT PROJECTS">AKTUÁLNÍ PROJEKTY</p>
+          <h2 data-cs-html="Na čem právě<br><span>pracuju.</span>" data-en-html="What I'm<br><span>building.</span>">Na čem právě<br><span>pracuju.</span></h2>
+          <p data-cs="Aktivní projekty mají přednost. Každý z nich řeší jiný problém, ale všechny spojuje jednoduché ovládání a praktické použití." data-en="Active projects come first. Each solves a different problem, but they all focus on simple interaction and practical use.">Aktivní projekty mají přednost. Každý z nich řeší jiný problém, ale všechny spojuje jednoduché ovládání a praktické použití.</p>
+        </div>
 
-    <h2>Novinky</h2>
-    <p>Zde naleznete aktuální novinky o mých projektech a aktivitách.</p>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Work</h5>
-            <p class="card-text">SAP-Excel-HTML</p>
-            <a href="work.html" class="btn btn-xs custom-btn">Více informací</a>
+        <div class="project-grid">
+          <article class="project-card featured-card">
+            <div class="card-meta"><span class="project-number">01</span><span class="status active" data-cs="VE VÝVOJI" data-en="IN DEVELOPMENT">VE VÝVOJI</span></div>
+            <div class="project-card-icon hb" aria-hidden="true">⌂</div>
+            <h3>Homebridge Manager</h3>
+            <p data-cs="Kompletní mobilní rozhraní pro správu Homebridge. PWA jako první krok, iOS aplikace jako další." data-en="A complete mobile interface for Homebridge management. PWA first, native iOS packaging next.">Kompletní mobilní rozhraní pro správu Homebridge. PWA jako první krok, iOS aplikace jako další.</p>
+            <div class="tag-row"><span>Homebridge</span><span>PWA</span><span>iPhone</span><span>API</span></div>
+            <div class="card-actions"><a class="text-link" href="homebridge-manager/" data-cs="Produktový web →" data-en="Product website →">Produktový web →</a><a class="text-link muted-link" href="https://github.com/CaseyCZ/Homebridge-Manager" target="_blank" rel="noopener">GitHub ↗</a></div>
+          </article>
+
+          <article class="project-card">
+            <div class="card-meta"><span class="project-number">02</span><span class="status active" data-cs="AKTIVNÍ" data-en="ACTIVE">AKTIVNÍ</span></div>
+            <div class="project-card-icon scriptable" aria-hidden="true">S</div>
+            <h3>Scriptable</h3>
+            <p data-cs="Widgety a nástroje pro iPhone. Sportovní přehledy, instalace skriptů a další experimenty pro domovskou obrazovku." data-en="Widgets and tools for iPhone. Sports dashboards, script installation and other home-screen experiments.">Widgety a nástroje pro iPhone. Sportovní přehledy, instalace skriptů a další experimenty pro domovskou obrazovku.</p>
+            <div class="tag-row"><span>iOS</span><span>Widgets</span><span>JavaScript</span></div>
+            <a class="text-link" href="https://github.com/CaseyCZ/Scriptable" target="_blank" rel="noopener" data-cs="Otevřít projekt →" data-en="Open project →">Otevřít projekt →</a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-meta"><span class="project-number">03</span><span class="status active" data-cs="AKTIVNÍ" data-en="ACTIVE">AKTIVNÍ</span></div>
+            <div class="project-card-icon games" aria-hidden="true">G</div>
+            <h3>GameS Calendar</h3>
+            <p data-cs="Sportovní projekt zaměřený na kalendáře, výsledky a přehledy. Datový základ pro další sportovní nástroje." data-en="A sports project focused on calendars, results and overviews, providing a data foundation for additional sports tools.">Sportovní projekt zaměřený na kalendáře, výsledky a přehledy. Datový základ pro další sportovní nástroje.</p>
+            <div class="tag-row"><span>Sports</span><span>Calendar</span><span>Data</span></div>
+            <a class="text-link" href="https://github.com/CaseyCZ/GameS-Calendar-Website" target="_blank" rel="noopener" data-cs="Otevřít projekt →" data-en="Open project →">Otevřít projekt →</a>
+          </article>
+
+          <article class="project-card">
+            <div class="card-meta"><span class="project-number">04</span><span class="status active" data-cs="AKTIVNÍ" data-en="ACTIVE">AKTIVNÍ</span></div>
+            <div class="project-card-icon stremio" aria-hidden="true">▶</div>
+            <h3>Stremio Sosáč</h3>
+            <p data-cs="Doplňky pro Stremio zaměřené na český a slovenský obsah, zdroje a titulky." data-en="Stremio add-ons focused on Czech and Slovak content, sources and subtitles.">Doplňky pro Stremio zaměřené na český a slovenský obsah, zdroje a titulky.</p>
+            <div class="tag-row"><span>Stremio</span><span>Add-on</span><span>Subtitles</span></div>
+            <div class="card-actions"><a class="text-link" href="https://github.com/CaseyCZ/stremio.sosac" target="_blank" rel="noopener">Sosáč ↗</a><a class="text-link muted-link" href="https://github.com/CaseyCZ/stremio.sosac.subtitles" target="_blank" rel="noopener" data-cs="Titulky ↗" data-en="Subtitles ↗">Titulky ↗</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section archive-section" id="archive">
+      <div class="container">
+        <div class="section-heading compact-heading">
+          <p class="kicker" data-cs="STARŠÍ PROJEKTY" data-en="OLDER PROJECTS">STARŠÍ PROJEKTY</p>
+          <h2 data-cs="Archiv zůstává dostupný." data-en="The archive stays available.">Archiv zůstává dostupný.</h2>
+          <p data-cs="Nic nemažu. Starší stránky zůstávají funkční a dostupné odsud, jen už nezabírají hlavní prostor." data-en="Nothing is removed. Older pages remain available here without taking over the main homepage.">Nic nemažu. Starší stránky zůstávají funkční a dostupné odsud, jen už nezabírají hlavní prostor.</p>
+        </div>
+
+        <div class="archive-grid">
+          <a class="archive-card" href="webshare.html"><span>01</span><div><strong>Webshare</strong><small data-cs="Starší webový projekt" data-en="Legacy web project">Starší webový projekt</small></div><b>→</b></a>
+          <a class="archive-card" href="livescore.html"><span>02</span><div><strong>Livescore</strong><small data-cs="Sportovní výsledky" data-en="Sports scores">Sportovní výsledky</small></div><b>→</b></a>
+          <a class="archive-card" href="Checklist.html"><span>03</span><div><strong>Checklist</strong><small data-cs="Webový nástroj" data-en="Web utility">Webový nástroj</small></div><b>→</b></a>
+          <a class="archive-card" href="hry.html"><span>04</span><div><strong>Hry</strong><small>Xbox</small></div><b>→</b></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div>
+          <p class="kicker">CASEYCZ</p>
+          <h2 data-cs-html="Jedna značka.<br><span>Různé nápady.</span>" data-en-html="One name.<br><span>Different ideas.</span>">Jedna značka.<br><span>Různé nápady.</span></h2>
+        </div>
+        <div class="about-copy">
+          <p class="large-copy" data-cs="CaseyCZ je moje místo pro vlastní aplikace, automatizace, widgety a další technické projekty, které vznikají hlavně proto, že mi chybí nástroj přesně podle mých představ." data-en="CaseyCZ is where I publish my apps, automations, widgets and other technical projects — usually because the exact tool I want does not exist yet.">CaseyCZ je moje místo pro vlastní aplikace, automatizace, widgety a další technické projekty, které vznikají hlavně proto, že mi chybí nástroj přesně podle mých představ.</p>
+          <div class="about-links">
+            <a href="https://github.com/CaseyCZ" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://www.youtube.com/channel/UCTT4ob7-2lkjdQf3yuqrjDw" target="_blank" rel="noopener">YouTube ↗</a>
+            <a href="https://www.reddit.com/user/CaseyCZ" target="_blank" rel="noopener">Reddit ↗</a>
+            <a href="https://twitter.com/Searcasey" target="_blank" rel="noopener">X / Twitter ↗</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Produkty</h5>
-            <p class="card-text">Apple,Microsoft</p>
-            <a
-              href="depictions/?p=com.supermamon.oldpackage"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Fotbal</h5>
-            <p class="card-text">Slovan Liberec U7.</p>
-            <a
-              href="depictions/?p=com.CaseyCZ.Cocoatop"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Sport</h5>
-            <p class="card-text">Florbal,Hokejbal</p>
-            <a
-              href="depictions/?p=com.supermamon.newpackage"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
-        </div>
-      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div><strong>CaseyCZ</strong><small data-cs="Apps · tools · projects" data-en="Apps · tools · projects">Apps · tools · projects</small></div>
+      <p>© <span id="year">2026</span> CaseyCZ. <span data-cs="Všechna práva vyhrazena." data-en="All rights reserved.">Všechna práva vyhrazena.</span></p>
+      <a href="#top" data-cs="Nahoru ↑" data-en="Back to top ↑">Nahoru ↑</a>
     </div>
-
-    <h2>Featured Packages</h2>
-    <p>Zde jsou zvýrazněné balíčky a projekty, na kterých pracuji.</p>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Hry</h5>
-            <p class="card-text">Xbox</p>
-            <a href="hry.html" class="btn btn-xs custom-btn">Více informací</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Software</h5>
-            <p class="card-text">Mac OS - Windows</p>
-            <a
-              href="depictions/?p=com.CaseyCZ.Cocoatop"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Tv</h5>
-            <p class="card-text">SSC - Plex</p>
-            <a
-              href="depictions/?p=com.CaseyCZ.Cocoatop"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Dron</h5>
-            <p class="card-text">Mavic Mini</p>
-            <a
-              href="depictions/?p=com.CaseyCZ.Cocoatop"
-              class="btn btn-xs custom-btn"
-              >Více informací</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      let isNightMode = false;
-      function toggleNightMode() {
-        isNightMode = !isNightMode;
-        document.body.classList.toggle("night-mode");
-      }
-      src =
-        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js";
-    </script>
-    <footer class="footer">
-      <div class="social-items">
-        <a
-          href="https://twitter.com/Searcasey"
-          target="_blank"
-          class="mr-3 social-icon"
-          ><i class="fab fa-twitter"></i
-        ></a>
-        <a
-          href="https://www.youtube.com/channel/UCTT4ob7-2lkjdQf3yuqrjDw"
-          target="_blank"
-          class="mr-3 social-icon"
-          ><i class="fab fa-youtube"></i
-        ></a>
-        <a
-          href="https://www.reddit.com/user/CaseyCZ"
-          target="_blank"
-          class="mr-3 social-icon"
-          ><i class="fab fa-reddit"></i
-        ></a>
-        <a
-          href="https://github.com/CaseyCZ"
-          target="_blank"
-          class="mr-3 social-icon"
-          ><i class="fab fa-github"></i
-        ></a>
-        <a
-          href="https://www.facebook.com/CaseyCZ"
-          target="_blank"
-          class="mr-3 social-icon"
-          ><i class="fab fa-facebook"></i
-        ></a>
-        <a
-          href="https://xboxgamertag.com/search/CaseyCZ"
-          target="_blank"
-          class="mr-3 social-icon"
-          ><i class="fab fa-xbox"></i
-        ></a>
-      </div>
-      <ul class="list">
-        <li>
-          <a href="index.html">Domů</a>
-        </li>
-        <li>
-          <a href="index.html">Services</a>
-        </li>
-        <li>
-          <a href="index.html">About</a>
-        </li>
-      </ul>
-    </footer>
-  </body>
+  </footer>
+</body>
 </html>

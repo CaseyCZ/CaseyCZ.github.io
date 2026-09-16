@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070b14" id="themeColor">
+  <meta name="description" content="Homebridge Manager is a mobile interface for managing Homebridge from iPhone: server status, plugins, updates, logs, child bridges, backups and configuration in one place.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Homebridge Manager — Your Homebridge under control">
+  <meta property="og:description" content="Plugins, updates, logs and Homebridge management clearly organized on iPhone.">
+  <meta property="og:image" content="icon.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Homebridge Manager">
+  <meta name="twitter:description" content="Mobile Homebridge management from iPhone.">
+  <link rel="alternate" hreflang="cs" href="index.html">
+  <link rel="alternate" hreflang="en" href="en.html">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="language.css">
+  <title>Homebridge Manager — Your Homebridge under control</title>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Homebridge Manager — home">
+        <img src="icon.svg" alt="" width="42" height="42">
+        <span><strong>Homebridge Manager</strong><small>by CaseyCZ</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#availability">Availability</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="lang-button" href="index.html" lang="cs" hreflang="cs" aria-label="Přepnout do češtiny" title="Čeština">CZ</a>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme">☀</button>
+        <a class="button compact" href="#availability">Get the app</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content">
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="status-dot"></span> IN DEVELOPMENT <span class="version">v0.6.2</span></div>
+          <h1>Your Homebridge.<br><span>Under control.</span></h1>
+          <p class="hero-lead">Plugins, updates and your whole server. Clearly organized in one place, directly from your iPhone.</p>
+          <div class="hero-actions">
+            <a class="button" href="#preview">Explore the interface</a>
+            <a class="button secondary" href="#features">See what it can do</a>
+          </div>
+          <div class="hero-notes" aria-label="Planned platforms">
+            <span>✓ PWA first</span>
+            <span>✓ iOS app planned</span>
+          </div>
+        </div>
+
+        <div class="product-frame" id="preview" aria-label="Homebridge Manager interface preview">
+          <div class="phone-shell">
+            <div class="phone-top"><span>HB Manager</span><span class="live-pill">ONLINE</span></div>
+            <div class="preview-tabs" role="tablist" aria-label="Preview screens">
+              <button class="preview-tab active" data-preview="overview" role="tab" aria-selected="true">Overview</button>
+              <button class="preview-tab" data-preview="plugins" role="tab" aria-selected="false">Plugins</button>
+              <button class="preview-tab" data-preview="logs" role="tab" aria-selected="false">Logs</button>
+            </div>
+            <div class="preview-screen" id="previewScreen"></div>
+            <div class="phone-note">Illustrative data · this preview does not connect to your server</div>
+          </div>
+        </div>
+      </div>
+      <div class="container compatibility-strip" aria-label="Main compatibility">
+        <span>Designed for your setup</span>
+        <strong>Homebridge</strong><i></i><strong>Raspberry Pi</strong><i></i><strong>iPhone</strong><i></i><strong>Private network / VPN</strong>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-heading">
+          <p class="kicker">LESS HUNTING. MORE CONTROL.</p>
+          <h2>Everything important.<br>Without switching between tools.</h2>
+          <p>Built for everyday Homebridge administration, from a quick status check to plugin configuration.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card featured">
+            <div class="number">01 / OVERVIEW</div>
+            <h3>One glance. You know where things stand.</h3>
+            <p>Homebridge status, CPU load, memory, temperature and uptime, plus system versions and available updates.</p>
+            <div class="metric-row"><span><b>CPU</b>Load</span><span><b>RAM</b>Memory</span><span><b>Uptime</b>Running time</span></div>
+          </article>
+
+          <article class="feature-card">
+            <div class="number">02 / PLUGINS</div>
+            <h3>Settings you can actually click through.</h3>
+            <p>Schema-based forms, nested sections and device lists. Review changes before saving, with an advanced JSON editor when needed.</p>
+            <a class="text-link" href="#preview">View the preview →</a>
+          </article>
+
+          <article class="feature-card">
+            <div class="number">03 / UPDATES</div>
+            <h3>Review first. Update second.</h3>
+            <p>Homebridge, its UI, plugins, Node.js and supported system updates, with version details and confirmation before execution.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="number">04 / CHILD BRIDGES</div>
+            <h3>Control each bridge separately.</h3>
+            <p>See individual bridge status and start, stop or restart a specific child bridge when needed.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="number">05 / BACKUPS</div>
+            <h3>Back up before you change things.</h3>
+            <p>Create and download Homebridge backups, restore from files with double confirmation, and use the advanced configuration editor.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="number">06 / DIAGNOSTICS</div>
+            <h3>Every problem leaves a trace.</h3>
+            <p>Live logs, search, error and warning filters, and a focused view of what just happened.</p>
+            <a class="text-link" href="#preview">View logs preview →</a>
+          </article>
+        </div>
+        <p class="fineprint">Features are part of the development build. Availability depends on Homebridge UI, account permissions and the server installation type.</p>
+      </div>
+    </section>
+
+    <section class="section privacy-band" id="how">
+      <div class="container two-col">
+        <div>
+          <p class="kicker">YOUR HOME STAYS YOURS</p>
+          <h2>Your server.<br>Your connection.</h2>
+          <p class="large-copy">Homebridge Manager is a client for your existing Homebridge. The original Homebridge web interface remains available.</p>
+          <ul class="check-list">
+            <li>Sign in with your Homebridge account</li>
+            <li>Direct connection to the Homebridge API</li>
+            <li>Remote access through your own VPN, such as Tailscale</li>
+          </ul>
+        </div>
+        <div class="architecture-card">
+          <div class="architecture-node"><span>01</span><div><strong>iPhone</strong><small>Homebridge Manager · client</small></div></div>
+          <div class="architecture-line"><span>Local network or your VPN</span></div>
+          <div class="architecture-node"><span>02</span><div><strong>Your Homebridge</strong><small>Homebridge Config UI X · server</small></div></div>
+          <div class="security-note">No need to expose your server publicly. Use Homebridge on a trusted network. The product website never connects to your Homebridge.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="compatibility">
+      <div class="container">
+        <div class="section-heading compact-heading">
+          <p class="kicker">COMPATIBILITY</p>
+          <h2>Built for a typical Homebridge setup.</h2>
+        </div>
+        <div class="compat-grid">
+          <article><span>📱</span><h3>iPhone</h3><p>A mobile interface designed for Safari/PWA. A native iOS wrapper is the next step.</p></article>
+          <article><span>⌂</span><h3>Homebridge</h3><p>Connects to an existing installation through the Homebridge Config UI X API.</p></article>
+          <article><span>◉</span><h3>Raspberry Pi / Linux</h3><p>Monitoring and supported administrative actions according to what the host exposes.</p></article>
+          <article><span>↔</span><h3>LAN / VPN</h3><p>Use your local network or private VPN. Publicly exposing Homebridge is not required.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section availability-section" id="availability">
+      <div class="container">
+        <div class="section-heading">
+          <p class="kicker">AVAILABILITY & LICENSING</p>
+          <h2>Starting with PWA.<br>Growing toward iOS.</h2>
+          <p>Homebridge Manager is under active development. The first commercial release will follow validation on real-world setups.</p>
+        </div>
+        <div class="availability-grid">
+          <article class="availability-card primary-card">
+            <span class="card-label">FIRST PLANNED RELEASE</span>
+            <h3>PWA on iPhone</h3>
+            <p>A web app that can be added to the Home Screen. The foundation is ready while final installation and networking behavior continue to be validated on iOS.</p>
+          </article>
+          <article class="availability-card">
+            <span class="card-label">NEXT STEP</span>
+            <h3>iOS app</h3>
+            <p>The same foundation in a native wrapper. IPA, TestFlight and App Store distribution are not publicly available yet.</p>
+          </article>
+          <article class="availability-card">
+            <span class="card-label">WHAT YOU NEED</span>
+            <h3>A working Homebridge</h3>
+            <p>Homebridge with Config UI X, a valid account and a reachable network connection. Administrative operations require the appropriate permissions.</p>
+          </article>
+        </div>
+
+        <div class="commercial-card">
+          <div>
+            <span class="card-label">BEFORE COMMERCIAL RELEASE</span>
+            <h3>Pricing will be announced before launch.</h3>
+            <p>Price, licence scope and payment model have not been published yet.</p>
+          </div>
+          <div class="commercial-status">
+            <span><small>Current status</small><strong>Development version 0.6.2</strong></span>
+            <span><small>Commercial orders</small><strong>Not open yet</strong></span>
+          </div>
+        </div>
+        <p class="fineprint">Homebridge Manager is proprietary software. The application source code is not publicly distributed. © 2026 CaseyCZ. All rights reserved.</p>
+      </div>
+    </section>
+
+    <section class="section steps-section" id="install">
+      <div class="container">
+        <div class="section-heading compact-heading">
+          <p class="kicker">FIRST CONNECTION</p>
+          <h2>How testing starts.</h2>
+          <p>Development builds are currently intended only for controlled testing. There is no public installation package or public application repository.</p>
+        </div>
+        <div class="steps-grid">
+          <article><span>01</span><h3>Prepare Homebridge</h3><p>Confirm that the original Homebridge UI works and that you can sign in. Create a backup before testing.</p></article>
+          <article><span>02</span><h3>Get a test build</h3><p>Development builds are provided only to selected testers while validation is in progress. Public distribution will be announced after testing is complete.</p></article>
+          <article><span>03</span><h3>Connect your server</h3><p>Enter your Homebridge address and account. Verify status loading first, then test individual administrative features.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section release-section" id="release">
+      <div class="container release-card">
+        <div>
+          <p class="kicker">WHAT'S NEW · 0.6.2</p>
+          <h2>Another step toward easier configuration.</h2>
+        </div>
+        <ul>
+          <li>Nested forms and device lists</li>
+          <li>Conditional fields and advanced JSON editor</li>
+          <li>PWA cache separated from Homebridge data</li>
+          <li>Touch-friendly controls and iPhone icons</li>
+        </ul>
+        <p class="fineprint">The complete changelog remains part of the internal development documentation.</p>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-heading">
+          <p class="kicker">GOOD TO KNOW</p>
+          <h2>Questions?<br>Here are the answers.</h2>
+          <p>An official contact and support channel will be published before release.</p>
+        </div>
+        <div class="faq-list">
+          <details open><summary>Is this an official Homebridge app?</summary><p>No. Homebridge Manager is an independent CaseyCZ project. It uses interfaces provided by an existing Homebridge UI installation and is not a product of the Homebridge team or Apple.</p></details>
+          <details><summary>Do I need to edit JSON?</summary><p>Not for normal configuration of supported plugins. The app can generate forms from plugin schemas. An advanced JSON editor remains available for more complex cases.</p></details>
+          <details><summary>Does it work away from home?</summary><p>Yes, if you have a secure path to your Homebridge, for example through your own VPN such as Tailscale. Homebridge does not need to be exposed directly to the public internet.</p></details>
+          <details><summary>Can I download it from the App Store now?</summary><p>Not yet. The project is in development. PWA is the first planned release form, followed by native iOS distribution after validation and completion.</p></details>
+          <details><summary>What works without a connection?</summary><p>The product website and some static interface elements. Administration, logs, updates and server status require a reachable Homebridge server.</p></details>
+          <details><summary>Are multiple servers or HOOBS supported?</summary><p>The current development branch targets one Homebridge server using Config UI X. Multiple profiles and other platforms are not currently promised as supported features.</p></details>
+          <details><summary>Is the development build suitable for production use?</summary><p>Test carefully. Create a backup before configuration changes or restore operations, and only run administrative actions when you understand their impact.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section support-section" id="support">
+      <div class="container support-card">
+        <div>
+          <p class="kicker">SUPPORT</p>
+          <h2>Official support will launch with the product.</h2>
+          <p>A dedicated support and issue-reporting channel is being prepared for the public release. Until then, never send passwords, tokens or configurations to unverified contacts.</p>
+        </div>
+        <div class="support-actions">
+          <a class="button" href="#availability">Release status</a>
+          <a class="button secondary" href="privacy-en.html">Privacy & data</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand"><img src="icon.svg" alt="" width="38" height="38"><div><strong>Homebridge Manager</strong><small>Independent project by CaseyCZ</small></div></div>
+      <nav aria-label="Legal links">
+        <a href="privacy-en.html">Privacy</a>
+        <a href="terms-en.html">Terms & licence</a>
+      </nav>
+      <small>© 2026 CaseyCZ · All rights reserved</small>
+    </div>
+  </footer>
+
+  <script src="app-en.js"></script>
+</body>
+</html>

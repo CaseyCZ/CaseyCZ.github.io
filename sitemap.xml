@@ -20,7 +20,14 @@
   </url>
   <url>
     <loc>https://caseycz.github.io/hry.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://caseycz.github.io/about.html</loc>
+    <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.2</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>

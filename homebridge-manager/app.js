@@ -11,13 +11,38 @@ function englishPageForCurrentPath() {
   return 'en.html';
 }
 
+function ensureLanguageUi() {
+  if (!document.querySelector('link[href="language.css"]')) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'language.css';
+    document.head.appendChild(link);
+  }
+  let button = document.querySelector('.lang-button');
+  if (!button) {
+    const actions = document.querySelector('.nav-actions');
+    if (!actions) return null;
+    button = document.createElement('a');
+    button.className = 'lang-button';
+    button.href = englishPageForCurrentPath();
+    button.lang = 'en';
+    button.hreflang = 'en';
+    button.textContent = 'EN';
+    button.setAttribute('aria-label', 'Switch to English');
+    button.title = 'English';
+    actions.insertBefore(button, toggle || actions.firstChild);
+  }
+  return button;
+}
+
 let savedLanguage = localStorage.getItem(languageKey);
 if (!savedLanguage) {
   savedLanguage = 'en';
   localStorage.setItem(languageKey, 'en');
 }
 
-document.querySelector('.lang-button')?.addEventListener('click', () => {
+const languageButton = ensureLanguageUi();
+languageButton?.addEventListener('click', () => {
   localStorage.setItem(languageKey, 'en');
 });
 

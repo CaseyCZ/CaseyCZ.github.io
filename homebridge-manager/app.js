@@ -11,29 +11,37 @@ function englishPageForCurrentPath() {
   return 'en.html';
 }
 
-function ensureLanguageUi() {
-  if (!document.querySelector('link[href="language.css"]')) {
+function ensureLanguageStyles() {
+  const loaded = [...document.querySelectorAll('link[rel="stylesheet"]')]
+    .some(link => (link.getAttribute('href') || '').includes('language.css'));
+  if (!loaded) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'language.css';
     document.head.appendChild(link);
   }
-  let button = document.querySelector('.lang-button');
+}
+
+function ensureLanguageButton() {
+  const actions = document.querySelector('.nav-actions');
+  if (!actions) return null;
+  let button = actions.querySelector('.lang-button');
   if (!button) {
-    const actions = document.querySelector('.nav-actions');
-    if (!actions) return null;
     button = document.createElement('a');
     button.className = 'lang-button';
+    button.textContent = 'EN';
     button.href = englishPageForCurrentPath();
     button.lang = 'en';
     button.hreflang = 'en';
-    button.textContent = 'EN';
     button.setAttribute('aria-label', 'Switch to English');
     button.title = 'English';
-    actions.insertBefore(button, toggle || actions.firstChild);
+    actions.insertBefore(button, actions.firstChild);
   }
   return button;
 }
+
+ensureLanguageStyles();
+const langButton = ensureLanguageButton();
 
 let savedLanguage = localStorage.getItem(languageKey);
 if (!savedLanguage) {
@@ -41,8 +49,7 @@ if (!savedLanguage) {
   localStorage.setItem(languageKey, 'en');
 }
 
-const languageButton = ensureLanguageUi();
-languageButton?.addEventListener('click', () => {
+langButton?.addEventListener('click', () => {
   localStorage.setItem(languageKey, 'en');
 });
 

@@ -1,0 +1,27 @@
+/* Legacy CaseyCZ styles preserved for older pages */
+body { background-color:#000; color:#fff; font-family:Arial,sans-serif; text-align:center; margin:0; padding:0; }
+.h1 { color:#fff; }
+.container { margin:0 auto; padding:10px; }
+.card-text { font-size:18px; margin:20px; }
+body:not(.night-mode) .card { background-color:#000; }
+.night-mode .body { margin:1em; background-color:#000; color:#000; }
+@media (prefers-color-scheme:dark){
+  .card-header{background-color:#000}
+  body{background-color:#000}
+  p{font-size:16px;margin:10px}
+  .card-header{background-color:#000;color:#fff}
+  body:not(.night-mode) .card{background-color:#fff}
+  body.night-mode .card{background-color:#000;color:#000}
+  .jumbotron,.list-group-item{background-color:#000}
+  .list-group-item{border-color:#000}
+  html.can-touch .link-item:hover,html.can-touch .link-item:active{background-color:#000}
+}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.custom-logo{width:200px;height:auto;position:absolute;top:-10px;left:-20px}
+.header{background-image:linear-gradient(to right,#667eea,#764ba2);transition:background-color .3s ease}
+.custom-btn{background-image:linear-gradient(to right,#667eea,#764ba2);color:#fff;border-radius:5px;text-decoration:none;align-items:center;padding:10px}
+.custom-btn:hover{background-image:linear-gradient(to right,#667eea,#764ba2);color:#000;text-decoration:none;align-items:center;padding:10px}
+body.night-mode .card{background-color:#fff}
+div .card{width:200px;margin:0 auto}.card-title{margin:5px}.card{transition:transform .3s ease;background-color:#f0f0f0;border:1px solid #ddd;margin-bottom:20px}.card:hover{transform:scale(1.05)}.card .card-title{color:#764ba2}.tabs a{margin-right:50px}.night-mode{background-color:#f8f8ff;color:#000}.nightModeButton{margin-right:20px}div.col-md-4{margin-bottom:20px}.row{margin:20px;padding:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;justify-items:center}
+@media(max-width:950px){.row{grid-template-columns:repeat(2,1fr);margin:0;padding:0;display:grid;gap:0;justify-items:center}}
+.custom-logo{display:none}.card{margin-bottom:10px;width:calc(50% - 10px)}h2{margin:10px}h5{font-size:20px}.button-odkazy{display:flex;align-items:center;justify-content:center;padding:10px;position:absolute;left:50%;transform:translate(-50%,-50%);width:100%;max-width:400px;box-sizing:border-box;margin-top:20px;margin-left:20px}.button-odkazy a,.button-odkazy button{margin-left:10px;text-decoration:none;color:#fff;transition:color .3s;background:none;border:none;padding:0;outline:none}.button-odkazy a:hover,.button-odkazy button:hover{background:none;color:#ff9900}

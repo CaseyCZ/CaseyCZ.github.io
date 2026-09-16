@@ -4,13 +4,28 @@ const themeColor = document.getElementById('themeColor');
 const preview = document.getElementById('previewScreen');
 const languageKey = 'hbm-product-language';
 
-if (!localStorage.getItem(languageKey)) {
+function czechPageForCurrentPath() {
+  const file = location.pathname.split('/').pop() || 'en.html';
+  if (file === 'privacy-en.html') return 'privacy.html';
+  if (file === 'terms-en.html') return 'terms.html';
+  return 'index.html';
+}
+
+let savedLanguage = localStorage.getItem(languageKey);
+if (!savedLanguage) {
+  savedLanguage = 'en';
   localStorage.setItem(languageKey, 'en');
 }
 
-document.querySelector('.lang-button')?.addEventListener('click', () => {
-  localStorage.setItem(languageKey, 'cs');
-});
+const langButton = document.querySelector('.lang-button');
+if (langButton) {
+  langButton.href = czechPageForCurrentPath();
+  langButton.addEventListener('click', () => localStorage.setItem(languageKey, 'cs'));
+}
+
+if (root.lang === 'en' && savedLanguage === 'cs') {
+  location.replace(czechPageForCurrentPath() + location.search + location.hash);
+}
 
 function applyTheme(theme) {
   root.dataset.theme = theme;

@@ -12,35 +12,32 @@
 </p>
 
 <p align="center">
-  <a href="https://caseycz.github.io/"><img src="https://img.shields.io/badge/CaseyCZ%20Website-OPEN-38BDF8?style=for-the-badge&labelColor=0284C7" alt="CaseyCZ Website" /></a>
-  <a href="https://www.buymeacoffee.com/caseycz"><img src="https://img.shields.io/badge/Support%20CaseyCZ-OPEN-38BDF8?style=for-the-badge&labelColor=0284C7&logo=buymeacoffee&logoColor=white" alt="Support CaseyCZ" /></a>
+  <a href="https://caseycz.github.io/"><img src="https://img.shields.io/badge/Website-Open-38BDF8?style=for-the-badge&labelColor=0284C7&logo=googlechrome&logoColor=white" alt="Open CaseyCZ Website" /></a>
+  <a href="https://github.com/CaseyCZ/CaseyCZ.github.io"><img src="https://img.shields.io/badge/GitHub-Repository-38BDF8?style=for-the-badge&labelColor=0284C7&logo=github&logoColor=white" alt="CaseyCZ Website GitHub repository" /></a>
 </p>
 
 ## About the website
 
-The website is the central place for current CaseyCZ projects. Each project has its own website or repository and can be reached quickly from the main page.
+**CaseyCZ Website** is the central place for my current apps and projects. From one website you can reach Homebridge Manager, GameS Calendar, Scriptable Apps, Travel Checklist and the Stremio add-ons.
 
 ## Projects
 
-- 🏠 **Homebridge Manager** — mobile Homebridge administration for iPhone / PWA
-- 🎮 **GameS Calendar** — game release calendar and search
-- 📱 **Scriptable Apps** — iPhone widgets and tools
-- ✈️ **Travel Checklist** — travel packing assistant
-- ▶️ **Stremio Sosáč** — catalogs, metadata and video streams
-- 💬 **Sosáč Subtitles** — separate Stremio subtitle add-on
+| Project | Info | Link |
+| --- | --- | --- |
+| **Homebridge Manager** | Mobile Homebridge administration for iPhone / PWA. | [Website](https://caseycz.github.io/homebridge-manager/) |
+| **GameS Calendar** | Game release calendar and search. | [Website](https://130.61.49.108/games/) |
+| **Scriptable Apps** | iPhone widgets and tools. | [Catalog](https://caseycz.github.io/Scriptable/) |
+| **Travel Checklist** | Travel packing assistant. | [Website](https://caseycz.github.io/Checklist.html) |
+| **Stremio Sosáč** | Catalogs, metadata and video streams. | [Configure](https://130.61.49.108/configure) |
+| **Sosáč Subtitles** | Separate Stremio subtitle add-on. | [Configure](https://130.61.49.108:8443/configure) |
 
-## Links
-
-<p>
-  <a href="https://caseycz.github.io/homebridge-manager/"><img src="https://img.shields.io/badge/Homebridge%20Manager-Web-38BDF8?style=for-the-badge&labelColor=0284C7" alt="Homebridge Manager" /></a>
-  <a href="https://130.61.49.108/games/"><img src="https://img.shields.io/badge/GameS%20Calendar-Web-38BDF8?style=for-the-badge&labelColor=0284C7" alt="GameS Calendar" /></a>
-  <a href="https://caseycz.github.io/Scriptable/"><img src="https://img.shields.io/badge/Scriptable-Catalog-38BDF8?style=for-the-badge&labelColor=0284C7" alt="Scriptable" /></a>
-  <a href="https://caseycz.github.io/Checklist.html"><img src="https://img.shields.io/badge/Travel%20Checklist-Web-38BDF8?style=for-the-badge&labelColor=0284C7" alt="Travel Checklist" /></a>
-</p>
-
-## CaseyCZ
+## Support
 
 <p align="center">
-  <a href="https://github.com/CaseyCZ"><img src="https://img.shields.io/badge/GitHub-CaseyCZ-38BDF8?style=for-the-badge&labelColor=0284C7&logo=github&logoColor=white" alt="CaseyCZ GitHub" /></a>
   <a href="https://www.buymeacoffee.com/caseycz"><img src="https://img.shields.io/badge/Support%20CaseyCZ-Buy%20Me%20a%20Coffee-38BDF8?style=for-the-badge&labelColor=0284C7&logo=buymeacoffee&logoColor=white" alt="Support CaseyCZ" /></a>
+</p>
+
+<p align="center">
+  <a href="https://www.buymeacoffee.com/caseycz"><img src="https://caseycz.github.io/support-qr.svg" width="150" alt="Buy Me a Coffee CaseyCZ QR code" /></a><br>
+  <sub>Scan the QR code or click the button.</sub>
 </p>

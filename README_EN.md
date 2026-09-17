@@ -22,14 +22,17 @@
 
 ## Projects
 
-| Project | Info | Link |
-| --- | --- | --- |
-| **Homebridge Manager** | Mobile Homebridge administration for iPhone / PWA. | [Website](https://caseycz.github.io/homebridge-manager/) |
-| **GameS Calendar** | Game release calendar and search. | [Website](https://130.61.49.108/games/) |
-| **Scriptable Apps** | iPhone widgets and tools. | [Catalog](https://caseycz.github.io/Scriptable/) |
-| **Travel Checklist** | Travel packing assistant. | [Website](https://caseycz.github.io/Checklist.html) |
-| **Stremio Sosáč** | Catalogs, metadata and video streams. | [Configure](https://130.61.49.108/configure) |
-| **Sosáč Subtitles** | Separate Stremio subtitle add-on. | [Configure](https://130.61.49.108:8443/configure) |
+<table>
+  <thead><tr><th>Project</th><th>Info</th><th>Links</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Homebridge Manager</strong></td><td>Mobile Homebridge administration for iPhone / PWA.</td><td><a href="https://caseycz.github.io/homebridge-manager/"><img src="https://img.shields.io/badge/Web-Open-38BDF8?style=flat-square&labelColor=0284C7&logo=googlechrome&logoColor=white" alt="Homebridge Manager web" /></a></td></tr>
+    <tr><td><strong>GameS Calendar</strong></td><td>Game release calendar and search.</td><td><a href="https://130.61.49.108/games/"><img src="https://img.shields.io/badge/Web-Open-38BDF8?style=flat-square&labelColor=0284C7&logo=googlechrome&logoColor=white" alt="GameS web" /></a> <a href="https://github.com/CaseyCZ/GameS-Calendar-Website"><img src="https://img.shields.io/badge/GitHub-Repo-38BDF8?style=flat-square&labelColor=0284C7&logo=github&logoColor=white" alt="GameS GitHub" /></a></td></tr>
+    <tr><td><strong>Scriptable Apps</strong></td><td>iPhone widgets and tools.</td><td><a href="https://caseycz.github.io/Scriptable/"><img src="https://img.shields.io/badge/Web-Catalog-38BDF8?style=flat-square&labelColor=0284C7&logo=googlechrome&logoColor=white" alt="Scriptable catalog" /></a> <a href="https://github.com/CaseyCZ/Scriptable"><img src="https://img.shields.io/badge/GitHub-Repo-38BDF8?style=flat-square&labelColor=0284C7&logo=github&logoColor=white" alt="Scriptable GitHub" /></a></td></tr>
+    <tr><td><strong>Travel Checklist</strong></td><td>Travel packing assistant.</td><td><a href="https://caseycz.github.io/Checklist.html"><img src="https://img.shields.io/badge/Web-Open-38BDF8?style=flat-square&labelColor=0284C7&logo=googlechrome&logoColor=white" alt="Travel Checklist web" /></a></td></tr>
+    <tr><td><strong>Stremio Sosáč</strong></td><td>Catalogs, metadata and video streams.</td><td><a href="https://130.61.49.108/configure"><img src="https://img.shields.io/badge/Configure-Open-38BDF8?style=flat-square&labelColor=0284C7&logo=googlechrome&logoColor=white" alt="Stremio Sosáč configuration" /></a> <a href="https://github.com/CaseyCZ/stremio.sosac"><img src="https://img.shields.io/badge/GitHub-Repo-38BDF8?style=flat-square&labelColor=0284C7&logo=github&logoColor=white" alt="Stremio Sosáč GitHub" /></a></td></tr>
+    <tr><td><strong>Sosáč Subtitles</strong></td><td>Separate Stremio subtitle add-on.</td><td><a href="https://130.61.49.108:8443/configure"><img src="https://img.shields.io/badge/Configure-Open-38BDF8?style=flat-square&labelColor=0284C7&logo=googlechrome&logoColor=white" alt="Sosáč Subtitles configuration" /></a> <a href="https://github.com/CaseyCZ/stremio.sosac.subtitles"><img src="https://img.shields.io/badge/GitHub-Repo-38BDF8?style=flat-square&labelColor=0284C7&logo=github&logoColor=white" alt="Sosáč Subtitles GitHub" /></a></td></tr>
+  </tbody>
+</table>
 
 ## Support
 

@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <a href="README.md"><img src="https://img.shields.io/badge/CZ-%C4%8Ce%C5%A1tina-38BDF8?style=for-the-badge&labelColor=0284C7" alt="Čeština" /></a>
+  <img src="https://img.shields.io/badge/CZ-%C4%8Ce%C5%A1tina-38BDF8?style=for-the-badge&labelColor=0284C7" alt="Čeština" />
   <a href="README_EN.md"><img src="https://img.shields.io/badge/EN-English-172033?style=for-the-badge&labelColor=111827" alt="English" /></a>
 </p>
 
@@ -13,7 +13,6 @@
 
 <p align="center">
   <a href="https://caseycz.github.io/"><img src="https://img.shields.io/badge/Web-Otev%C5%99%C3%ADt-38BDF8?style=for-the-badge&labelColor=0284C7&logo=googlechrome&logoColor=white" alt="Otevřít CaseyCZ Website" /></a>
-  <a href="https://github.com/CaseyCZ/CaseyCZ.github.io"><img src="https://img.shields.io/badge/GitHub-Repozit%C3%A1%C5%99-38BDF8?style=for-the-badge&labelColor=0284C7&logo=github&logoColor=white" alt="GitHub repozitář CaseyCZ Website" /></a>
 </p>
 
 ## O webu

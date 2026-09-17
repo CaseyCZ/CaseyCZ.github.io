@@ -14,7 +14,6 @@
 <p align="center">
   <a href="https://caseycz.github.io/"><img src="https://img.shields.io/badge/Web-Otev%C5%99%C3%ADt-38BDF8?style=for-the-badge&labelColor=0284C7&logo=googlechrome&logoColor=white" alt="Otevřít CaseyCZ Website" /></a>
   <a href="https://github.com/CaseyCZ/CaseyCZ.github.io"><img src="https://img.shields.io/badge/GitHub-Repozit%C3%A1%C5%99-38BDF8?style=for-the-badge&labelColor=0284C7&logo=github&logoColor=white" alt="GitHub repozitář CaseyCZ Website" /></a>
-  <a href="https://www.buymeacoffee.com/caseycz"><img src="https://img.shields.io/badge/Podpo%C5%99it-CaseyCZ-38BDF8?style=for-the-badge&labelColor=0284C7&logo=buymeacoffee&logoColor=white" alt="Podpořit CaseyCZ" /></a>
 </p>
 
 ## O webu
@@ -32,6 +31,13 @@
 | **Stremio Sosáč** | Katalogy, metadata a video streamy. | [Konfigurace](https://130.61.49.108/configure) |
 | **Sosáč Subtitles** | Samostatný Stremio addon pro titulky. | [Konfigurace](https://130.61.49.108:8443/configure) |
 
+## Podpora
+
 <p align="center">
-  <strong>CaseyCZ</strong> · apps · tools · projects
+  <a href="https://www.buymeacoffee.com/caseycz"><img src="https://img.shields.io/badge/Podpo%C5%99it%20CaseyCZ-Buy%20Me%20a%20Coffee-38BDF8?style=for-the-badge&labelColor=0284C7&logo=buymeacoffee&logoColor=white" alt="Podpořit CaseyCZ" /></a>
+</p>
+
+<p align="center">
+  <a href="https://www.buymeacoffee.com/caseycz"><img src="https://caseycz.github.io/support-qr.svg" width="150" alt="QR kód Buy Me a Coffee CaseyCZ" /></a><br>
+  <sub>Naskenuj QR kód nebo klikni na tlačítko.</sub>
 </p>

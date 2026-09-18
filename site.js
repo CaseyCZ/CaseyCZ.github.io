@@ -13,6 +13,91 @@
     try { localStorage.setItem(key, value); } catch (_) {}
   };
 
+  function installMobileNav() {
+    const header = document.querySelector('.site-header');
+    const sourceNav = document.querySelector('.desktop-nav');
+    const navActions = document.querySelector('.nav-actions');
+    if (!header || !sourceNav || !navActions || document.querySelector('[data-mobile-nav-toggle]')) return;
+
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'icon-button mobile-nav-toggle';
+    button.setAttribute('data-mobile-nav-toggle', '');
+    button.setAttribute('aria-label', 'Menu');
+    button.setAttribute('aria-haspopup', 'true');
+    button.setAttribute('aria-expanded', 'false');
+    button.setAttribute('aria-controls', 'mobileNavPanel');
+    button.textContent = '☰';
+
+    const panel = document.createElement('nav');
+    panel.id = 'mobileNavPanel';
+    panel.className = 'mobile-nav-panel';
+    panel.setAttribute('aria-label', 'Mobile navigation');
+    panel.setAttribute('aria-hidden', 'true');
+
+    [...sourceNav.querySelectorAll('a')].forEach((link) => {
+      const clone = link.cloneNode(true);
+      clone.removeAttribute('class');
+      panel.appendChild(clone);
+    });
+
+    const github = [...navActions.querySelectorAll('a')].find((link) => link.href.includes('github.com/CaseyCZ'));
+    if (github) {
+      const clone = github.cloneNode(true);
+      clone.className = 'mobile-nav-external';
+      clone.removeAttribute('class');
+      clone.classList.add('mobile-nav-external');
+      panel.appendChild(clone);
+    }
+
+    document.body.appendChild(panel);
+    navActions.insertBefore(button, document.getElementById('themeToggle'));
+
+    const positionPanel = () => {
+      const rect = header.getBoundingClientRect();
+      panel.style.top = Math.round(rect.bottom + 8) + 'px';
+    };
+
+    const close = () => {
+      panel.classList.remove('open');
+      panel.setAttribute('aria-hidden', 'true');
+      button.setAttribute('aria-expanded', 'false');
+      button.textContent = '☰';
+    };
+
+    const open = () => {
+      positionPanel();
+      panel.classList.add('open');
+      panel.setAttribute('aria-hidden', 'false');
+      button.setAttribute('aria-expanded', 'true');
+      button.textContent = '×';
+    };
+
+    button.addEventListener('click', () => {
+      if (panel.classList.contains('open')) close();
+      else open();
+    });
+
+    panel.addEventListener('click', (event) => {
+      if (event.target.closest('a')) close();
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!panel.classList.contains('open')) return;
+      if (panel.contains(event.target) || button.contains(event.target)) return;
+      close();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') close();
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 980) close();
+      else if (panel.classList.contains('open')) positionPanel();
+    });
+  }
+
   function installSupportUI() {
     const navActions = document.querySelector('.nav-actions');
     if (!navActions || document.querySelector('[data-support-open]')) return;
@@ -162,6 +247,7 @@
     safeSet('caseycz-language', selected);
   }
 
+  installMobileNav();
   installSupportUI();
 
   const storedTheme = safeGet('caseycz-theme');

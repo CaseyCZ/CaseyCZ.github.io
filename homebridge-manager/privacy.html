@@ -4,33 +4,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#070b14" id="themeColor">
-  <meta name="description" content="Informace o soukromí a práci s daty v projektu Homebridge Manager.">
+  <meta name="description" content="Informace o soukromí a práci s daty v HB Control.">
+  <link rel="alternate" hreflang="cs" href="privacy.html">
+  <link rel="alternate" hreflang="en" href="privacy-en.html">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
-  <title>Soukromí — Homebridge Manager</title>
+  <title>Soukromí — HB Control</title>
 </head>
 <body>
   <a class="skip" href="#content">Přejít na obsah</a>
-  <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><img src="icon.svg" alt="" width="42" height="42"><span><strong>Homebridge Manager</strong><small>by CaseyCZ</small></span></a><div class="nav-actions"><button class="icon-button" id="themeToggle" type="button" aria-label="Přepnout téma">☀</button><a class="button compact" href="index.html">Zpět na web</a></div></div></header>
+  <header class="site-header"><div class="container nav-wrap"><a class="brand" href="index.html"><img src="icon.svg" alt="" width="42" height="42"><span><strong>HB Control</strong><small>by CaseyCZ</small></span></a><div class="nav-actions"><button class="icon-button" id="themeToggle" type="button" aria-label="Přepnout téma">☀</button><a class="button compact" href="index.html">Zpět na web</a></div></div></header>
   <main class="legal-main" id="content">
-    <section class="legal-hero"><div class="container legal-content"><p class="kicker">SOUKROMÍ</p><h1>Vaše Homebridge data zůstávají mezi vámi a vaším serverem.</h1><p>Poslední aktualizace: 16. září 2026</p></div></section>
+    <section class="legal-hero"><div class="container legal-content"><p class="kicker">SOUKROMÍ</p><h1>Vaše Homebridge data zůstávají mezi vámi a vaším serverem.</h1><p>Poslední aktualizace: 26. září 2026 · HB Control 0.6.4 build 16</p></div></section>
     <section><div class="container legal-content">
       <h2>Produktový web</h2>
-      <p>Tento produktový web je informační stránka. Sám se nepřipojuje k vašemu Homebridge, nečte konfiguraci vašeho serveru a nevyžaduje přihlašovací údaje Homebridge.</p>
-      <h2>Homebridge Manager</h2>
-      <p>Vývojová aplikace se připojuje přímo k adrese Homebridge, kterou zadá uživatel. Přihlášení probíhá vůči Homebridge Config UI X. Současný prototyp neukládá heslo Homebridge; přístupový token je určen pro aktuální relaci aplikace.</p>
+      <p>Tento produktový web je informační stránka. Nepřipojuje se k vašemu Homebridge, nečte konfiguraci serveru a nevyžaduje přihlašovací údaje Homebridge.</p>
+      <h2>HB Control</h2>
+      <p>Aplikace se připojuje pouze k Homebridge serveru zvolenému uživatelem. Ve výchozím stavu heslo neukládá. Pokud uživatel výslovně zapne bezpečné přihlášení, adresa serveru, uživatelské jméno a heslo se uloží pouze do iOS Keychainu na daném zařízení a jejich načtení vyžaduje Face ID, Touch ID nebo kód zařízení. Přístupový token zůstává pouze v aktuální relaci.</p>
+      <h2>Demo Mode</h2>
+      <p>Demo Mode používá pouze lokální ukázková data a nepřipojuje se ke skutečnému Homebridge serveru ani na něm neprovádí změny.</p>
+      <h2>Diagnostika</h2>
+      <p>Diagnostika zůstává v zařízení, dokud ji uživatel sám nezkopíruje nebo nesdílí. Při kopírování aplikace maskuje běžné adresy serveru, IP adresy, MAC adresy a Bearer tokeny.</p>
+      <h2>Analytika a sledování</h2>
+      <p>HB Control nepoužívá reklamní tracking, nevytváří reklamní profil uživatele a nemá vlastní analytický nebo telemetrický backend. Produktový web neobsahuje vlastní reklamní ani analytické skripty.</p>
+      <h2>Uchování a smazání</h2>
+      <p>HB Control nemá vlastní uživatelský účet ani vývojářský backend pro ukládání Homebridge přihlašovacích údajů nebo diagnostiky. Uložené přihlášení lze kdykoliv smazat v aplikaci. Odhlášení odstraní token aktuální relace a jednorázové 2FA kódy se neukládají.</p>
+      <h2>Pluginy a služby třetích stran</h2>
+      <p>Homebridge pluginy jsou samostatný software nainstalovaný na vašem serveru a mohou používat vlastní síťové služby a zásady ochrany soukromí.</p>
       <h2>Lokální síť a VPN</h2>
-      <p>Homebridge Manager je navržen pro použití v důvěryhodné lokální síti nebo přes soukromé spojení, například Tailscale. Nedoporučujeme veřejně vystavovat administrační port Homebridge do internetu.</p>
-      <h2>Diagnostika a podpora</h2>
-      <p>Pokud při hlášení chyby později sdílíte screenshoty, logy nebo konfiguraci, před odesláním odstraňte hesla, tokeny, interní adresy a další citlivé údaje. Veřejný kanál podpory bude zveřejněn před vydáním produktu.</p>
-      <h2>Analytika a cookies</h2>
-      <p>Zdrojová verze tohoto webu neobsahuje vlastní reklamní ani sledovací skripty a nepoužívá analytické cookies. Hostingová platforma nebo budoucí poskytovatel domény může zpracovávat standardní technické údaje podle svých vlastních podmínek; před veřejným komerčním vydáním bude tato část aktualizována podle skutečného nasazení.</p>
-      <h2>Kontakt</h2>
-      <p>Oficiální kontakt pro podporu a dotazy k soukromí bude zveřejněn před komerčním vydáním. Neposílejte přístupová hesla, tokeny ani citlivé konfigurace na neověřené kontakty.</p>
-      <p><a href="index.html">← Zpět na Homebridge Manager</a></p>
+      <p>HB Control je navržen pro důvěryhodnou lokální síť nebo vlastní zabezpečené vzdálené připojení, například VPN. Administrační port Homebridge není potřeba veřejně vystavovat do internetu.</p>
+      <p><a href="index.html">← Zpět na HB Control</a></p>
     </div></section>
   </main>
-  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><img src="icon.svg" alt="" width="38" height="38"><div><strong>Homebridge Manager</strong><small>Nezávislý projekt od CaseyCZ</small></div></div><nav><a href="privacy.html">Soukromí</a><a href="terms.html">Podmínky a licence</a></nav><small>© 2026 CaseyCZ · Všechna práva vyhrazena</small></div></footer>
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><img src="icon.svg" alt="" width="38" height="38"><div><strong>HB Control</strong><small>Nezávislý projekt od CaseyCZ</small></div></div><nav><a href="privacy.html">Soukromí</a><a href="terms.html">Podmínky a licence</a></nav><small>© 2026 CaseyCZ · Všechna práva vyhrazena</small></div></footer>
   <script src="app.js"></script>
 </body>
 </html>

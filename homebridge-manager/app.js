@@ -2,7 +2,7 @@ const root = document.documentElement;
 const toggle = document.getElementById('themeToggle');
 const themeColor = document.getElementById('themeColor');
 const preview = document.getElementById('previewScreen');
-const languageKey = 'hbm-product-language';
+const languageKey = 'hb-control-product-language';
 
 function englishPageForCurrentPath() {
   const file = location.pathname.split('/').pop() || 'index.html';
@@ -64,17 +64,17 @@ function applyTheme(theme) {
     toggle.setAttribute('aria-label', theme === 'dark' ? 'Přepnout na světlé téma' : 'Přepnout na tmavé téma');
   }
   if (themeColor) themeColor.content = theme === 'dark' ? '#070b14' : '#eef3f8';
-  localStorage.setItem('hbm-product-theme', theme);
+  localStorage.setItem('hb-control-product-theme', theme);
 }
 
-const preferred = localStorage.getItem('hbm-product-theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+const preferred = localStorage.getItem('hb-control-product-theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
 applyTheme(preferred);
 toggle?.addEventListener('click', () => applyTheme(root.dataset.theme === 'dark' ? 'light' : 'dark'));
 
 const screens = {
   overview: `
     <div class="mock-head">
-      <div><h3>Domov pod kontrolou.</h3><p>Homebridge · Raspberry Pi</p></div>
+      <div><h3>HB Control.</h3><p>Homebridge · Raspberry Pi</p></div>
       <span class="mock-badge">ONLINE</span>
     </div>
     <div class="mock-grid">
@@ -84,7 +84,7 @@ const screens = {
     </div>
     <div class="mock-card"><div class="mock-card-top"><strong>◫ Pluginy</strong><span class="mock-count">8</span></div><p>Všechny integrace na jednom místě.</p></div>
     <div class="mock-card"><div class="mock-card-top"><strong>↑ Aktualizace</strong><span class="mock-count">2</span></div><p>Nejdřív přehled. Potom potvrzení.</p></div>
-    <div class="mock-card"><div class="mock-card-top"><strong>↻ Právě obnoveno</strong><span class="mock-badge">OK</span></div><p>Stav serveru a komponent na jednom místě.</p></div>`,
+    <div class="mock-card"><div class="mock-card-top"><strong>⌂ Apple Home</strong><span class="mock-badge">QR</span></div><p>Párování, PIN a QR kód přímo v aplikaci.</p></div>`,
   plugins: `
     <div class="mock-head"><div><h3>Pluginy.</h3><p>Nainstalované integrace a jejich stav</p></div><span class="mock-badge">8 PLUGINŮ</span></div>
     ${['Homebridge Govee','Homebridge Tuya','Homebridge Dummy Garage','Homebridge Mi Hygrothermograph'].map((name, i) => `

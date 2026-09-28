@@ -4,6 +4,34 @@
   const themeColor = document.getElementById('themeColor');
   const langButtons = [...document.querySelectorAll('[data-lang]')];
   const SUPPORT_URL = 'https://www.buymeacoffee.com/caseycz';
+  const PROFILE_VERSIONS_URL = 'https://raw.githubusercontent.com/CaseyCZ/CaseyCZ/Master/versions.json';
+
+  async function applyProjectVersions() {
+    const targets = [...document.querySelectorAll('[data-version]')];
+    if (!targets.length) return;
+
+    try {
+      const response = await fetch(PROFILE_VERSIONS_URL, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const versions = await response.json();
+
+      targets.forEach((node) => {
+        const key = node.dataset.version;
+        const value = versions?.[key];
+        if (value == null) return;
+
+        if (key === 'hb_control' && typeof value === 'object') {
+          node.textContent = value.display || [value.version, value.build ? `build ${value.build}` : ''].filter(Boolean).join(' · ');
+          return;
+        }
+
+        const text = String(value);
+        node.textContent = text.startsWith('v') ? text : `v${text}`;
+      });
+    } catch (error) {
+      console.warn('Project versions could not be refreshed:', error);
+    }
+  }
 
   const safeGet = (key) => {
     try { return localStorage.getItem(key); } catch (_) { return null; }
@@ -163,6 +191,7 @@
   }
 
   installSupportUI();
+  applyProjectVersions();
 
   const storedTheme = safeGet('caseycz-theme');
   const systemDark = Boolean(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);

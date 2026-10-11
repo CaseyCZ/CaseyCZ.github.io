@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="cs" data-theme="dark">
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#070b14" id="themeColor">
+  <meta name="description" content="Travel Checklist od CaseyCZ — chytrý seznam na cesty s automatickým ukládáním, šablonami, tiskem, exportem, importem a sdílením.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Travel Checklist — CaseyCZ">
+  <meta property="og:description" content="Sbalte se bez zapomínání. Vlastní kategorie, šablony, průběh balení, tisk a sdílení.">
+  <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+  <link rel="stylesheet" href="travel.css">
+  <script src="travel.js" defer></script>
+  <title>Travel Checklist — CaseyCZ</title>
+<!-- Google Analytics loads only after explicit consent. -->
+<script src="analytics-consent.js?v=20261001-footer3"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="CaseyCZ"><span class="brand-mark">C</span><span class="brand-copy"><strong>CaseyCZ</strong><small>Travel Checklist</small></span></a>
+      <div class="nav-actions">
+        <a class="nav-button" href="index.html"><span class="home-label" data-cs="Domů" data-en="Home">Domů</span> ←</a>
+        <div class="language-switch" aria-label="Language"><button class="lang-btn active" type="button" data-lang="cs" aria-pressed="true">CZ</button><button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button></div>
+        <button class="icon-button" id="themeToggle" type="button" aria-label="Přepnout téma">☀</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow"><span class="dot"></span><span data-cs="CESTOVNÍ POMOCNÍK" data-en="TRAVEL ASSISTANT">CESTOVNÍ POMOCNÍK</span></div>
+        <h1 data-cs="Sbaleno. Bez stresu." data-en="Packed. No stress.">Sbaleno. <span>Bez stresu.</span></h1>
+        <p data-cs="Vytvořte si vlastní seznam na cestu, použijte šablonu, odškrtávejte věci při balení a hotový seznam si uložte, vytiskněte nebo odešlete." data-en="Build your own packing list, start from a template, tick things off while packing, then save, print or share the result.">Vytvořte si vlastní seznam na cestu, použijte šablonu, odškrtávejte věci při balení a hotový seznam si uložte, vytiskněte nebo odešlete.</p>
+      </div>
+    </section>
+
+    <section class="app-shell">
+      <div class="container">
+        <div class="print-title"><h1>Travel Checklist</h1><p>CaseyCZ</p></div>
+
+        <section class="panel trip-panel" aria-label="Trip settings">
+          <div class="trip-grid">
+            <div class="field"><label for="tripName" data-cs="Název cesty" data-en="Trip name">Název cesty</label><input id="tripName" type="text" maxlength="100" data-cs-placeholder="Např. Itálie 2026" data-en-placeholder="e.g. Italy 2026" placeholder="Např. Itálie 2026"></div>
+            <div class="field"><label for="destination" data-cs="Cíl" data-en="Destination">Cíl</label><input id="destination" type="text" maxlength="100" data-cs-placeholder="Město / země" data-en-placeholder="City / country" placeholder="Město / země"></div>
+            <div class="field"><label for="startDate" data-cs="Odjezd" data-en="Departure">Odjezd</label><input id="startDate" type="date"></div>
+            <div class="field"><label for="endDate" data-cs="Návrat" data-en="Return">Návrat</label><input id="endDate" type="date"></div>
+          </div>
+
+          <div class="template-row">
+            <select id="templateSelect" aria-label="Travel template">
+              <option value="general" data-cs="Univerzální cesta" data-en="General trip">Univerzální cesta</option>
+              <option value="city" data-cs="Město / eurovíkend" data-en="City break">Město / eurovíkend</option>
+              <option value="beach" data-cs="Moře / pláž" data-en="Beach holiday">Moře / pláž</option>
+              <option value="mountains" data-cs="Hory / turistika" data-en="Mountains / hiking">Hory / turistika</option>
+              <option value="business" data-cs="Pracovní cesta" data-en="Business trip">Pracovní cesta</option>
+              <option value="family" data-cs="Rodinná cesta" data-en="Family trip">Rodinná cesta</option>
+            </select>
+            <button class="action primary" id="applyTemplate" type="button" data-cs="Použít šablonu" data-en="Apply template">Použít šablonu</button>
+          </div>
+
+          <div class="toolbar">
+            <button class="action" id="newList" type="button" data-cs="＋ Nový seznam" data-en="＋ New list">＋ Nový seznam</button>
+            <button class="action" id="resetChecks" type="button" data-cs="↺ Zrušit odškrtnutí" data-en="↺ Clear checks">↺ Zrušit odškrtnutí</button>
+            <button class="action" id="printList" type="button" data-cs="🖨 Tisk / PDF" data-en="🖨 Print / PDF">🖨 Tisk / PDF</button>
+            <button class="action" id="exportList" type="button" data-cs="↓ Uložit zálohu" data-en="↓ Save backup">↓ Uložit zálohu</button>
+            <button class="action" id="importList" type="button" data-cs="↑ Načíst zálohu" data-en="↑ Import backup">↑ Načíst zálohu</button>
+            <button class="action primary" id="shareList" type="button" data-cs="↗ Odeslat / sdílet" data-en="↗ Send / share">↗ Odeslat / sdílet</button>
+            <input id="importFile" type="file" accept="application/json,.json" hidden>
+          </div>
+
+          <div class="status-grid">
+            <div class="progress-copy"><strong id="progressText">Sbaleno: 0 / 0 položek</strong><small data-cs="Změny se automaticky ukládají pouze do tohoto prohlížeče." data-en="Changes are automatically saved only in this browser.">Změny se automaticky ukládají pouze do tohoto prohlížeče.</small><div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div></div>
+            <div class="progress-number" id="progressNumber">0%</div>
+          </div>
+        </section>
+
+        <div class="filters" aria-label="Filters">
+          <button class="filter-btn active" type="button" data-filter="all" data-cs="Vše" data-en="All">Vše</button>
+          <button class="filter-btn" type="button" data-filter="todo" data-cs="Ještě sbalit" data-en="To pack">Ještě sbalit</button>
+          <button class="filter-btn" type="button" data-filter="done" data-cs="Sbaleno" data-en="Packed">Sbaleno</button>
+          <input class="search" id="searchInput" type="search" data-cs-placeholder="Hledat v seznamu…" data-en-placeholder="Search the list…" placeholder="Hledat v seznamu…">
+        </div>
+
+        <div class="categories" id="categories" aria-live="polite"></div>
+
+        <form class="add-category" id="addCategoryForm">
+          <input id="newCategory" type="text" maxlength="80" data-cs-placeholder="Přidat vlastní kategorii…" data-en-placeholder="Add your own category…" placeholder="Přidat vlastní kategorii…">
+          <button type="submit" data-cs="＋ Přidat kategorii" data-en="＋ Add category">＋ Přidat kategorii</button>
+        </form>
+
+        <p class="privacy-note" data-cs="Soukromí: seznam se neposílá na CaseyCZ ani na jiný server. Ukládá se lokálně v prohlížeči. Exportovanou JSON zálohu můžete později znovu načíst." data-en="Privacy: your list is not sent to CaseyCZ or any other server. It is stored locally in your browser. You can export a JSON backup and import it later.">Soukromí: seznam se neposílá na CaseyCZ ani na jiný server. Ukládá se lokálně v prohlížeči. Exportovanou JSON zálohu můžete později znovu načíst.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-wrap"><span>© 2026 CaseyCZ</span><span data-cs="Travel Checklist · data zůstávají ve vašem zařízení" data-en="Travel Checklist · your data stays on your device">Travel Checklist · data zůstávají ve vašem zařízení</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
